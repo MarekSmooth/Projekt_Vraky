@@ -30,6 +30,19 @@
         background: rgba(255,255,255,0.3);
         border-radius: 50%;
       }
+      .location-graphic {
+        position: absolute;
+        right: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 40px;
+        height: 40px;
+        opacity: 0.6;
+      }
+      .location-graphic svg {
+        width: 100%;
+        height: 100%;
+      }
     </style>
   </head>
   <body class="text-gray-300">
@@ -39,10 +52,10 @@
         <img src="Logo Vraky Brno.png" alt="Vraky Brno Logo" class="h-16 w-auto ml-8">
       </div>
       <div class="space-x-6 hidden md:flex items-center">
-        <a href="#sluzby" class="text-gray-300 hover:text-green-400">Služby</a>
-        <a href="#proc" class="text-gray-300 hover:text-green-400">Proč právě nás</a>
-        <a href="#kontakt" class="text-gray-300 hover:text-green-400">Kontakt</a>
-        <a href="tel:+420123456789" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">
+        <a href="#sluzby" class="text-gray-300 hover:text-green-800">Služby</a>
+        <a href="#proc" class="text-gray-300 hover:text-green-800">Proč právě nás</a>
+        <a href="#kontakt" class="text-gray-300 hover:text-green-800">Kontakt</a>
+        <a href="tel:+420123456789" class="bg-green-800 text-white px-4 py-2 rounded hover:bg-green-900 font-bold">
           📞 +420 123 456 789
         </a>
       </div>
@@ -57,9 +70,17 @@
           <!-- BRNO -->
           <button onclick="selectLocation('brno')" id="btn-brno" class="location-btn bg-transparent text-white p-4 rounded-l-2xl w-full md:w-1/4 text-left hover:bg-black/20 transition-all duration-300 relative">
             <div class="flex flex-col gap-1">
-              <div class="text-lg font-bold"> Brno</div>
+              <div class="text-lg font-bold">Brno</div>
               <div class="text-xs opacity-80">Hlavní pobočka</div>
               <span class="mt-1 text-xs underline">Zobrazit detail →</span>
+            </div>
+            <div class="location-graphic">
+              <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="2" opacity="0.3"/>
+                <circle cx="20" cy="20" r="12" fill="currentColor" opacity="0.2"/>
+                <circle cx="20" cy="20" r="6" fill="currentColor" opacity="0.4"/>
+                <circle cx="20" cy="20" r="2" fill="currentColor"/>
+              </svg>
             </div>
           </button>
 
@@ -71,9 +92,17 @@
           <!-- BŘECLAV -->
           <button onclick="selectLocation('breclav')" id="btn-breclav" class="location-btn bg-transparent text-white p-4 w-full md:w-1/4 text-left hover:bg-black/20 transition-all duration-300 relative">
             <div class="flex flex-col gap-1">
-              <div class="text-lg font-bold"> Břeclav</div>
+              <div class="text-lg font-bold">Břeclav</div>
               <div class="text-xs opacity-80">Jižní Morava</div>
               <span class="mt-1 text-xs underline">Zobrazit detail →</span>
+            </div>
+            <div class="location-graphic">
+              <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="2" opacity="0.3"/>
+                <circle cx="20" cy="20" r="12" fill="currentColor" opacity="0.2"/>
+                <circle cx="20" cy="20" r="6" fill="currentColor" opacity="0.4"/>
+                <circle cx="20" cy="20" r="2" fill="currentColor"/>
+              </svg>
             </div>
           </button>
 
@@ -85,9 +114,17 @@
           <!-- VYŠKOV -->
           <button onclick="selectLocation('vyskov')" id="btn-vyskov" class="location-btn bg-transparent text-white p-4 w-full md:w-1/4 text-left hover:bg-black/20 transition-all duration-300 relative">
             <div class="flex flex-col gap-1">
-              <div class="text-lg font-bold"> Vyškov</div>
+              <div class="text-lg font-bold">Vyškov</div>
               <div class="text-xs opacity-80">Východní oblast</div>
               <span class="mt-1 text-xs underline">Zobrazit detail →</span>
+            </div>
+            <div class="location-graphic">
+              <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="2" opacity="0.3"/>
+                <circle cx="20" cy="20" r="12" fill="currentColor" opacity="0.2"/>
+                <circle cx="20" cy="20" r="6" fill="currentColor" opacity="0.4"/>
+                <circle cx="20" cy="20" r="2" fill="currentColor"/>
+              </svg>
             </div>
           </button>
 
@@ -99,9 +136,17 @@
           <!-- BLANSKO -->
           <button onclick="selectLocation('blansko')" id="btn-blansko" class="location-btn bg-transparent text-white p-4 rounded-r-2xl w-full md:w-1/4 text-left hover:bg-black/20 transition-all duration-300 relative">
             <div class="flex flex-col gap-1">
-              <div class="text-lg font-bold"> Blansko</div>
+              <div class="text-lg font-bold">Blansko</div>
               <div class="text-xs opacity-80">Severní oblast</div>
               <span class="mt-1 text-xs underline">Zobrazit detail →</span>
+            </div>
+            <div class="location-graphic">
+              <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="2" opacity="0.3"/>
+                <circle cx="20" cy="20" r="12" fill="currentColor" opacity="0.2"/>
+                <circle cx="20" cy="20" r="6" fill="currentColor" opacity="0.4"/>
+                <circle cx="20" cy="20" r="2" fill="currentColor"/>
+              </svg>
             </div>
           </button>
 
@@ -114,14 +159,14 @@
       <div class="absolute inset-0 bg-[url('https://t4.ftcdn.net/jpg/11/63/99/37/360_F_1163993761_yuhAAonLORO9M2NUxNhS5ynMB1yreVHD.jpg')] bg-cover bg-center opacity-25"></div>
       <div class="max-w-6xl mx-auto relative z-10">
         <div class="text-center max-w-3xl mx-auto">
-          <h1 class="text-5xl md:text-6xl font-extrabold mb-6 leading-tight bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-green-600">
+          <h1 class="text-5xl md:text-6xl font-extrabold mb-6 leading-tight bg-clip-text text-transparent bg-gradient-to-r from-green-800 to-green-900">
             Ekologická likvidace vozidel
           </h1>
           <p class="text-xl md:text-2xl mb-8 text-gray-300">
             Zajistíme kompletní likvidaci včetně odvozu a dokumentace
           </p>
           <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="#kontakt" class="bg-green-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-green-700 transition-colors">
+            <a href="#kontakt" class="bg-green-800 text-white px-8 py-4 rounded-lg font-semibold hover:bg-green-900 transition-colors">
               Nezávazná poptávka
             </a>
             <a href="#sluzby" class="bg-gray-700 text-white px-8 py-4 rounded-lg font-semibold hover:bg-gray-600 transition-colors">
@@ -136,29 +181,29 @@
     <section class="py-16 px-6 bg-gray-800">
       <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
         <div class="flex items-center space-x-4 bg-gray-700 p-6 rounded-lg">
-          <div class="bg-green-600 p-3 rounded-full">
+          <div class="bg-green-800 p-3 rounded-full">
             <span class="text-2xl">📑</span>
           </div>
           <div>
-            <h3 class="font-bold text-lg text-green-400">Certifikovaná likvidace</h3>
+            <h3 class="font-bold text-lg text-green-800">Certifikovaná likvidace</h3>
             <p class="text-gray-400">Zajistíme ekologickou likvidaci vozidla v souladu s platnou  legislativou s potvrzením.</p>
           </div>
         </div>
         <div class="flex items-center space-x-4 bg-gray-700 p-6 rounded-lg">
-          <div class="bg-green-600 p-3 rounded-full">
+          <div class="bg-green-800 p-3 rounded-full">
             <span class="text-2xl">🛻</span>
           </div>
           <div>
-            <h3 class="font-bold text-lg text-green-400">Odvoz zdarma</h3>
+            <h3 class="font-bold text-lg text-green-800">Odvoz zdarma</h3>
             <p class="text-gray-400">Nabízíme bezplatný odvoz nepojízdných vozidel z celého Jihomoravského kraje.</p>
           </div>
         </div>
         <div class="flex items-center space-x-4 bg-gray-700 p-6 rounded-lg">
-          <div class="bg-green-600 p-3 rounded-full">
+          <div class="bg-green-800 p-3 rounded-full">
             <span class="text-2xl">📝</span>
           </div>
           <div>
-            <h3 class="font-bold text-lg text-green-400">Kompletní servis</h3>
+            <h3 class="font-bold text-lg text-green-800">Kompletní servis</h3>
             <p class="text-gray-400">Vyřídíme veškerou dokumentaci včetně odhlášení vozidla  z registru.</p>
           </div>
         </div>
@@ -168,21 +213,21 @@
     <!-- Služby -->
     <section id="sluzby" class="py-16 px-6 bg-gray-900">
       <div class="max-w-6xl mx-auto">
-        <h2 class="text-3xl font-bold text-center mb-12 text-green-400">Naše služby</h2>
+        <h2 class="text-3xl font-bold text-center mb-12 text-green-800">Naše služby</h2>
         <div class="grid md:grid-cols-3 gap-8">
           <div class="bg-gray-800 p-8 rounded-xl hover:transform hover:scale-105 transition-transform">
             <img src="https://img.icons8.com/?size=100&id=2171&format=png&color=000000" class="mx-auto mb-6 h-16 invert" alt="Ikona auta" />
-            <h3 class="text-xl font-semibold mb-4 text-green-400">Výkup autovraků</h3>
+            <h3 class="text-xl font-semibold mb-4 text-green-800">Výkup autovraků</h3>
             <p class="text-gray-400">Nabízíme nejvýhodnější výkupní ceny autovraků všech značek a stáří.</p>
           </div>
           <div class="bg-gray-800 p-8 rounded-xl hover:transform hover:scale-105 transition-transform">
             <img src="https://img.icons8.com/?size=100&id=35068&format=png&color=000000" class="mx-auto mb-6 h-16 invert" alt="Ikona náhradních dílů" />
-            <h3 class="text-xl font-semibold mb-4 text-green-400">Prodej náhradních dílů</h3>
+            <h3 class="text-xl font-semibold mb-4 text-green-800">Prodej náhradních dílů</h3>
             <p class="text-gray-400">Široká nabídka kvalitních použitých náhradních dílů za výhodné ceny.</p>
           </div>
           <div class="bg-gray-800 p-8 rounded-xl hover:transform hover:scale-105 transition-transform">
             <img src="https://img.icons8.com/?size=100&id=nvpiU656gOAu&format=png&color=000000" class="mx-auto mb-6 h-16 invert" alt="Ikona recyklace" />
-            <h3 class="text-xl font-semibold mb-4 text-green-400">Ekologická likvidace</h3>
+            <h3 class="text-xl font-semibold mb-4 text-green-800">Ekologická likvidace</h3>
             <p class="text-gray-400">Zajistíme ekologickou likvidaci v souladu s předpisy a vystavíme potvrzení.</p>
           </div>
         </div>
@@ -192,11 +237,11 @@
     <!-- Kontakt -->
     <section id="kontakt" class="py-16 px-6 bg-gray-800">
       <div class="max-w-6xl mx-auto">
-        <h2 class="text-3xl font-bold text-center mb-12 text-green-400">Kontaktujte nás</h2>
+        <h2 class="text-3xl font-bold text-center mb-12 text-green-800">Kontaktujte nás</h2>
         <div class="grid md:grid-cols-2 gap-12">
           <div class="space-y-6">
             <div class="bg-gray-700 p-6 rounded-lg">
-              <h3 class="text-xl font-semibold mb-4 text-green-400">Kontaktní údaje</h3>
+              <h3 class="text-xl font-semibold mb-4 text-green-800">Kontaktní údaje</h3>
               <div class="space-y-3" id="contact-info">
                 <p class="flex items-center text-gray-300">
                   <span class="mr-3">📍</span> <span id="address">Jihlavská 1234, 625 00 Brno</span>
@@ -210,7 +255,7 @@
               </div>
             </div>
             <div class="bg-gray-700 p-6 rounded-lg">
-              <h3 class="text-xl font-semibold mb-4 text-green-400">Otevírací doba</h3>
+              <h3 class="text-xl font-semibold mb-4 text-green-800">Otevírací doba</h3>
               <div class="space-y-2 text-gray-300">
                 <p>Pondělí - Pátek: 8:00 - 17:00</p>
                 <p>Sobota: 9:00 - 12:00</p>
@@ -236,7 +281,7 @@
                 <label class="block text-sm font-medium text-gray-400 mb-1">Zpráva</label>
                 <textarea rows="4" class="w-full px-4 py-2 rounded bg-gray-600 border-gray-500 text-white" required></textarea>
               </div>
-              <button type="submit" class="w-full bg-green-600 text-white py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors">
+              <button type="submit" class="w-full bg-green-800 text-white py-3 rounded-lg font-semibold hover:bg-green-900 transition-colors">
                 Odeslat poptávku
               </button>
             </div>
@@ -250,16 +295,16 @@
       <div class="max-w-6xl mx-auto px-6">
         <div class="grid md:grid-cols-3 gap-8 mb-8">
           <div>
-            <h4 class="text-lg font-semibold text-green-400 mb-4">O nás</h4>
+            <h4 class="text-lg font-semibold text-green-800 mb-4">O nás</h4>
             <p class="text-sm">Jsme profesionální vrakoviště s dlouholetou tradicí. Zajišťujeme ekologickou likvidaci vozidel a prodej náhradních dílů.</p>
           </div>
           <div>
-            <h4 class="text-lg font-semibold text-green-400 mb-4">Rychlý kontakt</h4>
+            <h4 class="text-lg font-semibold text-green-800 mb-4">Rychlý kontakt</h4>
             <p class="text-sm">📞 <span id="footer-phone">+420 123 456 789</span></p>
             <p class="text-sm">📧 <span id="footer-email">brno@vrakoviste.cz</span></p>
           </div>
           <div> 
-            <h4 class="text-lg font-semibold text-green-400 mb-4">Provozní doba</h4>
+            <h4 class="text-lg font-semibold text-green-800 mb-4">Provozní doba</h4>
             <p class="text-sm">Po-Pá: 8:00 - 17:00</p>
             <p class="text-sm">So: 9:00 - 12:00</p>
           </div>
