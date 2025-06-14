@@ -14,13 +14,29 @@
         font-family: 'Inter', sans-serif;
         background-color: #1a1a1a;
       }
+      .location-separator {
+        width: 1px;
+        background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.2), transparent);
+        height: 60%;
+      }
+      .location-separator::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 6px;
+        height: 6px;
+        background: rgba(255,255,255,0.3);
+        border-radius: 50%;
+      }
     </style>
   </head>
   <body class="text-gray-300">
     <!-- Navigace -->
     <nav class="bg-gray-900 bg-opacity-90 backdrop-blur shadow-md px-6 py-4 flex justify-between items-center sticky top-0 z-50">
       <div class="flex items-center">
-        <img src="/Logo Vraky Brno.png" alt="Vraky Brno Logo" class="h-16 w-auto ml-8">
+        <img src="/auto.png" alt="Vraky Brno Logo" class="h-16 w-auto ml-8">
       </div>
       <div class="space-x-6 hidden md:flex items-center">
         <a href="#sluzby" class="text-gray-300 hover:text-green-400">Služby</a>
@@ -33,44 +49,59 @@
     </nav>
 
     <!-- Lokace -->
-    <section class="bg-gray-800 py-8 px-6">
+    <section class="bg-gray-800 py-6 px-6">
       <div class="max-w-6xl mx-auto">
-        <!-- Flex bez scrollu, vždy v jednom řádku na větších obrazovkách -->
-        <div class="flex flex-col md:flex-row gap-6 bg-gradient-to-r from-green-600 via-green-700 to-green-900 p-1 rounded-2xl">
+        <!-- Kompaktnější panel s tmavší zelenou a moderními oddělovači -->
+        <div class="flex flex-col md:flex-row gap-0 bg-gradient-to-r from-green-800 via-green-900 to-green-800 p-1 rounded-2xl">
           
           <!-- BRNO -->
-          <button onclick="selectLocation('brno')" id="btn-brno" class="location-btn bg-transparent text-white p-6 rounded-2xl w-full md:w-1/4 text-left hover:bg-black/20 transition-all duration-300">
-            <div class="flex flex-col gap-2">
-              <div class="text-xl font-bold">📍 Brno</div>
-              <div class="text-sm opacity-80">Hlavní pobočka</div>
-              <span class="mt-2 text-sm underline">Zobrazit detail →</span>
+          <button onclick="selectLocation('brno')" id="btn-brno" class="location-btn bg-transparent text-white p-4 rounded-l-2xl w-full md:w-1/4 text-left hover:bg-black/20 transition-all duration-300 relative">
+            <div class="flex flex-col gap-1">
+              <div class="text-lg font-bold">📍 Brno</div>
+              <div class="text-xs opacity-80">Hlavní pobočka</div>
+              <span class="mt-1 text-xs underline">Zobrazit detail →</span>
             </div>
           </button>
+
+          <!-- Oddělovač -->
+          <div class="hidden md:flex items-center justify-center relative">
+            <div class="location-separator relative"></div>
+          </div>
 
           <!-- BŘECLAV -->
-          <button onclick="selectLocation('breclav')" id="btn-breclav" class="location-btn bg-transparent text-white p-6 rounded-2xl w-full md:w-1/4 text-left hover:bg-black/20 transition-all duration-300">
-            <div class="flex flex-col gap-2">
-              <div class="text-xl font-bold">📍 Břeclav</div>
-              <div class="text-sm opacity-80">Jižní Morava</div>
-              <span class="mt-2 text-sm underline">Zobrazit detail →</span>
+          <button onclick="selectLocation('breclav')" id="btn-breclav" class="location-btn bg-transparent text-white p-4 w-full md:w-1/4 text-left hover:bg-black/20 transition-all duration-300 relative">
+            <div class="flex flex-col gap-1">
+              <div class="text-lg font-bold">📍 Břeclav</div>
+              <div class="text-xs opacity-80">Jižní Morava</div>
+              <span class="mt-1 text-xs underline">Zobrazit detail →</span>
             </div>
           </button>
+
+          <!-- Oddělovač -->
+          <div class="hidden md:flex items-center justify-center relative">
+            <div class="location-separator relative"></div>
+          </div>
 
           <!-- VYŠKOV -->
-          <button onclick="selectLocation('vyskov')" id="btn-vyskov" class="location-btn bg-transparent text-white p-6 rounded-2xl w-full md:w-1/4 text-left hover:bg-black/20 transition-all duration-300">
-            <div class="flex flex-col gap-2">
-              <div class="text-xl font-bold">📍 Vyškov</div>
-              <div class="text-sm opacity-80">Východní oblast</div>
-              <span class="mt-2 text-sm underline">Zobrazit detail →</span>
+          <button onclick="selectLocation('vyskov')" id="btn-vyskov" class="location-btn bg-transparent text-white p-4 w-full md:w-1/4 text-left hover:bg-black/20 transition-all duration-300 relative">
+            <div class="flex flex-col gap-1">
+              <div class="text-lg font-bold">📍 Vyškov</div>
+              <div class="text-xs opacity-80">Východní oblast</div>
+              <span class="mt-1 text-xs underline">Zobrazit detail →</span>
             </div>
           </button>
 
+          <!-- Oddělovač -->
+          <div class="hidden md:flex items-center justify-center relative">
+            <div class="location-separator relative"></div>
+          </div>
+
           <!-- BLANSKO -->
-          <button onclick="selectLocation('blansko')" id="btn-blansko" class="location-btn bg-transparent text-white p-6 rounded-2xl w-full md:w-1/4 text-left hover:bg-black/20 transition-all duration-300">
-            <div class="flex flex-col gap-2">
-              <div class="text-xl font-bold">📍 Blansko</div>
-              <div class="text-sm opacity-80">Severní oblast</div>
-              <span class="mt-2 text-sm underline">Zobrazit detail →</span>
+          <button onclick="selectLocation('blansko')" id="btn-blansko" class="location-btn bg-transparent text-white p-4 rounded-r-2xl w-full md:w-1/4 text-left hover:bg-black/20 transition-all duration-300 relative">
+            <div class="flex flex-col gap-1">
+              <div class="text-lg font-bold">📍 Blansko</div>
+              <div class="text-xs opacity-80">Severní oblast</div>
+              <span class="mt-1 text-xs underline">Zobrazit detail →</span>
             </div>
           </button>
 
