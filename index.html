@@ -44,70 +44,6 @@
         height: 100%;
       }
     </style>
-    <!-- PŘIDAT DO <head> -->
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-sA+e2S6jQbzZkUEg5FEMq4YmO3Yge7NHzA9vMM5Myzo=" crossorigin=""/>
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-o9N1j7k1sV4zL4pMyPthLVZmZ8e+k7mfLTTdF7rxaQA=" crossorigin=""></script>
-
-<script>
-const descriptions = {
-  brno: "Zajišťujeme odtah a ekologickou likvidaci vozidel v Brně a všech přilehlých obcích do 30 km (Modřice, Kuřim, Řečkovice, Ždánice a další).",
-  breclav: "Pokrýváme Břeclav, Lanžhot, Valtice, Podivín, Hustopeče a okolí do 20 km.",
-  vyskov: "Vyškov a okolí do 25 km - Rousínov, Ivanovice, Slavkov u Brna.",
-  blansko: "Blansko, Adamov, Boskovice a vše do 30 km od Blanska."
-};
-
-const coordinates = {
-  brno: [49.1951, 16.6068],
-  breclav: [48.7586, 16.8825],
-  vyskov: [49.2772, 17.0039],
-  blansko: [49.3630, 16.6445]
-};
-
-let map;
-
-function selectLocation(location) {
-  // Update contact information
-  document.getElementById('address').textContent = locations[location].address;
-  document.getElementById('phone').textContent = locations[location].phone;
-  document.getElementById('email').textContent = locations[location].email;
-  document.getElementById('footer-phone').textContent = locations[location].phone;
-  document.getElementById('footer-email').textContent = locations[location].email;
-
-  // Update button styles
-  document.querySelectorAll('.location-btn').forEach(btn => {
-    btn.classList.remove('ring-2', 'ring-gray-600', 'ring-offset-2', 'bg-black/20');
-  });
-  document.getElementById(`btn-${location}`).classList.add('ring-2', 'ring-gray-600', 'ring-offset-2', 'bg-black/20');
-
-  // Show map and description
-  document.getElementById('location-detail').classList.remove('hidden');
-  document.getElementById('location-description').textContent = descriptions[location];
-
-  // Inicializace nebo update mapy
-  if (!map) {
-    map = L.map('map').setView(coordinates[location], 11);
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '&copy; OpenStreetMap',
-      maxZoom: 18,
-    }).addTo(map);
-  } else {
-    map.setView(coordinates[location], 11);
-    map.eachLayer(layer => {
-      if (layer instanceof L.Marker || layer instanceof L.Circle) {
-        map.removeLayer(layer);
-      }
-    });
-  }
-
-  L.marker(coordinates[location]).addTo(map);
-  L.circle(coordinates[location], {
-    radius: location === 'breclav' ? 20000 : 25000,
-    color: '#16a34a',
-    fillColor: '#16a34a',
-    fillOpacity: 0.2
-  }).addTo(map);
-}
-</script>
   </head>
   <body class="text-gray-300">
     <!-- Navigace -->
@@ -147,7 +83,7 @@ function selectLocation(location) {
           </div>
         </div>
       </div>
-    </header>
+    </header> 
 
 
     <!-- Lokace -->
@@ -234,17 +170,6 @@ function selectLocation(location) {
         </div>
       </div>
     </section>
-
-    <!-- DOPLNENI POD TLAČITKA S LOKACEMI -->
-<section class="bg-gray-800 px-6 pb-16">
-  <div id="location-detail" class="max-w-6xl mx-auto mt-6 hidden">
-    <h3 class="text-2xl font-bold text-green-700 mb-4">Oblast pokrytí</h3>
-    <div class="mb-4 text-gray-300" id="location-description">
-      <!-- Dynamicky se doplní popis lokace -->
-    </div>
-    <div id="map" class="w-full h-96 rounded-lg shadow-lg"></div>
-  </div>
-</section>
     
     <!-- Výhody -->
     <section class="py-16 px-6 bg-gray-800">
