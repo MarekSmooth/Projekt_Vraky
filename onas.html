@@ -158,47 +158,5 @@
       </div>
     </footer>
 
-    <script>
-      const locations = {
-        brno: {
-          address: "Jihlavská 1234, 625 00 Brno",
-          phone: "+420 123 456 789",
-          email: "brno@vrakoviste.cz"
-        },
-        breclav: {
-          address: "Průmyslová 567, 690 02 Břeclav",
-          phone: "+420 234 567 890",
-          email: "breclav@vrakoviste.cz"
-        },
-        vyskov: {
-          address: "Nádražní 890, 682 01 Vyškov",
-          phone: "+420 345 678 901",
-          email: "vyskov@vrakoviste.cz"
-        },
-        blansko: {
-          address: "Tovární 123, 678 01 Blansko",
-          phone: "+420 456 789 012",
-          email: "blansko@vrakoviste.cz"
-        }
-      };
-
-      function selectLocation(location) {
-        // Update footer contact information
-        document.getElementById('footer-phone').textContent = locations[location].phone;
-        document.getElementById('footer-email').textContent = locations[location].email;
-
-        // Update button styles
-        document.querySelectorAll('.location-btn').forEach(btn => {
-          btn.classList.remove('ring-2', 'ring-gray-600', 'ring-offset-2', 'bg-black/20');
-        });
-
-        document.getElementById(`btn-${location}`).classList.add('ring-2', 'ring-gray-600', 'ring-offset-2', 'bg-black/20');
-      }
-
-      // Set Brno as default on page load
-      document.addEventListener('DOMContentLoaded', function() {
-        selectLocation('brno');
-      });
-    </script>
   </body>
 </html>
