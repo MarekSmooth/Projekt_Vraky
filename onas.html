@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="cs">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>O nás – Vraky Brno – Odtah, výkup a likvidace vozidel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: #1a1a1a;
+      }
+      .location-separator {
+        width: 1px;
+        background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.2), transparent);
+        height: 60%;
+      }
+      .location-separator::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 6px;
+        height: 6px;
+        background: rgba(255,255,255,0.3);
+        border-radius: 50%;
+      }
+      .location-graphic {
+        position: absolute;
+        right: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 40px;
+        height: 40px;
+        opacity: 0.6;
+      }
+      .location-graphic svg {
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body class="text-gray-300">
+    <!-- Navigace -->
+    <nav class="bg-gray-900 bg-opacity-90 backdrop-blur shadow-md px-6 py-4 flex justify-between items-center sticky top-0 z-50">
+      <div class="flex items-center">
+        <img src="Logo Vraky Brno.png" alt="Vraky Brno Logo" class="h-20 w-auto ml-8">
+      </div>
+      <div class="space-x-6 hidden md:flex items-center">
+        <a href="index.html" class="text-gray-300 hover:text-green-800">Domů</a>
+        <a href="onas.html" class="text-gray-300 hover:text-green-800">O nás</a>
+        <a href="index.html#sluzby" class="text-gray-300 hover:text-green-800">Služby</a>
+        <a href="index.html#kontakt" class="text-gray-300 hover:text-green-800">Kontakt</a>
+        <a href="tel:+420123456789" class="bg-green-800 text-white px-4 py-2 rounded hover:bg-green-900 font-bold">
+          📞 +420 123 456 789
+        </a>
+      </div>
+    </nav>
+
+    <!-- Lokace -->
+    <section class="bg-gray-800 py-6 px-6">
+      <div class="max-w-6xl mx-auto">
+        <!-- Kompaktnější panel s tmavší zelenou a moderními oddělovači -->
+        <div class="flex flex-col md:flex-row gap-0 bg-gradient-to-r from-green-800 via-green-900 to-green-800 p-1 rounded-2xl">
+          
+          <!-- BRNO -->
+          <button onclick="selectLocation('brno')" id="btn-brno" class="location-btn bg-transparent text-white p-4 rounded-l-2xl w-full md:w-1/4 text-left hover:bg-black/20 transition-all duration-300 relative">
+            <div class="flex flex-col gap-1">
+              <div class="text-lg font-bold">Brno a okolí</div>
+            </div>
+            <div class="location-graphic">
+              <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="2" opacity="0.3"/>
+                <circle cx="20" cy="20" r="12" fill="currentColor" opacity="0.2"/>
+                <circle cx="20" cy="20" r="6" fill="currentColor" opacity="0.4"/>
+                <circle cx="20" cy="20" r="2" fill="currentColor"/>
+              </svg>
+            </div>
+          </button>
+
+          <!-- Oddělovač -->
+          <div class="hidden md:flex items-center justify-center relative">
+            <div class="location-separator relative"></div>
+          </div>
+
+          <!-- BŘECLAV -->
+          <button onclick="selectLocation('breclav')" id="btn-breclav" class="location-btn bg-transparent text-white p-4 w-full md:w-1/4 text-left hover:bg-black/20 transition-all duration-300 relative">
+            <div class="flex flex-col gap-1">
+              <div class="text-lg font-bold">Břeclav</div>
+            </div>
+            <div class="location-graphic">
+              <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="2" opacity="0.3"/>
+                <circle cx="20" cy="20" r="12" fill="currentColor" opacity="0.2"/>
+                <circle cx="20" cy="20" r="6" fill="currentColor" opacity="0.4"/>
+                <circle cx="20" cy="20" r="2" fill="currentColor"/>
+              </svg>
+            </div>
+          </button>
+
+          <!-- Oddělovač -->
+          <div class="hidden md:flex items-center justify-center relative">
+            <div class="location-separator relative"></div>
+          </div>
+
+          <!-- VYŠKOV -->
+          <button onclick="selectLocation('vyskov')" id="btn-vyskov" class="location-btn bg-transparent text-white p-4 w-full md:w-1/4 text-left hover:bg-black/20 transition-all duration-300 relative">
+            <div class="flex flex-col gap-1">
+              <div class="text-lg font-bold">Vyškov</div>
+            </div>
+            <div class="location-graphic">
+              <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="2" opacity="0.3"/>
+                <circle cx="20" cy="20" r="12" fill="currentColor" opacity="0.2"/>
+                <circle cx="20" cy="20" r="6" fill="currentColor" opacity="0.4"/>
+                <circle cx="20" cy="20" r="2" fill="currentColor"/>
+              </svg>
+            </div>
+          </button>
+
+          <!-- Oddělovač -->
+          <div class="hidden md:flex items-center justify-center relative">
+            <div class="location-separator relative"></div>
+          </div>
+
+          <!-- BLANSKO -->
+          <button onclick="selectLocation('blansko')" id="btn-blansko" class="location-btn bg-transparent text-white p-4 rounded-r-2xl w-full md:w-1/4 text-left hover:bg-black/20 transition-all duration-300 relative">
+            <div class="flex flex-col gap-1">
+              <div class="text-lg font-bold">Blansko</div>
+            </div>
+            <div class="location-graphic">
+              <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="2" opacity="0.3"/>
+                <circle cx="20" cy="20" r="12" fill="currentColor" opacity="0.2"/>
+                <circle cx="20" cy="20" r="6" fill="currentColor" opacity="0.4"/>
+                <circle cx="20" cy="20" r="2" fill="currentColor"/>
+              </svg>
+            </div>
+          </button>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- O nás sekce -->
+    <section class="py-16 px-6 bg-gray-900">
+      <div class="max-w-4xl mx-auto">
+        <h1 class="text-4xl md:text-5xl font-bold text-center mb-12 text-green-800">O nás</h1>
+        
+        <div class="bg-gray-800 p-8 md:p-12 rounded-xl">
+          <div class="space-y-8">
+            <div class="text-center">
+              <div class="bg-green-800 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                <span class="text-3xl">🏢</span>
+              </div>
+              <p class="text-lg md:text-xl text-gray-300 leading-relaxed">
+                Jsme tým profesionálů se sídlem v Brně, specializujeme se na odtah, výkup a ekologickou likvidaci vozidel. 
+                S více než 10 lety zkušeností se zavazujeme k rychlému servisu, poctivé komunikaci a spokojenosti zákazníků.
+              </p>
+            </div>
+            
+            <div class="border-t border-gray-700 pt-8">
+              <div class="text-center">
+                <div class="bg-green-800 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <span class="text-3xl">🎯</span>
+                </div>
+                <p class="text-lg md:text-xl text-gray-300 leading-relaxed">
+                  Naším cílem je učinit proces likvidace vozidel jednoduchým, bezpečným a bezstarostným. 
+                  Kontaktujte nás kdykoliv – jsme tu pro vás 7 dní v týdnu.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Naše hodnoty -->
+        <div class="mt-16 grid md:grid-cols-3 gap-8">
+          <div class="bg-gray-800 p-6 rounded-lg text-center">
+            <div class="bg-green-800 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span class="text-xl">⚡</span>
+            </div>
+            <h3 class="text-xl font-semibold mb-3 text-green-800">Rychlost</h3>
+            <p class="text-gray-400">Rychlé řešení vašich potřeb s minimálními průtahy</p>
+          </div>
+          
+          <div class="bg-gray-800 p-6 rounded-lg text-center">
+            <div class="bg-green-800 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span class="text-xl">🤝</span>
+            </div>
+            <h3 class="text-xl font-semibold mb-3 text-green-800">Důvěryhodnost</h3>
+            <p class="text-gray-400">Poctivá komunikace a transparentní jednání</p>
+          </div>
+          
+          <div class="bg-gray-800 p-6 rounded-lg text-center">
+            <div class="bg-green-800 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span class="text-xl">🌱</span>
+            </div>
+            <h3 class="text-xl font-semibold mb-3 text-green-800">Ekologie</h3>
+            <p class="text-gray-400">Odpovědný přístup k životnímu prostředí</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-8">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="grid md:grid-cols-3 gap-8 mb-8">
+          <div>
+            <h4 class="text-lg font-semibold text-green-800 mb-4">O nás</h4>
+            <p class="text-sm">Jsme profesionální vrakoviště s dlouholetou tradicí. Zajišťujeme ekologickou likvidaci vozidel a prodej náhradních dílů.</p>
+          </div>
+          <div>
+            <h4 class="text-lg font-semibold text-green-800 mb-4">Rychlý kontakt</h4>
+            <p class="text-sm">📞 <span id="footer-phone">+420 123 456 789</span></p>
+            <p class="text-sm">📧 <span id="footer-email">brno@vrakoviste.cz</span></p>
+          </div>
+          <div> 
+            <h4 class="text-lg font-semibold text-green-800 mb-4">Provozní doba</h4>
+            <p class="text-sm">Po-Pá: 8:00 - 17:00</p>
+            <p class="text-sm">So: 9:00 - 12:00</p>
+          </div>
+        </div>
+        <div class="border-t border-gray-700 pt-8 text-center">
+          <p class="text-sm">&copy; 2025 Vraky Brno. Všechna práva vyhrazena.</p>
+          <p class="text-sm">Created by Smooth Development</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const locations = {
+        brno: {
+          address: "Jihlavská 1234, 625 00 Brno",
+          phone: "+420 123 456 789",
+          email: "brno@vrakoviste.cz"
+        },
+        breclav: {
+          address: "Průmyslová 567, 690 02 Břeclav",
+          phone: "+420 234 567 890",
+          email: "breclav@vrakoviste.cz"
+        },
+        vyskov: {
+          address: "Nádražní 890, 682 01 Vyškov",
+          phone: "+420 345 678 901",
+          email: "vyskov@vrakoviste.cz"
+        },
+        blansko: {
+          address: "Tovární 123, 678 01 Blansko",
+          phone: "+420 456 789 012",
+          email: "blansko@vrakoviste.cz"
+        }
+      };
+
+      function selectLocation(location) {
+        // Update footer contact information
+        document.getElementById('footer-phone').textContent = locations[location].phone;
+        document.getElementById('footer-email').textContent = locations[location].email;
+
+        // Update button styles
+        document.querySelectorAll('.location-btn').forEach(btn => {
+          btn.classList.remove('ring-2', 'ring-gray-600', 'ring-offset-2', 'bg-black/20');
+        });
+
+        document.getElementById(`btn-${location}`).classList.add('ring-2', 'ring-gray-600', 'ring-offset-2', 'bg-black/20');
+      }
+
+      // Set Brno as default on page load
+      document.addEventListener('DOMContentLoaded', function() {
+        selectLocation('brno');
+      });
+    </script>
+  </body>
+</html>
