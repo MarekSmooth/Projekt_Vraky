@@ -65,64 +65,45 @@
 
     
     <!-- O nás sekce -->
-    <section class="py-16 px-6 bg-gray-900">
-      <div class="max-w-4xl mx-auto">
-        <h1 class="text-4xl md:text-5xl font-bold text-center mb-12 text-green-800">O nás</h1>
-        
-        <div class="bg-gray-800 p-8 md:p-12 rounded-xl">
-          <div class="space-y-8">
-            <div class="text-center">
-              <div class="bg-green-800 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
-                <span class="text-3xl">🏢</span>
-              </div>
-              <p class="text-lg md:text-xl text-gray-300 leading-relaxed">
-                Jsme tým profesionálů se sídlem v Brně, specializujeme se na odtah, výkup a ekologickou likvidaci vozidel. 
-                S více než 10 lety zkušeností se zavazujeme k rychlému servisu, poctivé komunikaci a spokojenosti zákazníků.
-              </p>
-            </div>
-            
-            <div class="border-t border-gray-700 pt-8">
-              <div class="text-center">
-                <div class="bg-green-800 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <span class="text-3xl">🎯</span>
-                </div>
-                <p class="text-lg md:text-xl text-gray-300 leading-relaxed">
-                  Naším cílem je učinit proces likvidace vozidel jednoduchým, bezpečným a bezstarostným. 
-                  Kontaktujte nás kdykoliv – jsme tu pro vás 7 dní v týdnu.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
+<section class="py-16 px-4 bg-gray-900 text-gray-300">
+  <div class="max-w-5xl mx-auto space-y-24">
 
-        <!-- Naše hodnoty -->
-        <div class="mt-16 grid md:grid-cols-3 gap-8">
-          <div class="bg-gray-800 p-6 rounded-lg text-center">
-            <div class="bg-green-800 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
-              <span class="text-xl">⚡</span>
-            </div>
-            <h3 class="text-xl font-semibold mb-3 text-green-800">Rychlost</h3>
-            <p class="text-gray-400">Rychlé řešení vašich potřeb s minimálními průtahy</p>
-          </div>
-          
-          <div class="bg-gray-800 p-6 rounded-lg text-center">
-            <div class="bg-green-800 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
-              <span class="text-xl">🤝</span>
-            </div>
-            <h3 class="text-xl font-semibold mb-3 text-green-800">Důvěryhodnost</h3>
-            <p class="text-gray-400">Poctivá komunikace a transparentní jednání</p>
-          </div>
-          
-          <div class="bg-gray-800 p-6 rounded-lg text-center">
-            <div class="bg-green-800 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
-              <span class="text-xl">🌱</span>
-            </div>
-            <h3 class="text-xl font-semibold mb-3 text-green-800">Ekologie</h3>
-            <p class="text-gray-400">Odpovědný přístup k životnímu prostředí</p>
-          </div>
-        </div>
+    <!-- Blok 1: text vlevo, ruka vpravo -->
+    <div class="flex flex-col md:flex-row items-center md:items-start md:justify-between gap-8">
+      <div class="md:w-3/5">
+        <h2 class="text-2xl md:text-3xl font-semibold text-green-800 mb-4">Kdo jsme</h2>
+        <p class="text-lg leading-relaxed">
+          Jsme tým profesionálů se sídlem v Brně, specializujeme se na odtah, výkup a ekologickou likvidaci vozidel. 
+          S více než 10 lety zkušeností se zavazujeme k rychlému servisu, poctivé komunikaci a spokojenosti zákazníků.
+        </p>
       </div>
-    </section>
+      <div class="md:w-2/5 flex justify-center md:justify-end">
+        <!-- SVG ruka -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 120" class="w-24 h-24 text-green-800">
+          <path d="M50 0 L40 30 L30 50 Q25 60 35 80 L50 65 L65 80 Q75 60 70 50 L60 30 Z" stroke="currentColor" stroke-width="4" fill="none" />
+        </svg>
+      </div>
+    </div>
+
+    <!-- Blok 2: text vpravo, ruka vlevo -->
+    <div class="flex flex-col md:flex-row-reverse items-center md:items-start md:justify-between gap-8">
+      <div class="md:w-3/5">
+        <h2 class="text-2xl md:text-3xl font-semibold text-green-800 mb-4">Naše mise</h2>
+        <p class="text-lg leading-relaxed">
+          Naším cílem je učinit proces likvidace vozidel jednoduchým, bezpečným a bezstarostným.
+          Kontaktujte nás kdykoliv – jsme tu pro vás 7 dní v týdnu.
+        </p>
+      </div>
+      <div class="md:w-2/5 flex justify-center md:justify-start">
+        <!-- SVG ruka -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 120" class="w-24 h-24 text-green-800">
+          <path d="M50 0 L40 30 L30 50 Q25 60 35 80 L50 65 L65 80 Q75 60 70 50 L60 30 Z" stroke="currentColor" stroke-width="4" fill="none" />
+        </svg>
+      </div>
+    </div>
+
+  </div>
+</section>
 
     <!-- Footer -->
     <footer class="bg-gray-900 text-gray-400 py-8">
