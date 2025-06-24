@@ -5,18 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vraky Brno – Odtah, výkup a likvidace vozidel</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        darkMode: 'media',
-        theme: {
-          extend: {
-            fontFamily: {
-              inter: ['Inter', 'sans-serif']
-            }
+<script>
+  tailwind.config = {
+    darkMode: 'media',
+    theme: {
+      extend: {
+        fontFamily: {
+          inter: ['Inter', 'sans-serif']
+        },
+        colors: {
+          grayish: {
+            800: '#2e2f33',
+            700: '#3a3b3f',
+            600: '#4a4b4f'
           }
         }
       }
-    </script>
+    },
+    safelist: [
+      'bg-grayish-800',
+      'bg-grayish-700',
+      'bg-grayish-600',
+      'text-white',
+      'text-gray-300'
+    ]
+  }
+</script>
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
       rel="stylesheet"
