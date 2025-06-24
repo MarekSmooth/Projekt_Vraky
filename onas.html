@@ -5,6 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>O nás – Vraky Brno – Odtah, výkup a likvidace vozidel</title>
     <script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    darkMode: 'media',
+    theme: {
+      extend: {
+        fontFamily: {
+          inter: ['Inter', 'sans-serif']
+        },
+        colors: {
+          grayish: {
+            900: '#1a1a1a',
+            800: '#2e2f33',
+            700: '#3a3b3f',
+            600: '#4a4b4f'
+          }
+        }
+      }
+    },
+    safelist: [
+      'bg-grayish-900',
+      'bg-grayish-800',
+      'bg-grayish-700',
+      'bg-grayish-600',
+      'text-white',
+      'text-gray-300'
+    ]
+  }
+</script>
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
       rel="stylesheet"
@@ -47,9 +75,9 @@
   </head>
   <body class="text-gray-300">
     <!-- Navigace -->
-    <nav class="bg-gray-900 bg-opacity-90 backdrop-blur shadow-md px-6 py-4 flex justify-between items-center sticky top-0 z-50">
+    <nav class="bg-grayish-900 shadow-md px-6 py-4 flex justify-between items-center sticky top-0 z-50">
       <div class="flex items-center">
-        <img src="Logo Vraky Brno.png" alt="Vraky Brno Logo" class="h-20 w-auto ml-8">
+        <img src="public/Logo.png" alt="Vraky Brno Logo" class="h-20 w-auto ml-8">
       </div>
       <div class="space-x-6 hidden md:flex items-center">
         <a href="index.html" class="text-gray-300 hover:text-green-800">Domů</a>
@@ -57,47 +85,45 @@
         <a href="index.html#sluzby" class="text-gray-300 hover:text-green-800">Služby</a>
         <a href="#proc" class="text-gray-300 hover:text-green-800">Proč právě nás</a>
         <a href="index.html#kontakt" class="text-gray-300 hover:text-green-800">Kontakt</a>
-        <a href="tel:+420123456789" class="bg-green-800 text-white px-4 py-2 rounded hover:bg-green-900 font-bold">
-          📞 +420 731 071 218
+        <a href="tel:+420731071218" class="bg-green-800 text-white px-4 py-2 rounded hover:bg-green-900 font-bold">
+          +420 731 071 218
         </a>
       </div>
     </nav>
 
-    <!-- O nás sekce -->
-    <section class="relative min-h-screen py-20 px-6 text-gray-300 shadow-inner" style="background: linear-gradient(to bottom right, #1f2937cc, #111827cc), url('img/auta-pozadi.png'); background-size: cover; background-position: center; background-repeat: no-repeat; background-blend-mode: lighten;">
-      <div class="w-full max-w-screen-xl mx-auto px-4 md:px-8">
-        <h1 class="text-4xl md:text-5xl font-extrabold text-center mb-16 text-green-400 tracking-wider drop-shadow-xl animate-fade-in">O nás</h1>
+    <!-- O nás sekce - Section 1 (Lighter) -->
+    <section class="relative min-h-screen py-20 px-6 text-gray-300 bg-grayish-700">
+      <div class="absolute inset-0 bg-[url('img/auta-pozadi.png')] bg-cover bg-center opacity-20"></div>
+      <div class="w-full max-w-screen-xl mx-auto px-4 md:px-8 relative z-10">
+        <h1 class="text-4xl md:text-5xl font-extrabold text-center mb-16 text-green-400 tracking-wider drop-shadow-xl">O nás</h1>
 
         <div class="grid md:grid-cols-3 gap-10">
           <!-- Box 1 -->
-          <div class="bg-gray-800 border border-green-700 rounded-xl p-8 shadow-lg hover:shadow-green-800 transition duration-300 transform hover:scale-105">
+          <div class="bg-grayish-800 border border-green-700 rounded-xl p-8 shadow-lg hover:shadow-green-800 transition duration-300 transform hover:scale-105">
             <img src="img/Jerab text.svg" alt="Ikona mise" class="w-24 h-24 mx-auto mb-6 animate-pulse" style="filter: drop-shadow(0 0 10px rgba(34,197,94,0.9)) brightness(2) saturate(2.2);">
             <h2 class="text-xl font-semibold text-center text-green-300 mb-2">Naše mise</h2>
             <p class="text-center text-gray-300">Naším cílem je učinit proces likvidace vozidel jednoduchým, bezpečným a bezstarostným. Jsme tu pro vás 7 dní v týdnu.</p>
           </div>
 
           <!-- Box 2 -->
-          <div class="bg-gray-800 border border-green-700 rounded-xl p-8 shadow-lg hover:shadow-green-800 transition duration-300 transform hover:scale-105">
+          <div class="bg-grayish-800 border border-green-700 rounded-xl p-8 shadow-lg hover:shadow-green-800 transition duration-300 transform hover:scale-105">
             <img src="img/Jerab text.svg" alt="Ikona kdo jsme" class="w-24 h-24 mx-auto mb-6 animate-pulse delay-100" style="filter: drop-shadow(0 0 10px rgba(34,197,94,0.9)) brightness(2) saturate(2.2);">
             <h2 class="text-xl font-semibold text-center text-green-300 mb-2">Kdo jsme</h2>
             <p class="text-center text-gray-300">Jsme tým profesionálů z Brna, specializujeme se na odtah, výkup a ekologickou likvidaci vozidel. Přes 10 let zkušeností a důraz na spokojenost zákazníků.</p>
           </div>
 
           <!-- Box 3 -->
-          <div class="bg-gray-800 border border-green-700 rounded-xl p-8 shadow-lg hover:shadow-green-800 transition duration-300 transform hover:scale-105">
+          <div class="bg-grayish-800 border border-green-700 rounded-xl p-8 shadow-lg hover:shadow-green-800 transition duration-300 transform hover:scale-105">
             <img src="img/Jerab text.svg" alt="Ikona hodnoty" class="w-24 h-24 mx-auto mb-6 animate-pulse delay-200" style="filter: drop-shadow(0 0 10px rgba(34,197,94,0.9)) brightness(2) saturate(2.2);">
             <h2 class="text-xl font-semibold text-center text-green-300 mb-2">Naše hodnoty</h2>
             <p class="text-center text-gray-300">Poctivost, rychlost a ekologický přístup. Věříme, že dobré služby začínají férovým jednáním a končí kvalitní péčí o každého zákazníka.</p>
           </div>
         </div>
       </div>
-
-      <!-- Fade-out dolní přechod -->
-      <div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-black to-transparent z-0 pointer-events-none"></div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-400 py-8">
+    <!-- Footer - Section 2 (Darker) -->
+    <footer class="bg-grayish-900 text-gray-400 py-8">
       <div class="max-w-6xl mx-auto px-6">
         <div class="grid md:grid-cols-3 gap-8 mb-8">
           <div>

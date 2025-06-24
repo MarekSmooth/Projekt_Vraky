@@ -15,6 +15,7 @@
         },
         colors: {
           grayish: {
+            900: '#1a1a1a',
             800: '#2e2f33',
             700: '#3a3b3f',
             600: '#4a4b4f'
@@ -23,6 +24,7 @@
       }
     },
     safelist: [
+      'bg-grayish-900',
       'bg-grayish-800',
       'bg-grayish-700',
       'bg-grayish-600',
@@ -89,15 +91,15 @@
   </nav>
 
 
-    <!-- Hero sekce -->
-    <header class="relative text-white py-20 px-6 overflow-hidden bg-gradient-to-r from-grayis-900 to-gray-800">
+    <!-- Hero sekce - Section 1 (Darker) -->
+    <header class="relative text-white py-20 px-6 overflow-hidden bg-grayish-900">
       <div class="absolute inset-0 bg-[url('img/Auto.png')] bg-cover bg-center opacity-25"></div> 
       <div class="max-w-6xl mx-auto relative z-10">
         <div class="text-center max-w-3xl mx-auto">
           <h1 class="text-5xl md:text-6xl font-extrabold mb-6 leading-tight bg-clip-text text-transparent bg-gradient-to-r from-green-500 to-green-700">
             Ekologická likvidace vozidel
           </h1>
-          <p class="text-xl md:text-2xl mb-8 text-grayish-300">
+          <p class="text-xl md:text-2xl mb-8 text-gray-300">
             Zajistíme kompletní likvidaci včetně odvozu a dokumentace
           </p>
           <div class="flex flex-col sm:flex-row gap-4 justify-center">
@@ -113,8 +115,8 @@
     </header>
 
 
-    <!-- Lokace -->
-    <section class="bg-grayish-800 py-6 px-6">
+    <!-- Lokace - Section 2 (Lighter) -->
+    <section class="bg-grayish-700 py-6 px-6">
       <div class="max-w-6xl mx-auto">
         <!-- Kompaktnější panel s tmavší zelenou a moderními oddělovači -->
         <div class="flex flex-col md:flex-row gap-0 bg-gradient-to-r from-green-800 via-green-900 to-green-800 p-1 rounded-2xl">
@@ -198,10 +200,10 @@
       </div>
     </section>
     
-    <!-- Výhody -->
-    <section class="py-16 px-6 bg-grayish-800">
+    <!-- Výhody - Section 3 (Darker) -->
+    <section class="py-16 px-6 bg-grayish-900">
       <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="flex items-center space-x-4 bg-grayish-700 p-6 rounded-lg">
+        <div class="flex items-center space-x-4 bg-grayish-800 p-6 rounded-lg">
           <div class="bg-green-800 p-3 rounded-full">
             <span class="text-2xl">📑</span>
           </div>
@@ -210,7 +212,7 @@
             <p class="text-gray-400">Zajistíme ekologickou likvidaci vozidla v souladu s platnou  legislativou s potvrzením.</p>
           </div>
         </div>
-        <div class="flex items-center space-x-4 bg-grayish-700 p-6 rounded-lg">
+        <div class="flex items-center space-x-4 bg-grayish-800 p-6 rounded-lg">
           <div class="bg-green-800 p-3 rounded-full">
             <span class="text-2xl">🛻</span>
           </div>
@@ -219,7 +221,7 @@
             <p class="text-gray-400">Nabízíme bezplatný odvoz nepojízdných vozidel z celého Jihomoravského kraje.</p>
           </div>
         </div>
-        <div class="flex items-center space-x-4 bg-grayish-700 p-6 rounded-lg">
+        <div class="flex items-center space-x-4 bg-grayish-800 p-6 rounded-lg">
           <div class="bg-green-800 p-3 rounded-full">
             <span class="text-2xl">📝</span>
           </div>
@@ -231,8 +233,8 @@
       </div>
     </section>
 
-    <!-- Služby -->
-    <section id="sluzby" class="bg-grayish-800 py-12 text-white">
+    <!-- Služby - Section 4 (Lighter) -->
+    <section id="sluzby" class="bg-grayish-700 py-12 text-white">
       <div class="max-w-6xl mx-auto">
         <h2 class="text-3xl font-bold text-center mb-12 text-green-800">Naše služby</h2>
         <div class="grid md:grid-cols-3 gap-8">
@@ -255,13 +257,13 @@
       </div>
     </section>
 
-    <!-- Kontakt -->
-    <section id="kontakt" class="py-16 px-6 bg-grayish-800">
+    <!-- Kontakt - Section 5 (Darker) -->
+    <section id="kontakt" class="py-16 px-6 bg-grayish-900">
       <div class="max-w-6xl mx-auto">
         <h2 class="text-3xl font-bold text-center mb-12 text-green-800">Kontaktujte nás</h2>
         <div class="grid md:grid-cols-2 gap-12">
           <div class="space-y-6">
-            <div class="bg-grayish-700 p-6 rounded-lg">
+            <div class="bg-grayish-800 p-6 rounded-lg">
               <h3 class="text-xl font-semibold mb-4 text-green-800">Kontaktní údaje</h3>
               <div class="space-y-3" id="contact-info">
                 <p class="flex items-center text-gray-300">
@@ -275,7 +277,7 @@
                 </p>
               </div>
             </div>
-            <div class="bg-grayish-700 p-6 rounded-lg">
+            <div class="bg-grayish-800 p-6 rounded-lg">
               <h3 class="text-xl font-semibold mb-4 text-green-800">Otevírací doba</h3>
               <div class="space-y-2 text-gray-300">
                 <p>Pondělí - Pátek: 8:00 - 18:00</p>
@@ -284,7 +286,7 @@
               </div>
             </div>
           </div>
-          <form class="bg-grayish-700 p-8 rounded-lg">
+          <form class="bg-grayish-800 p-8 rounded-lg">
             <div class="space-y-4">
               <div>
                 <label class="block text-sm font-medium text-gray-400 mb-1">Jméno</label>
@@ -311,8 +313,8 @@
       </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-grayish-900 text-gray-400 py-8">
+    <!-- Footer - Section 6 (Lighter) -->
+    <footer class="bg-grayish-700 text-gray-400 py-8">
       <div class="max-w-6xl mx-auto px-6">
         <div class="grid md:grid-cols-3 gap-8 mb-8">
           <div>
