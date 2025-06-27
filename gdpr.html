@@ -5,141 +5,189 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Zásady zpracování osobních údajů – Vraky Brno</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            inter: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            grayish: {
+              900: '#1a1a1a',
+              800: '#2e2f33',
+              700: '#3a3b3f',
+              600: '#4a4b4f',
+            },
+          },
+        },
+      },
+      safelist: [
+        'bg-grayish-900', 'bg-grayish-800', 'bg-grayish-700', 'bg-grayish-600',
+        'text-white', 'text-gray-300',
+        'dark:bg-grayish-900', 'dark:bg-grayish-800', 'dark:bg-grayish-700', 'dark:bg-grayish-600',
+        'dark:text-white', 'dark:text-gray-300'
+      ]
+    };
+  </script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: 'Inter', sans-serif;
-    }
+    body { font-family: 'Inter', sans-serif; }
+    .theme-toggle { transition: transform 0.3s ease; }
+    .theme-toggle:hover { transform: scale(1.1); }
   </style>
 </head>
-<body class="bg-white text-gray-900 dark:bg-grayish-900 dark:text-gray-300">
+<body class="bg-white text-gray-800 dark:bg-grayish-800 dark:text-gray-300">
 
-   <!-- Navigace - Always Dark with Transparency -->
-    <nav class="bg-gray-800 dark:bg-grayish-900 bg-opacity-90 backdrop-blur shadow-md px-6 py-4 flex justify-between items-center sticky top-0 z-50">
-      <a href="index.html" class="flex items-center">
-        <img src="public/Logo.png" alt="Logo" class="h-20 w-auto ml-8">
-      </a>
-      <div class="space-x-6 hidden md:flex items-center">
-        <a href="index.html" class="text-gray-300 hover:text-green-600 dark:hover:text-green-800">Domů</a>
-        <a href="onas.html" class="text-gray-300 hover:text-green-600 dark:hover:text-green-800">O nás</a>
-        <a href="sluzby.html" class="text-gray-300 hover:text-green-600 dark:hover:text-green-800">Služby</a>
-        <a href="kontakt.html" class="text-gray-300 hover:text-green-600 dark:hover:text-green-800">Kontakt</a>
-        
-        <!-- Theme Toggle Button -->
-        <button onclick="toggleTheme()" class="theme-toggle p-2 rounded-lg bg-gray-700 dark:bg-gray-600 hover:bg-gray-600 dark:hover:bg-gray-500 transition-colors">
-          <svg id="sun-icon" class="w-5 h-5 text-yellow-400 hidden" fill="currentColor" viewBox="0 0 20 20">
-            <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"></path>
-          </svg>
-          <svg id="moon-icon" class="w-5 h-5 text-gray-300" fill="currentColor" viewBox="0 0 20 20">
-            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
-          </svg>
-        </button>
-        
-        <a href="tel:+420731071218" class="bg-green-600 dark:bg-green-800 text-white px-4 py-2 rounded hover:bg-green-700 dark:hover:bg-green-900 font-bold">
-          +420 731 071 218
-        </a>
-      </div>
-    </nav>
-
-  <main class="max-w-4xl mx-auto py-16 px-6">
+<!-- Navigace -->
+<nav class="bg-grayish-900 dark:bg-grayish-900 bg-opacity-90 backdrop-blur shadow-md px-6 py-4 flex justify-between items-center sticky top-0 z-50">
+  <a href="index.html" class="flex items-center">
+    <img src="public/Logo.png" alt="Logo" class="h-20 w-auto ml-8">
+  </a>
+  <div class="space-x-6 hidden md:flex items-center">
+    <a href="index.html" class="text-gray-300 hover:text-green-600 dark:hover:text-green-800">Domů</a>
+    <a href="onas.html" class="text-gray-300 hover:text-green-600 dark:hover:text-green-800">O nás</a>
+    <a href="sluzby.html" class="text-gray-300 hover:text-green-600 dark:hover:text-green-800">Služby</a>
+    <a href="kontakt.html" class="text-gray-300 hover:text-green-600 dark:hover:text-green-800">Kontakt</a>
+    <button onclick="toggleTheme()" class="theme-toggle p-2 rounded-lg bg-gray-700 dark:bg-gray-600 hover:bg-gray-600 dark:hover:bg-gray-500 transition-colors">
+      <svg id="sun-icon" class="w-5 h-5 text-yellow-400 hidden" fill="currentColor" viewBox="0 0 20 20">
+        <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1z..." clip-rule="evenodd"></path>
+      </svg>
+      <svg id="moon-icon" class="w-5 h-5 text-gray-300" fill="currentColor" viewBox="0 0 20 20">
+        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+      </svg>
+    </button>
+    <a href="tel:+420731071218" class="bg-green-600 dark:bg-green-800 text-white px-4 py-2 rounded hover:bg-green-700 dark:hover:bg-green-900 font-bold">
+      +420 731 071 218
+    </a>
+  </div>
+</nav>
+<main class="max-w-4xl mx-auto py-16 px-6">
     <h1 class="text-4xl font-bold mb-8 text-green-700 dark:text-green-600">Zásady zpracování osobních údajů</h1>
-
     <p class="mb-6">
-      Správcem osobních údajů je Lukáš Vaverka, IČO: 05513251, se sídlem v České republice (dále jen „správce“).
-      Tyto zásady vysvětlují, jakým způsobem jsou osobní údaje návštěvníků webu www.vraky-brno.cz shromažďovány,
-      zpracovávány a chráněny.
+        Správcem osobních údajů je Lukáš Vaverka, IČO: 05513251, se sídlem v České republice (dále jen „správce“).
+        Tyto zásady vysvětlují, jakým způsobem jsou osobní údaje návštěvníků webu www.vraky-brno.cz shromažďovány,
+        zpracovávány a chráněny.
     </p>
 
     <section class="space-y-8">
 
-      <div>
-        <h2 class="text-2xl font-semibold text-green-700 dark:text-green-600 mb-2">Jaké údaje zpracováváme?</h2>
-        <ul class="list-disc list-inside space-y-1">
-          <li>Jméno a příjmení</li>
-          <li>Telefonní číslo</li>
-          <li>Emailová adresa</li>
-          <li>Obsah zprávy z kontaktního formuláře</li>
-          <li>IP adresa a analytické údaje (Google Analytics)</li>
-        </ul>
-      </div>
+        <div>
+            <h2 class="text-2xl font-semibold text-green-700 dark:text-green-600 mb-2">Jaké údaje zpracováváme?</h2>
+            <ul class="list-disc list-inside space-y-1">
+                <li>Jméno a příjmení</li>
+                <li>Telefonní číslo</li>
+                <li>Emailová adresa</li>
+                <li>Obsah zprávy z kontaktního formuláře</li>
+                <li>IP adresa a analytické údaje (Google Analytics)</li>
+            </ul>
+        </div>
 
-      <div>
-        <h2 class="text-2xl font-semibold text-green-700 dark:text-green-600 mb-2">Účel zpracování</h2>
-        <p>
-          Vaše údaje zpracováváme výhradně za účelem odpovědi na vaši zprávu a pro analýzu provozu webových stránek.
-          Nepoužíváme je pro marketing ani je nepředáváme třetím stranám.
-        </p>
-      </div>
+        <div>
+            <h2 class="text-2xl font-semibold text-green-700 dark:text-green-600 mb-2">Účel zpracování</h2>
+            <p>
+                Vaše údaje zpracováváme výhradně za účelem odpovědi na vaši zprávu a pro analýzu provozu webových stránek.
+                Nepoužíváme je pro marketing ani je nepředáváme třetím stranám.
+            </p>
+        </div>
 
-      <div>
-        <h2 class="text-2xl font-semibold text-green-700 dark:text-green-600 mb-2">Právní základ</h2>
-        <p>
-          Zpracování osobních údajů je založeno na oprávněném zájmu správce a vašem souhlasu uděleném prostřednictvím kontaktního formuláře.
-        </p>
-      </div>
+        <div>
+            <h2 class="text-2xl font-semibold text-green-700 dark:text-green-600 mb-2">Právní základ</h2>
+            <p>
+                Zpracování osobních údajů je založeno na oprávněném zájmu správce a vašem souhlasu uděleném prostřednictvím kontaktního formuláře.
+            </p>
+        </div>
 
-      <div>
-        <h2 class="text-2xl font-semibold text-green-700 dark:text-green-600 mb-2">Doba uchování údajů</h2>
-        <p>
-          Údaje jsou uchovávány po dobu nezbytně nutnou – maximálně 6 měsíců od odeslání formuláře.
-        </p>
-      </div>
+        <div>
+            <h2 class="text-2xl font-semibold text-green-700 dark:text-green-600 mb-2">Doba uchování údajů</h2>
+            <p>
+                Údaje jsou uchovávány po dobu nezbytně nutnou – maximálně 6 měsíců od odeslání formuláře.
+            </p>
+        </div>
 
-      <div>
-        <h2 class="text-2xl font-semibold text-green-700 dark:text-green-600 mb-2">Práva subjektů údajů</h2>
-        <p>Máte právo požadovat:</p>
-        <ul class="list-disc list-inside space-y-1">
-          <li>přístup ke svým osobním údajům,</li>
-          <li>opravu či výmaz,</li>
-          <li>omezení zpracování,</li>
-          <li>podat stížnost u Úřadu pro ochranu osobních údajů (<a href="https://www.uoou.cz" class="underline text-green-700 dark:text-green-500">www.uoou.cz</a>).</li>
-        </ul>
-      </div>
+        <div>
+            <h2 class="text-2xl font-semibold text-green-700 dark:text-green-600 mb-2">Práva subjektů údajů</h2>
+            <p>Máte právo požadovat:</p>
+            <ul class="list-disc list-inside space-y-1">
+                <li>přístup ke svým osobním údajům,</li>
+                <li>opravu či výmaz,</li>
+                <li>omezení zpracování,</li>
+                <li>podat stížnost u Úřadu pro ochranu osobních údajů (<a href="https://www.uoou.cz" class="underline text-green-700 dark:text-green-500">www.uoou.cz</a>).</li>
+            </ul>
+        </div>
 
-      <div>
-        <h2 class="text-2xl font-semibold text-green-700 dark:text-green-600 mb-2">Kontakt</h2>
-        <p>Pro jakékoli dotazy nebo žádosti týkající se vašich údajů nás kontaktujte na e-mailové adrese: 
-          <a href="mailto:info@vraky-brno.cz" class="underline text-green-700 dark:text-green-500">info@vraky-brno.cz</a>
-        </p>
-      </div>
+        <div>
+            <h2 class="text-2xl font-semibold text-green-700 dark:text-green-600 mb-2">Kontakt</h2>
+            <p>Pro jakékoli dotazy nebo žádosti týkající se vašich údajů nás kontaktujte na e-mailové adrese: 
+                <a href="mailto:info@vraky-brno.cz" class="underline text-green-700 dark:text-green-500">info@vraky-brno.cz</a>
+            </p>
+        </div>
 
     </section>
-  </main>
+</main>
 
-        <!-- Footer - Always Dark -->
-    <footer class="bg-gray-800 dark:bg-grayish-900 text-gray-400 py-8">
-        <div class="max-w-6xl mx-auto px-6">
-            <div class="grid md:grid-cols-3 gap-8 mb-8">
-                <div>
-                    <h4 class="text-lg font-semibold text-green-600 dark:text-green-800 mb-4">O nás</h4>
-                    <p class="text-sm">Jsme profesionální vrakoviště s dlouholetou tradicí. Zajišťujeme ekologickou likvidaci vozidel a prodej náhradních dílů.</p>
-                </div>
-                <div>
-                    <h4 class="text-lg font-semibold text-green-600 dark:text-green-800 mb-4">Rychlý kontakt</h4>
-                    <p class="text-sm"><span id="footer-phone">+420 731 071 218</span></p>
-                    <p class="text-sm"><span id="footer-email">info@vraky-brno.cz</span></p>
-                </div>
-                <div> 
-                    <h4 class="text-lg font-semibold text-green-600 dark:text-green-800 mb-4">Provozní doba</h4>
-                    <p class="text-sm">Po-Pá: 8:00 - 18:00</p>
-                    <p class="text-sm">So: 9:00 - 14:00</p>
-                    <p class="text-sm">Ne: Zavřeno</p>
-                </div>
-            </div>
+<footer class="bg-grayish-700 dark:bg-grayish-900 text-gray-400 py-8">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="grid md:grid-cols-3 gap-8 mb-8">
+      <div>
+        <h4 class="text-lg font-semibold text-green-600 dark:text-green-800 mb-4">O nás</h4>
+        <p class="text-sm">Jsme profesionální vrakoviště s dlouholetou tradicí...</p>
+      </div>
+      <div>
+        <h4 class="text-lg font-semibold text-green-600 dark:text-green-800 mb-4">Rychlý kontakt</h4>
+        <p class="text-sm">+420 731 071 218</p>
+        <p class="text-sm">info@vraky-brno.cz</p>
+      </div>
+      <div>
+        <h4 class="text-lg font-semibold text-green-600 dark:text-green-800 mb-4">Provozní doba</h4>
+        <p class="text-sm">Po–Pá: 8:00–18:00<br>So: 9:00–14:00<br>Ne: Zavřeno</p>
+      </div>
+    </div>
+    <div class="text-center text-sm space-x-4 mb-4">
+      <a href="gdpr.html" class="hover:underline text-gray-400 hover:text-white">Zásady zpracování osobních údajů</a>
+      <a href="vop.html" class="hover:underline text-gray-400 hover:text-white">Obchodní podmínky</a>
+      <a href="cookies.html" class="hover:underline text-gray-400 hover:text-white">Používání cookies</a>
+    </div>
+    <div class="border-t border-gray-700 pt-6 text-center text-sm">
+      &copy; 2025 Vraky Brno. Všechna práva vyhrazena. | Created by Smooth Development
+    </div>
+  </div>
+</footer>
 
-            <!-- Odkazy na právní dokumenty -->
-            <div class="md:col-span-3 space-x-4 text-sm text-center mb-4">
-                <a href="gdpr.html" class="hover:underline text-gray-400 hover:text-white">Zásady zpracování osobních údajů</a>
-                <a href="vop.html" class="hover:underline text-gray-400 hover:text-white">Obchodní podmínky</a>
-                <a href="cookies.html" class="hover:underline text-gray-400 hover:text-white">Používání cookies</a>
-            </div>
-
-            <div class="border-t border-gray-700 pt-8 text-center">
-                <p class="text-sm">&copy; 2025 Vraky Brno. Všechna práva vyhrazena.</p>
-                <p class="text-sm">Created by Smooth Development</p>
-            </div>
-        </div>
-    </footer>>
-
-</body>
+<script>
+  function updateIcons() {
+    const sunIcon = document.getElementById("sun-icon");
+    const moonIcon = document.getElementById("moon-icon");
+    if (document.documentElement.classList.contains("dark")) {
+      sunIcon.classList.remove("hidden");
+      moonIcon.classList.add("hidden");
+    } else {
+      sunIcon.classList.add("hidden");
+      moonIcon.classList.remove("hidden");
+    }
+  }
+  function toggleTheme() {
+    const html = document.documentElement;
+    if (html.classList.contains("dark")) {
+      html.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+    } else {
+      html.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+    }
+    updateIcons();
+  }
+  window.addEventListener("DOMContentLoaded", () => {
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+    updateIcons();
+  });
+</script>
+</body>a
 </html>
