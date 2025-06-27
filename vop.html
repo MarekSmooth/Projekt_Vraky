@@ -10,37 +10,6 @@
     body {
       font-family: 'Inter', sans-serif;
     }
-    <script>
-  // Zjistí preferenci uživatele
-  if (localStorage.getItem("theme") === "dark" ||
-     (!localStorage.getItem("theme") && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
-    document.documentElement.classList.add("dark");
-    document.getElementById("sun-icon").classList.remove("hidden");
-    document.getElementById("moon-icon").classList.add("hidden");
-  } else {
-    document.documentElement.classList.remove("dark");
-    document.getElementById("moon-icon").classList.remove("hidden");
-    document.getElementById("sun-icon").classList.add("hidden");
-  }
-
-  function toggleTheme() {
-    const html = document.documentElement;
-    const sunIcon = document.getElementById("sun-icon");
-    const moonIcon = document.getElementById("moon-icon");
-
-    if (html.classList.contains("dark")) {
-      html.classList.remove("dark");
-      localStorage.setItem("theme", "light");
-      sunIcon.classList.add("hidden");
-      moonIcon.classList.remove("hidden");
-    } else {
-      html.classList.add("dark");
-      localStorage.setItem("theme", "dark");
-      moonIcon.classList.add("hidden");
-      sunIcon.classList.remove("hidden");
-    }
-  }
-</script>
   </style>
 </head>
 <body class="bg-white text-gray-900 dark:bg-grayish-900 dark:text-gray-300">
@@ -157,6 +126,36 @@
             </div>
         </div>
     </footer>
+ <script>
+  // Zjistí preferenci uživatele
+  if (localStorage.getItem("theme") === "dark" ||
+     (!localStorage.getItem("theme") && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+    document.documentElement.classList.add("dark");
+    document.getElementById("sun-icon").classList.remove("hidden");
+    document.getElementById("moon-icon").classList.add("hidden");
+  } else {
+    document.documentElement.classList.remove("dark");
+    document.getElementById("moon-icon").classList.remove("hidden");
+    document.getElementById("sun-icon").classList.add("hidden");
+  }
 
+  function toggleTheme() {
+    const html = document.documentElement;
+    const sunIcon = document.getElementById("sun-icon");
+    const moonIcon = document.getElementById("moon-icon");
+
+    if (html.classList.contains("dark")) {
+      html.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+      sunIcon.classList.add("hidden");
+      moonIcon.classList.remove("hidden");
+    } else {
+      html.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+      moonIcon.classList.add("hidden");
+      sunIcon.classList.remove("hidden");
+    }
+  }
+</script>
 </body>
 </html>
