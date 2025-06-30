@@ -4,6 +4,6 @@ WORKDIR /var/www/html
 
 COPY . /var/www/html
 
-EXPOSE 10000
+EXPOSE 8080
 
 CMD ["sh", "-c", "php -S 0.0.0.0:$PORT -t /var/www/html"]
