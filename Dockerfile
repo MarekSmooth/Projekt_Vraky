@@ -1,11 +1,9 @@
-# Použij oficiální PHP image
 FROM php:8.2-cli
 
-# Nastav pracovní adresář
-WORKDIR /usr/src/app
+WORKDIR /var/www/html
 
-# Zkopíruj všechny soubory do kontejneru
-COPY . .
+COPY . /var/www/html
 
-# Spusť vestavěný PHP server
+EXPOSE 10000
+
 CMD ["sh", "-c", "php -S 0.0.0.0:$PORT -t /var/www/html"]
