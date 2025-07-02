@@ -47,29 +47,41 @@
       body {
         font-family: 'Inter', sans-serif;
         position: relative;
-        z-index: 0;
+        min-height: 100vh;
       }
 
-      /* Background image with higher opacity for better visibility */
-      body::before {
-        content: '';
+      /* Try multiple background approaches */
+      .background-container {
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        background-image: url('./img/auta-pozadi.png');
+        z-index: -1;
+        pointer-events: none;
+        background-color: #f5f5f5;
+        background-image: 
+          url('img/auta-pozadi.png'),
+          url('./img/auta-pozadi.png'),
+          url('/img/auta-pozadi.png');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
-        opacity: 0.15; /* Increased opacity for better visibility */
-        z-index: -1;
-        pointer-events: none;
+        opacity: 0.2;
       }
 
-      /* Fallback background if image doesn't load */
-      body {
-        background-color: #f5f5f5;
+      /* Alternative approach with ::before */
+      body::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: url('img/auta-pozadi.png') center/cover no-repeat;
+        opacity: 0.15;
+        z-index: -2;
+        pointer-events: none;
       }
 
       .location-separator {
@@ -107,9 +119,22 @@
       .theme-toggle:hover {
         transform: scale(1.1);
       }
+
+      /* Debug styles */
+      .debug-bg {
+        background: linear-gradient(45deg, rgba(255,0,0,0.1) 25%, transparent 25%), 
+                    linear-gradient(-45deg, rgba(0,255,0,0.1) 25%, transparent 25%), 
+                    linear-gradient(45deg, transparent 75%, rgba(0,0,255,0.1) 75%), 
+                    linear-gradient(-45deg, transparent 75%, rgba(255,255,0,0.1) 75%);
+        background-size: 20px 20px;
+        background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+      }
     </style>
   </head>
   <body class="bg-white text-gray-900 dark:bg-[#1a1a1a] dark:text-gray-300">
+
+    <!-- Background container as fallback -->
+    <div class="background-container" id="bg-container"></div>
 
     <!-- Navigace - Always Dark with Transparency -->
     <nav class="bg-grayish-900 dark:bg-grayish-900 bg-opacity-90 backdrop-blur shadow-md px-6 py-4 flex justify-between items-center sticky top-0 z-50">
@@ -475,19 +500,42 @@
           sunIcon.classList.remove('hidden');
           moonIcon.classList.add('hidden');
         }
-      });
 
-      // Debug: Check if background image loads
-      window.addEventListener('load', function() {
-        console.log('Page loaded, checking background image...');
-        const testImg = new Image();
-        testImg.onload = function() {
-          console.log('✅ Background image loaded successfully!');
-        };
-        testImg.onerror = function() {
-          console.log('❌ Background image failed to load. Check the path: ./img/auta-pozadi.png');
-        };
-        testImg.src = './img/auta-pozadi.png';
+        // Enhanced background debugging
+        console.log('🔍 Debugging background image...');
+        
+        // Test multiple image paths
+        const imagePaths = [
+          'img/auta-pozadi.png',
+          './img/auta-pozadi.png',
+          '/img/auta-pozadi.png'
+        ];
+
+        imagePaths.forEach((path, index) => {
+          const testImg = new Image();
+          testImg.onload = function() {
+            console.log(`✅ Path ${index + 1} (${path}) - Image loaded successfully!`);
+            // Apply working background to container
+            const bgContainer = document.getElementById('bg-container');
+            if (bgContainer) {
+              bgContainer.style.backgroundImage = `url('${path}')`;
+              bgContainer.style.opacity = '0.2';
+            }
+          };
+          testImg.onerror = function() {
+            console.log(`❌ Path ${index + 1} (${path}) - Failed to load`);
+          };
+          testImg.src = path;
+        });
+
+        // Add debug background as fallback
+        setTimeout(() => {
+          const bgContainer = document.getElementById('bg-container');
+          if (bgContainer && !bgContainer.style.backgroundImage) {
+            console.log('⚠️ No background image loaded, adding debug pattern');
+            bgContainer.classList.add('debug-bg');
+          }
+        }, 2000);
       });
     </script>
   </body>
