@@ -46,7 +46,21 @@
     <style>
       body {
         font-family: 'Inter', sans-serif;
+        position: relative;
+        z-index: 0;
       }
+      body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url('img/auta-pozadi.png'); /* ← sem doplň správnou cestu */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      opacity: 0.05; /* přizpůsob dle potřeby */
+      z-index: -1;
+      pointer-events: none;
+    }
       .location-separator {
         width: 1px;
         background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.2), transparent);
@@ -115,7 +129,7 @@
 
     <!-- Hero sekce - Section 1 (Lighter) -->
     <header class="relative text-white py-20 px-6 overflow-hidden bg-gray-300 dark:bg-grayish-700">
-      <div class="absolute inset-0 bg-[url('img/Auto.png')] bg-cover bg-center opacity-25"></div> 
+      <div class="relative text-white py-20 px-6 overflow-hidden bg-transparent"></div> 
       <div class="max-w-6xl mx-auto relative z-10">
         <div class="text-center max-w-3xl mx-auto">
           <h1 class="text-5xl md:text-6xl font-extrabold mb-6 leading-tight bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-green-800 dark:from-green-500 dark:to-green-700">
