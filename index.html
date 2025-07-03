@@ -115,36 +115,36 @@
     </nav>
 
     <!-- Main Content Container with Single Background -->
-    <section class="relative min-h-screen py-20 px-6 bg-gray-300 dark:bg-grayish-700">
+    <section class="relative py-12 px-6 bg-gray-300 dark:bg-grayish-700">
       <div class="absolute inset-0 bg-[url('img/auta-pozadi.png')] bg-cover bg-center opacity-20"></div>
-      <div class="w-full max-w-screen-xl mx-auto px-4 md:px-8 relative z-10">
+      <div class="w-full max-w-screen-xl mx-auto px-4 md:px-8 relative z-10 space-y-12">
         
         <!-- Hero Section -->
-        <div class="text-center max-w-3xl mx-auto mb-16">
-          <h1 class="text-5xl md:text-6xl font-extrabold mb-6 leading-tight bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-green-800 dark:from-green-500 dark:to-green-700">
+        <div class="text-center max-w-3xl mx-auto">
+          <h1 class="text-4xl md:text-5xl font-extrabold mb-4 leading-tight bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-green-800 dark:from-green-500 dark:to-green-700">
             Ekologická likvidace vozidel
           </h1>
-          <p class="text-xl md:text-2xl mb-8 text-gray-700 dark:text-gray-300">
+          <p class="text-lg md:text-xl mb-6 text-gray-700 dark:text-gray-300">
             Zajistíme kompletní likvidaci včetně odvozu a dokumentace
           </p>
           <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="kontakt.html" class="bg-green-600 dark:bg-green-800 text-white px-8 py-4 rounded-lg font-semibold hover:bg-green-700 dark:hover:bg-green-900 transition-colors font-bold">
+            <a href="kontakt.html" class="bg-green-600 dark:bg-green-800 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 dark:hover:bg-green-900 transition-colors font-bold">
               +420 731 071 218
             </a>
-            <a href="sluzby.html" class="bg-gray-400 dark:bg-grayish-700 text-white px-8 py-4 rounded-lg font-semibold hover:bg-gray-500 dark:hover:bg-gray-600 transition-colors">
+            <a href="sluzby.html" class="bg-gray-400 dark:bg-grayish-700 text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-500 dark:hover:bg-gray-600 transition-colors">
               Více informací
             </a>
           </div>
         </div>
 
         <!-- Location Selection -->
-        <div class="max-w-6xl mx-auto mb-16">
+        <div class="max-w-6xl mx-auto">
           <div class="flex flex-col md:flex-row gap-0 bg-gradient-to-r from-green-600 via-green-700 to-green-600 dark:from-green-800 dark:via-green-900 dark:to-green-800 p-1 rounded-2xl">
             
             <!-- BRNO -->
-            <button onclick="selectLocation('brno')" id="btn-brno" class="location-btn bg-transparent text-white p-4 rounded-l-2xl w-full md:w-1/4 text-left hover:bg-black/20 transition-all duration-300 relative">
+            <button onclick="selectLocation('brno')" id="btn-brno" class="location-btn bg-transparent text-white p-3 rounded-l-2xl w-full md:w-1/4 text-left hover:bg-black/20 transition-all duration-300 relative">
               <div class="flex flex-col gap-1">
-                <div class="text-lg font-bold">Brno a okolí</div>
+                <div class="text-base font-bold">Brno a okolí</div>
               </div>
               <div class="location-graphic">
                 <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -162,9 +162,9 @@
             </div>
 
             <!-- BŘECLAV -->
-            <button onclick="selectLocation('breclav')" id="btn-breclav" class="location-btn bg-transparent text-white p-4 w-full md:w-1/4 text-left hover:bg-black/20 transition-all duration-300 relative">
+            <button onclick="selectLocation('breclav')" id="btn-breclav" class="location-btn bg-transparent text-white p-3 w-full md:w-1/4 text-left hover:bg-black/20 transition-all duration-300 relative">
               <div class="flex flex-col gap-1">
-                <div class="text-lg font-bold">Břeclav</div>
+                <div class="text-base font-bold">Břeclav</div>
               </div>
               <div class="location-graphic">
                 <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -182,9 +182,9 @@
             </div>
 
             <!-- VYŠKOV -->
-            <button onclick="selectLocation('vyskov')" id="btn-vyskov" class="location-btn bg-transparent text-white p-4 w-full md:w-1/4 text-left hover:bg-black/20 transition-all duration-300 relative">
+            <button onclick="selectLocation('vyskov')" id="btn-vyskov" class="location-btn bg-transparent text-white p-3 w-full md:w-1/4 text-left hover:bg-black/20 transition-all duration-300 relative">
               <div class="flex flex-col gap-1">
-                <div class="text-lg font-bold">Vyškov</div>
+                <div class="text-base font-bold">Vyškov</div>
               </div>
               <div class="location-graphic">
                 <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -202,9 +202,9 @@
             </div>
 
             <!-- BLANSKO -->
-            <button onclick="selectLocation('blansko')" id="btn-blansko" class="location-btn bg-transparent text-white p-4 rounded-r-2xl w-full md:w-1/4 text-left hover:bg-black/20 transition-all duration-300 relative">
+            <button onclick="selectLocation('blansko')" id="btn-blansko" class="location-btn bg-transparent text-white p-3 rounded-r-2xl w-full md:w-1/4 text-left hover:bg-black/20 transition-all duration-300 relative">
               <div class="flex flex-col gap-1">
-                <div class="text-lg font-bold">Blansko</div>
+                <div class="text-base font-bold">Blansko</div>
               </div>
               <div class="location-graphic">
                 <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -219,34 +219,78 @@
           </div>
         </div>
 
-        <!-- Contact Info -->
-        <div class="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
-          <!-- Kontaktní údaje -->
-          <div class="bg-gray-200 dark:bg-grayish-800 border border-green-600 dark:border-green-700 rounded-xl p-8 shadow-lg hover:shadow-green-600 dark:hover:shadow-green-800 transition duration-300 transform hover:scale-105">
-            <div class="flex items-center gap-6 mb-6">
-              <img src="img/Jerab text.svg" alt="Ikona kontaktu" class="w-16 h-16 animate-pulse flex-shrink-0" style="filter: drop-shadow(0 0 10px rgba(34,197,94,0.9)) brightness(2) saturate(2.2);">
-              <h3 class="text-xl font-semibold text-green-600 dark:text-green-300">Kontaktní údaje</h3>
+        <!-- Služby - Compact 4 Boxes -->
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-2xl font-bold text-center mb-8 text-green-700 dark:text-green-800">V případě požadavku na likvidaci autovraku probíhá celý proces následovně:</h2>
+          <div class="grid md:grid-cols-4 gap-4">
+            <div class="bg-gray-200 dark:bg-grayish-800 p-4 rounded-xl hover:transform hover:scale-105 transition-transform text-center">
+              <img src="img/Zavolate.png" class="mx-auto mb-3 h-20" alt="Zavolejte ikona" />
+              <h3 class="text-lg font-semibold mb-2 text-green-700 dark:text-green-800">Vy nám zavoláte</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">Po zavolání si domluvíte termín odvozu a výši výkupní ceny.</p>
             </div>
-            <div class="space-y-3" id="contact-info">
-              <p class="flex items-center text-gray-700 dark:text-gray-300">
+            <div class="bg-gray-200 dark:bg-grayish-800 p-4 rounded-xl hover:transform hover:scale-105 transition-transform text-center">
+              <img src="img/postaramese.png" class="mx-auto mb-3 h-20" alt="Odtah ikona" />
+              <h3 class="text-lg font-semibold mb-2 text-green-700 dark:text-green-800">My se postaráme</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">Přijedeme s odtahovým vozidlem, vyplatíme cenu a vyřídíme doklady.</p>
+            </div>
+            <div class="bg-gray-200 dark:bg-grayish-800 p-4 rounded-xl hover:transform hover:scale-105 transition-transform text-center">
+              <img src="img/Certifikat.png" class="mx-auto mb-3 h-20" alt="Certifikat ikona" />
+              <h3 class="text-lg font-semibold mb-2 text-green-700 dark:text-green-800">Požadované dokumenty</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">Velký technický průkaz a doklad totožnosti. <a href="public/plnamoc.pdf" class="text-green-700 dark:text-green-500 underline" target="_blank">Vzor plné moci</a>.</p>
+            </div>
+            <div class="bg-gray-200 dark:bg-grayish-800 p-4 rounded-xl hover:transform hover:scale-105 transition-transform text-center">
+              <img src="img/Hotovo.png" class="mx-auto mb-3 h-20" alt="Hotovo ikona" />
+              <h3 class="text-lg font-semibold mb-2 text-green-700 dark:text-green-800">A je to hotové</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">Do 24 hodin obdržíte potvrzení o ekologické likvidaci vozidla.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hotovo - Compact Section -->
+        <div class="max-w-4xl mx-auto">
+          <div class="bg-gray-200 dark:bg-grayish-800 border border-green-600 dark:border-green-700 rounded-xl p-6 shadow-lg hover:shadow-green-600 dark:hover:shadow-green-800 transition duration-300">
+            <div class="flex items-start gap-6">
+              <img src="img/Hotovo.png" class="w-16 h-16 flex-shrink-0" alt="Hotovo ikona" />
+              <div class="flex-1">
+                <h3 class="text-xl font-semibold text-green-600 dark:text-green-300 mb-3">Kompletní proces likvidace</h3>
+                <p class="text-gray-700 dark:text-gray-300 mb-3">
+                  Po odvezení vraku obdržíte do 24 hodin doklad o ekologické likvidaci vozidla (Potvrzení o převzetí autovraku do zařízení ke sběru autovraků). 
+                  Tímto je celý proces u konce a vy máte o starost v podobě vraku méně a o peníze v kapse více... to se vyplatí, co říkáte?
+                </p>
+                <a href="vice.html" class="text-green-700 dark:text-green-500 underline font-semibold">Zjistit více</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <!-- Kontaktní údaje -->
+          <div class="bg-gray-200 dark:bg-grayish-800 border border-green-600 dark:border-green-700 rounded-xl p-6 shadow-lg hover:shadow-green-600 dark:hover:shadow-green-800 transition duration-300 transform hover:scale-105">
+            <div class="flex items-center gap-4 mb-4">
+              <img src="img/Jerab text.svg" alt="Ikona kontaktu" class="w-12 h-12 animate-pulse flex-shrink-0" style="filter: drop-shadow(0 0 10px rgba(34,197,94,0.9)) brightness(2) saturate(2.2);">
+              <h3 class="text-lg font-semibold text-green-600 dark:text-green-300">Kontaktní údaje</h3>
+            </div>
+            <div class="space-y-2" id="contact-info">
+              <p class="flex items-center text-gray-700 dark:text-gray-300 text-sm">
                 <span class="mr-3">📍</span> <span id="address">U Hřiště 290, 664 61 Opatovice</span>
               </p>
-              <p class="flex items-center text-gray-700 dark:text-gray-300">
+              <p class="flex items-center text-gray-700 dark:text-gray-300 text-sm">
                 <span class="mr-3">📞</span> <span id="phone">+420 731 071 218</span>
               </p>
-              <p class="flex items-center text-gray-700 dark:text-gray-300">
+              <p class="flex items-center text-gray-700 dark:text-gray-300 text-sm">
                 <span class="mr-3">📧</span> <span id="email">info@vraky-brno.cz</span>
               </p>
             </div>
           </div>
           
           <!-- Otevírací doba -->
-          <div class="bg-gray-200 dark:bg-grayish-800 border border-green-600 dark:border-green-700 rounded-xl p-8 shadow-lg hover:shadow-green-600 dark:hover:shadow-green-800 transition duration-300 transform hover:scale-105">
-            <div class="flex items-center gap-6 mb-6">
-              <img src="img/Jerab text.svg" alt="Ikona času" class="w-16 h-16 animate-pulse delay-100 flex-shrink-0" style="filter: drop-shadow(0 0 10px rgba(34,197,94,0.9)) brightness(2) saturate(2.2);">
-              <h3 class="text-xl font-semibold text-green-600 dark:text-green-300">Provozní doba</h3>
+          <div class="bg-gray-200 dark:bg-grayish-800 border border-green-600 dark:border-green-700 rounded-xl p-6 shadow-lg hover:shadow-green-600 dark:hover:shadow-green-800 transition duration-300 transform hover:scale-105">
+            <div class="flex items-center gap-4 mb-4">
+              <img src="img/Jerab text.svg" alt="Ikona času" class="w-12 h-12 animate-pulse delay-100 flex-shrink-0" style="filter: drop-shadow(0 0 10px rgba(34,197,94,0.9)) brightness(2) saturate(2.2);">
+              <h3 class="text-lg font-semibold text-green-600 dark:text-green-300">Provozní doba</h3>
             </div>
-            <div class="space-y-2 text-gray-700 dark:text-gray-300">
+            <div class="space-y-1 text-gray-700 dark:text-gray-300 text-sm">
               <p>Pondělí - Pátek: 8:00 - 18:00</p>
               <p>Sobota: 9:00 - 14:00</p>
               <p>Neděle: Zavřeno</p>
