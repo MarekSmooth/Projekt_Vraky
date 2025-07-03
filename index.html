@@ -115,35 +115,30 @@
     </nav>
 
     <!-- Main Content Container with Single Background -->
-    <div class="relative min-h-screen bg-gray-300 dark:bg-grayish-700">
+    <section class="relative min-h-screen py-20 px-6 bg-gray-300 dark:bg-grayish-700">
       <div class="absolute inset-0 bg-[url('img/auta-pozadi.png')] bg-cover bg-center opacity-20"></div>
-      
-      <!-- Hero sekce - Section 1 -->
-      <section class="relative py-20 px-6">
-        <div class="w-full max-w-screen-xl mx-auto px-4 md:px-8 relative z-10">
-          <div class="text-center max-w-3xl mx-auto">
-            <h1 class="text-5xl md:text-6xl font-extrabold mb-6 leading-tight bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-green-800 dark:from-green-500 dark:to-green-700">
-              Ekologická likvidace vozidel
-            </h1>
-            <p class="text-xl md:text-2xl mb-8 text-gray-700 dark:text-gray-300">
-              Zajistíme kompletní likvidaci včetně odvozu a dokumentace
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="kontakt.html" class="bg-green-600 dark:bg-green-800 text-white px-8 py-4 rounded-lg font-semibold hover:bg-green-700 dark:hover:bg-green-900 transition-colors font-bold">
-                +420 731 071 218
-              </a>
-              <a href="sluzby.html" class="bg-gray-400 dark:bg-grayish-700 text-white px-8 py-4 rounded-lg font-semibold hover:bg-gray-500 dark:hover:bg-gray-600 transition-colors">
-                Více informací
-              </a>
-            </div>
+      <div class="w-full max-w-screen-xl mx-auto px-4 md:px-8 relative z-10">
+        
+        <!-- Hero Section -->
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <h1 class="text-5xl md:text-6xl font-extrabold mb-6 leading-tight bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-green-800 dark:from-green-500 dark:to-green-700">
+            Ekologická likvidace vozidel
+          </h1>
+          <p class="text-xl md:text-2xl mb-8 text-gray-700 dark:text-gray-300">
+            Zajistíme kompletní likvidaci včetně odvozu a dokumentace
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="kontakt.html" class="bg-green-600 dark:bg-green-800 text-white px-8 py-4 rounded-lg font-semibold hover:bg-green-700 dark:hover:bg-green-900 transition-colors font-bold">
+              +420 731 071 218
+            </a>
+            <a href="sluzby.html" class="bg-gray-400 dark:bg-grayish-700 text-white px-8 py-4 rounded-lg font-semibold hover:bg-gray-500 dark:hover:bg-gray-600 transition-colors">
+              Více informací
+            </a>
           </div>
         </div>
-      </section>
 
-      <!-- Lokace - Section 2 -->
-      <section class="relative py-20 px-6">
-        <div class="max-w-6xl mx-auto relative z-10">
-          <!-- Kompaktnější panel s tmavší zelenou a moderními oddělovači -->
+        <!-- Location Selection -->
+        <div class="max-w-6xl mx-auto mb-16">
           <div class="flex flex-col md:flex-row gap-0 bg-gradient-to-r from-green-600 via-green-700 to-green-600 dark:from-green-800 dark:via-green-900 dark:to-green-800 p-1 rounded-2xl">
             
             <!-- BRNO -->
@@ -223,71 +218,44 @@
 
           </div>
         </div>
-      </section>
 
-      <!-- Služby - Section 3 -->
-      <section id="sluzby" class="relative py-20 px-6">
-        <div class="max-w-6xl mx-auto relative z-10">
-          <h2 class="text-3xl font-bold text-center mb-12 text-green-700 dark:text-green-800">V případě požadavku na likvidaci autovraku probíhá celý proces následovně:</h2>
-          <div class="grid md:grid-cols-3 gap-8">
-            <div class="bg-gray-200 dark:bg-grayish-800 p-8 rounded-xl hover:transform hover:scale-105 transition-transform text-center">
-              <img src="img/Zavolate.png" class="mx-auto mb-6 h-32" alt="Zavolejte ikona" />
-              <h3 class="text-xl font-semibold mb-4 text-green-700 dark:text-green-800">Vy nám zavoláte</h3>
-              <p class="text-gray-600 dark:text-gray-400">Po zavolání na naše telefonní číslo si domluvíte termín (den, hodinu) odvozu vašeho vraku, výši výkupní ceny vozidla (vyplacení probíhá v hotovosti při příjmu vozidla).</p>
+        <!-- Contact Info -->
+        <div class="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+          <!-- Kontaktní údaje -->
+          <div class="bg-gray-200 dark:bg-grayish-800 border border-green-600 dark:border-green-700 rounded-xl p-8 shadow-lg hover:shadow-green-600 dark:hover:shadow-green-800 transition duration-300 transform hover:scale-105">
+            <div class="flex items-center gap-6 mb-6">
+              <img src="img/Jerab text.svg" alt="Ikona kontaktu" class="w-16 h-16 animate-pulse flex-shrink-0" style="filter: drop-shadow(0 0 10px rgba(34,197,94,0.9)) brightness(2) saturate(2.2);">
+              <h3 class="text-xl font-semibold text-green-600 dark:text-green-300">Kontaktní údaje</h3>
             </div>
-            <div class="bg-gray-200 dark:bg-grayish-800 p-8 rounded-xl hover:transform hover:scale-105 transition-transform text-center">
-              <img src="img/postaramese.png" class="mx-auto mb-6 h-32" alt="Odtah ikona" />
-              <h3 class="text-xl font-semibold mb-4 text-green-700 dark:text-green-800">My se postaráme</h3>
-              <p class="text-gray-600 dark:text-gray-400">Ve smluvený čas si pro váš autovrak přijedeme s naším odtahovým vozidlem, vozidlo si naložíme, vyplatíme výkupní cenu, vyřídíme doklady spojené s likvidací (podpis plné moci k likvidaci vozidla) a vozidlo následně odvezeme na ekologickou likvidaci.</p>
+            <div class="space-y-3" id="contact-info">
+              <p class="flex items-center text-gray-700 dark:text-gray-300">
+                <span class="mr-3">📍</span> <span id="address">U Hřiště 290, 664 61 Opatovice</span>
+              </p>
+              <p class="flex items-center text-gray-700 dark:text-gray-300">
+                <span class="mr-3">📞</span> <span id="phone">+420 731 071 218</span>
+              </p>
+              <p class="flex items-center text-gray-700 dark:text-gray-300">
+                <span class="mr-3">📧</span> <span id="email">info@vraky-brno.cz</span>
+              </p>
             </div>
-            <div class="bg-gray-200 dark:bg-grayish-800 p-8 rounded-xl hover:transform hover:scale-105 transition-transform text-center">
-              <img src="img/Certifikat.png" class="mx-auto mb-6 h-32" alt="Certifikat ikona" />
-              <h3 class="text-xl font-semibold mb-4 text-green-700 dark:text-green-800">Příprava požadovaných dokumentů</h3>
-              <p class="text-gray-600 dark:text-gray-400">Při přejímání autovraku k likvidaci je nutno předložit Velký technický průkaz a doklad totožnosti, popř. plnou moc od vlastníka vozidla v případě zastupování jinou osobou (nemusí být s ověřeným podpisem). Vzor plné moci je ke stažení <a href="public/plnamoc.pdf" class="text-green-700 dark:text-green-500 underline" target="_blank">zde</a>.</p>
+          </div>
+          
+          <!-- Otevírací doba -->
+          <div class="bg-gray-200 dark:bg-grayish-800 border border-green-600 dark:border-green-700 rounded-xl p-8 shadow-lg hover:shadow-green-600 dark:hover:shadow-green-800 transition duration-300 transform hover:scale-105">
+            <div class="flex items-center gap-6 mb-6">
+              <img src="img/Jerab text.svg" alt="Ikona času" class="w-16 h-16 animate-pulse delay-100 flex-shrink-0" style="filter: drop-shadow(0 0 10px rgba(34,197,94,0.9)) brightness(2) saturate(2.2);">
+              <h3 class="text-xl font-semibold text-green-600 dark:text-green-300">Provozní doba</h3>
             </div>
-            <div class="bg-gray-200 dark:bg-grayish-800 p-8 rounded-xl hover:transform hover:scale-105 transition-transform md:col-span-3 text-center">
-              <img src="img/Hotovo.png" class="mx-auto mb-6 h-32" alt="Hotovo ikona" />
-              <h3 class="text-xl font-semibold mb-4 text-green-700 dark:text-green-800">A je to hotové</h3>
-              <p class="text-gray-600 dark:text-gray-400">Po odvezení vraku obdržíte od nás do 24 hodin (není li dle domluvy stanoveno jinak) doklad o ekologické likvidaci vozidla (Potvrzení o převzetí autovraku do zařízení ke sběru autovraků). Tímto je celý proces u konce a vy máte o starost v podobě vraku méně a o peníze v kapse více... to se vyplatí, co říkáte? <a href="vice.html" class="text-green-700 dark:text-green-500 underline">Zjistit více</a>.</p>
+            <div class="space-y-2 text-gray-700 dark:text-gray-300">
+              <p>Pondělí - Pátek: 8:00 - 18:00</p>
+              <p>Sobota: 9:00 - 14:00</p>
+              <p>Neděle: Zavřeno</p>
             </div>
           </div>
         </div>
-      </section>
 
-      <!-- Kontakt - Section 4 -->
-      <section id="kontakt" class="relative py-20 px-6">
-        <div class="max-w-6xl mx-auto relative z-10">
-          <h2 class="text-3xl font-bold text-center mb-12 text-green-700 dark:text-green-800">Kontaktujte nás</h2>
-          <div class="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
-            <!-- Kontaktní údaje -->
-            <div class="bg-gray-200 dark:bg-grayish-800 p-6 rounded-lg">
-              <h3 class="text-xl font-semibold mb-4 text-green-700 dark:text-green-800">Kontaktní údaje</h3>
-              <div class="space-y-3" id="contact-info">
-                <p class="flex items-center text-gray-700 dark:text-gray-300">
-                  <span class="mr-3"></span> <span id="address">U Hřiště 290, 664 61 Opatovice</span>
-                </p>
-                <p class="flex items-center text-gray-700 dark:text-gray-300">
-                  <span class="mr-3"></span> <span id="phone">+420 731 071 218</span>
-                </p>
-                <p class="flex items-center text-gray-700 dark:text-gray-300">
-                  <span class="mr-3"></span> <span id="email">info@vraky-brno.cz</span>
-                </p>
-              </div>
-            </div>
-            
-            <!-- Otevírací doba -->
-            <div class="bg-gray-200 dark:bg-grayish-800 p-6 rounded-lg">
-              <h3 class="text-xl font-semibold mb-4 text-green-700 dark:text-green-800">Otevírací doba</h3>
-              <div class="space-y-2 text-gray-700 dark:text-gray-300">
-                <p>Pondělí - Pátek: 8:00 - 18:00</p>
-                <p>Sobota: 9:00 - 14:00</p>
-                <p>Neděle: Zavřeno</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
+      </div>
+    </section>
 
     <!-- Footer - Always Dark -->
     <footer class="bg-grayish-800 dark:bg-grayish-900 text-gray-400 py-8">
