@@ -41,41 +41,81 @@
 <body class="bg-white text-gray-800 dark:bg-grayish-800 dark:text-gray-300">
 
 <!-- Navigace -->
-<nav class="bg-grayish-900 dark:bg-grayish-900 bg-opacity-90 backdrop-blur shadow-md px-6 py-4 flex justify-between items-center sticky top-0 z-50">
-  <a href="index.html" class="flex items-center">
-    <img src="public/Logo.png" alt="Logo" class="h-20 w-auto ml-8">
+    <nav class="bg-grayish-900 dark:bg-grayish-900 bg-opacity-90 backdrop-blur shadow-md px-4 md:px-6 py-4 sticky top-0 z-50">
+      <div class="flex justify-between items-center">
+        <a href="index.html" class="flex items-center">
+          <img src="public/Logo.png" alt="Logo" class="h-16 md:h-20 w-auto ml-2 md:ml-8">
+        </a>
+        
+        <!-- Mobile menu button -->
+        <button onclick="toggleMobileMenu()" class="md:hidden p-2 rounded-lg bg-gray-700 hover:bg-gray-600 transition-colors">
+          <svg id="menu-icon" class="w-6 h-6 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+          <svg id="close-icon" class="w-6 h-6 text-gray-300 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+        
+        <!-- Desktop menu -->
+        <div class="space-x-6 hidden md:flex items-center">
+          <a href="index.html" class="text-gray-300 hover:text-green-600 dark:hover:text-green-800">Domů</a>
+          <a href="onas.html" class="text-gray-300 hover:text-green-600 dark:hover:text-green-800">O nás</a>
+          <a href="sluzby.html" class="text-gray-300 hover:text-green-600 dark:hover:text-green-800">Služby</a>
+          <a href="kontakt.html" class="text-gray-300 hover:text-green-600 dark:hover:text-green-800">Kontakt</a>
+          
+          <button onclick="toggleTheme()" class="theme-toggle p-2 rounded-lg bg-gray-700 dark:bg-gray-600 hover:bg-gray-600 dark:hover:bg-gray-500 transition-colors">
+            <svg id="sun-icon" class="w-5 h-5 text-yellow-400 hidden" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1z..." clip-rule="evenodd"></path>
+            </svg>
+            <svg id="moon-icon" class="w-5 h-5 text-gray-300" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+            </svg>
+          </button>
+          
+          <a href="tel:+420731071218" class="bg-green-600 dark:bg-green-800 text-white px-4 py-2 rounded hover:bg-green-700 dark:hover:bg-green-900 font-bold">
+            +420 731 071 218
+          </a>
+        </div>
   </a>
-  <div class="space-x-6 hidden md:flex items-center">
-    <a href="index.html" class="text-gray-300 hover:text-green-600 dark:hover:text-green-800">Domů</a>
-    <a href="onas.html" class="text-gray-300 hover:text-green-600 dark:hover:text-green-800">O nás</a>
-    <a href="sluzby.html" class="text-gray-300 hover:text-green-600 dark:hover:text-green-800">Služby</a>
-    <a href="kontakt.html" class="text-gray-300 hover:text-green-600 dark:hover:text-green-800">Kontakt</a>
-    <button onclick="toggleTheme()" class="theme-toggle p-2 rounded-lg bg-gray-700 dark:bg-gray-600 hover:bg-gray-600 dark:hover:bg-gray-500 transition-colors">
-      <svg id="sun-icon" class="w-5 h-5 text-yellow-400 hidden" fill="currentColor" viewBox="0 0 20 20">
-        <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1z..." clip-rule="evenodd"></path>
-      </svg>
-      <svg id="moon-icon" class="w-5 h-5 text-gray-300" fill="currentColor" viewBox="0 0 20 20">
-        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
-      </svg>
-    </button>
-    <a href="tel:+420731071218" class="bg-green-600 dark:bg-green-800 text-white px-4 py-2 rounded hover:bg-green-700 dark:hover:bg-green-900 font-bold">
-      +420 731 071 218
-    </a>
+      
+      <!-- Mobile menu -->
+      <div id="mobile-menu" class="md:hidden hidden absolute top-full left-0 right-0 bg-grayish-900 bg-opacity-95 backdrop-blur border-t border-gray-700">
+        <div class="px-4 py-4 space-y-4">
+          <a href="index.html" class="block text-gray-300 hover:text-green-600 py-2">Domů</a>
+          <a href="onas.html" class="block text-gray-300 hover:text-green-600 py-2">O nás</a>
+          <a href="sluzby.html" class="block text-gray-300 hover:text-green-600 py-2">Služby</a>
+          <a href="kontakt.html" class="block text-gray-300 hover:text-green-600 py-2">Kontakt</a>
+          <div class="flex items-center justify-between pt-4 border-t border-gray-700">
+            <button onclick="toggleTheme()" class="theme-toggle p-2 rounded-lg bg-gray-700 hover:bg-gray-600 transition-colors">
+              <svg id="sun-icon-mobile" class="w-5 h-5 text-yellow-400 hidden" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1z..." clip-rule="evenodd"></path>
+              </svg>
+              <svg id="moon-icon-mobile" class="w-5 h-5 text-gray-300" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+              </svg>
+            </button>
+            <a href="tel:+420731071218" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 font-bold text-sm">
+              +420 731 071 218
+            </a>
+          </div>
+        </div>
   </div>
 </nav>
-<main class="max-w-4xl mx-auto py-16 px-6">
-    <h1 class="text-4xl font-bold mb-8 text-green-700 dark:text-green-600">Zásady zpracování osobních údajů</h1>
-    <p class="mb-6">
+    
+<main class="max-w-4xl mx-auto py-8 md:py-16 px-4 md:px-6">
+    <h1 class="text-2xl md:text-4xl font-bold mb-6 md:mb-8 text-green-700 dark:text-green-600">Zásady zpracování osobních údajů</h1>
+    <p class="mb-4 md:mb-6 text-sm md:text-base">
         Správcem osobních údajů je Lukáš Vaverka, IČO: 05513251, se sídlem v České republice (dále jen „správce“).
         Tyto zásady vysvětlují, jakým způsobem jsou osobní údaje návštěvníků webu www.vraky-brno.cz shromažďovány,
         zpracovávány a chráněny.
     </p>
 
-    <section class="space-y-8">
+    <section class="space-y-6 md:space-y-8">
 
         <div>
-            <h2 class="text-2xl font-semibold text-green-700 dark:text-green-600 mb-2">Jaké údaje zpracováváme?</h2>
-            <ul class="list-disc list-inside space-y-1">
+            <h2 class="text-lg md:text-2xl font-semibold text-green-700 dark:text-green-600 mb-2">Jaké údaje zpracováváme?</h2>
+            <ul class="list-disc list-inside space-y-1 text-sm md:text-base">
                 <li>Jméno a příjmení</li>
                 <li>Telefonní číslo</li>
                 <li>Emailová adresa</li>
@@ -85,31 +125,31 @@
         </div>
 
         <div>
-            <h2 class="text-2xl font-semibold text-green-700 dark:text-green-600 mb-2">Účel zpracování</h2>
-            <p>
+            <h2 class="text-lg md:text-2xl font-semibold text-green-700 dark:text-green-600 mb-2">Účel zpracování</h2>
+            <p class="text-sm md:text-base">
                 Vaše údaje zpracováváme výhradně za účelem odpovědi na vaši zprávu a pro analýzu provozu webových stránek.
                 Nepoužíváme je pro marketing ani je nepředáváme třetím stranám.
             </p>
         </div>
 
         <div>
-            <h2 class="text-2xl font-semibold text-green-700 dark:text-green-600 mb-2">Právní základ</h2>
-            <p>
+            <h2 class="text-lg md:text-2xl font-semibold text-green-700 dark:text-green-600 mb-2">Právní základ</h2>
+            <p class="text-sm md:text-base">
                 Zpracování osobních údajů je založeno na oprávněném zájmu správce a vašem souhlasu uděleném prostřednictvím kontaktního formuláře.
             </p>
         </div>
 
         <div>
-            <h2 class="text-2xl font-semibold text-green-700 dark:text-green-600 mb-2">Doba uchování údajů</h2>
-            <p>
+            <h2 class="text-lg md:text-2xl font-semibold text-green-700 dark:text-green-600 mb-2">Doba uchování údajů</h2>
+            <p class="text-sm md:text-base">
                 Údaje jsou uchovávány po dobu nezbytně nutnou – maximálně 6 měsíců od odeslání formuláře.
             </p>
         </div>
 
         <div>
-            <h2 class="text-2xl font-semibold text-green-700 dark:text-green-600 mb-2">Práva subjektů údajů</h2>
-            <p>Máte právo požadovat:</p>
-            <ul class="list-disc list-inside space-y-1">
+            <h2 class="text-lg md:text-2xl font-semibold text-green-700 dark:text-green-600 mb-2">Práva subjektů údajů</h2>
+            <p class="text-sm md:text-base">Máte právo požadovat:</p>
+            <ul class="list-disc list-inside space-y-1 text-sm md:text-base">
                 <li>přístup ke svým osobním údajům,</li>
                 <li>opravu či výmaz,</li>
                 <li>omezení zpracování,</li>
@@ -118,8 +158,8 @@
         </div>
 
         <div>
-            <h2 class="text-2xl font-semibold text-green-700 dark:text-green-600 mb-2">Kontakt</h2>
-            <p>Pro jakékoli dotazy nebo žádosti týkající se vašich údajů nás kontaktujte na e-mailové adrese: 
+            <h2 class="text-lg md:text-2xl font-semibold text-green-700 dark:text-green-600 mb-2">Kontakt</h2>
+            <p class="text-sm md:text-base">Pro jakékoli dotazy nebo žádosti týkající se vašich údajů nás kontaktujte na e-mailové adrese: 
                 <a href="mailto:info@vraky-brno.cz" class="underline text-green-700 dark:text-green-500">info@vraky-brno.cz</a>
             </p>
         </div>
@@ -163,6 +203,42 @@
 </footer>
 
 <script>
+  function toggleMobileMenu() {
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+    
+    if (mobileMenu.classList.contains('hidden')) {
+      mobileMenu.classList.remove('hidden');
+      menuIcon.classList.add('hidden');
+      closeIcon.classList.remove('hidden');
+    } else {
+      mobileMenu.classList.add('hidden');
+      menuIcon.classList.remove('hidden');
+      closeIcon.classList.add('hidden');
+    }
+  }
+
+  function updateThemeIcons() {
+    const sunIcon = document.getElementById('sun-icon');
+    const moonIcon = document.getElementById('moon-icon');
+    const sunIconMobile = document.getElementById('sun-icon-mobile');
+    const moonIconMobile = document.getElementById('moon-icon-mobile');
+    const isDark = document.documentElement.classList.contains('dark');
+    
+    if (isDark) {
+      sunIcon.classList.remove('hidden');
+      moonIcon.classList.add('hidden');
+      sunIconMobile.classList.remove('hidden');
+      moonIconMobile.classList.add('hidden');
+    } else {
+      sunIcon.classList.add('hidden');
+      moonIcon.classList.remove('hidden');
+      sunIconMobile.classList.add('hidden');
+      moonIconMobile.classList.remove('hidden');
+    }
+  }
+
   function updateIcons() {
     const sunIcon = document.getElementById("sun-icon");
     const moonIcon = document.getElementById("moon-icon");
@@ -183,7 +259,7 @@
       html.classList.add("dark");
       localStorage.setItem("theme", "dark");
     }
-    updateIcons();
+    updateThemeIcons();
   }
   window.addEventListener("DOMContentLoaded", () => {
     selectLocation('brno');
@@ -195,7 +271,7 @@
     } else {
       document.documentElement.classList.remove("dark");
     }
-    updateIcons();
+    updateThemeIcons();
   });
 
   const locations = {
