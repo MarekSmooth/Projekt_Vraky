@@ -253,8 +253,6 @@
   }
   
   window.addEventListener("DOMContentLoaded", () => {
-    selectLocation('brno');
-    
     // Check for saved theme preference or default to dark
     const savedTheme = localStorage.getItem('theme') || 'dark';
     const html = document.documentElement;
@@ -265,6 +263,7 @@
       html.classList.remove('dark');
     }
     updateThemeIcons();
+    selectLocation('brno');
   });
 
   const locations = {
