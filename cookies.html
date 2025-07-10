@@ -149,4 +149,78 @@
         </ul>
       </div>
 
-      <div class="bg-gray-100 dark:bg-grayish-700 p-4 md:p-6 
+      <div class="bg-gray-100 dark:bg-grayish-700 p-4 md:p-6 rounded-lg">
+        <h2 class="text-lg md:text-2xl font-semibold mb-2 text-green-700 dark:text-green-400">Jak spravovat cookies?</h2>
+        <p class="text-sm md:text-base">
+          Cookies můžete spravovat prostřednictvím nastavení vašeho webového prohlížeče. Můžete je zakázat,
+          omezit nebo smazat. Mějte však na paměti, že zakázání cookies může ovlivnit funkčnost webu.
+        </p>
+      </div>
+
+    </section>
+
+    <div class="mt-8 md:mt-12 p-4 md:p-6 bg-green-50 dark:bg-grayish-700 rounded-lg border-l-4 border-green-500">
+      <p class="text-sm md:text-base">
+        <strong>Kontakt:</strong> Pokud máte jakékoli dotazy ohledně používání cookies na našem webu,
+        kontaktujte nás na <a href="mailto:info@vrakybrno.cz" class="text-green-600 dark:text-green-400 hover:underline">info@vrakybrno.cz</a>
+        nebo na telefonu <a href="tel:+420731071218" class="text-green-600 dark:text-green-400 hover:underline">+420 731 071 218</a>.
+      </p>
+    </div>
+  </main>
+
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      const sunIcons = document.querySelectorAll('#sun-icon, #sun-icon-mobile');
+      const moonIcons = document.querySelectorAll('#moon-icon, #moon-icon-mobile');
+      
+      if (html.classList.contains('dark')) {
+        html.classList.remove('dark');
+        localStorage.setItem('theme', 'light');
+        sunIcons.forEach(icon => icon.classList.add('hidden'));
+        moonIcons.forEach(icon => icon.classList.remove('hidden'));
+      } else {
+        html.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+        sunIcons.forEach(icon => icon.classList.remove('hidden'));
+        moonIcons.forEach(icon => icon.classList.add('hidden'));
+      }
+    }
+
+    function toggleMobileMenu() {
+      const mobileMenu = document.getElementById('mobile-menu');
+      const menuIcon = document.getElementById('menu-icon');
+      const closeIcon = document.getElementById('close-icon');
+      
+      if (mobileMenu.classList.contains('hidden')) {
+        mobileMenu.classList.remove('hidden');
+        menuIcon.classList.add('hidden');
+        closeIcon.classList.remove('hidden');
+      } else {
+        mobileMenu.classList.add('hidden');
+        menuIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+      }
+    }
+
+    // Initialize theme on page load
+    document.addEventListener('DOMContentLoaded', function() {
+      const savedTheme = localStorage.getItem('theme');
+      const html = document.documentElement;
+      const sunIcons = document.querySelectorAll('#sun-icon, #sun-icon-mobile');
+      const moonIcons = document.querySelectorAll('#moon-icon, #moon-icon-mobile');
+      
+      if (savedTheme === 'light') {
+        html.classList.remove('dark');
+        sunIcons.forEach(icon => icon.classList.add('hidden'));
+        moonIcons.forEach(icon => icon.classList.remove('hidden'));
+      } else {
+        html.classList.add('dark');
+        sunIcons.forEach(icon => icon.classList.remove('hidden'));
+        moonIcons.forEach(icon => icon.classList.add('hidden'));
+      }
+    });
+  </script>
+
+</body>
+</html>
