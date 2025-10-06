@@ -44,6 +44,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="styles.css" />
     <style>
       body {
         font-family: 'Inter', sans-serif;
@@ -100,7 +101,9 @@
       }
     </style>
   </head>
-  <body class="bg-white text-gray-900 dark:bg-[#1a1a1a] dark:text-gray-300">
+  <body class="bg-white text-gray-900 dark:bg-[#1a1a1a] dark:text-gray-300" data-bg="fixed">
+    <div class="site-bg"></div>
+    <!-- <div class="site-bg-overlay"></div> -->
 
     <!-- Navigace - Always Dark with Transparency -->
     <nav class="relative overflow-visible bg-gradient-to-r from-black to-grayish-900 dark:from-black dark:to-grayish-900 bg-opacity-90 backdrop-blur shadow-md px-4 md:px-6 py-4 sticky top-0 z-50">
@@ -185,9 +188,8 @@
       </div>
     </nav>
 
-    <!-- Main Content Container with Single Background -->
-    <div class="relative min-h-screen bg-gray-400 dark:bg-grayish-700">
-      <div class="absolute inset-0 bg-[url('img/auta-pozadi.png')] bg-cover bg-center opacity-20"></div>
+    <!-- Main Content Container -->
+    <div class="relative min-h-screen">
       
       <!-- Hero sekce - Section 1 -->
       <section class="relative py-8 md:py-16 px-4 md:px-6">
