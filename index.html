@@ -534,7 +534,7 @@
         }
 
         // Load GeoJSON data from file
-        fetch('public/okresy-brno.geojson')
+        fetch('/okresy-brno.geojson')
           .then(response => response.json())
           .then(data => {
             const geojsonLayer = L.geoJSON(data, {
@@ -542,8 +542,10 @@
               onEachFeature: onEachFeature
             }).addTo(map);
 
-            // Fit map to show all districts
-            map.fitBounds(geojsonLayer.getBounds());
+            // Fit map to show all districts with some padding
+            map.fitBounds(geojsonLayer.getBounds(), {
+              padding: [50, 50]
+            });
           })
           .catch(error => {
             console.error('Error loading GeoJSON:', error);
