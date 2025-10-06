@@ -485,8 +485,8 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script>
       function initMap() {
-        // Initialize map centered on Brno region
-        const map = L.map('map').setView([49.2, 16.6], 9);
+        // Initialize map centered on Czech Republic
+        const map = L.map('map').setView([49.8, 15.5], 7);
 
         // Add OpenStreetMap tiles
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -542,10 +542,10 @@
               onEachFeature: onEachFeature
             }).addTo(map);
 
-            // Fit map to show all districts with some padding
-            map.fitBounds(geojsonLayer.getBounds(), {
-              padding: [50, 50]
-            });
+            // Don't auto-zoom to bounds, keep the initial Czech Republic view
+            // map.fitBounds(geojsonLayer.getBounds(), {
+            //   padding: [50, 50]
+            // });
           })
           .catch(error => {
             console.error('Error loading GeoJSON:', error);
