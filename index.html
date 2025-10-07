@@ -541,7 +541,11 @@
         }
 
         // Load GeoJSON data from file
-        fetch('../public/okresy-brno.geojson')
+        const geoJsonPath = window.location.pathname.includes('/Projects_Vraky/')
+          ? '../public/okresy-brno.geojson'
+          : './okresy-brno.geojson';
+
+        fetch(geoJsonPath)
           .then(response => {
             if (!response.ok) {
               throw new Error('Network response was not ok: ' + response.status);
