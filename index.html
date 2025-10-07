@@ -437,7 +437,7 @@
           phone: "+420 456 789 012",
           email: "blansko@vrakoviste.cz"
         }
-      }; 
+      };
 
       function selectLocation(location) {
         // Update footer information
@@ -541,7 +541,7 @@
         }
 
         // Load GeoJSON data from file
-        fetch('../public/okresy-brno.geojson')
+        fetch('./okresy-brno.geojson')
           .then(response => {
             if (!response.ok) {
               throw new Error('Network response was not ok: ' + response.status);
