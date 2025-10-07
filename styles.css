@@ -6,7 +6,7 @@
   background: center center / cover no-repeat;
   background-image: url("img/auta-pozadi.png");
   pointer-events: none;
-  opacity: 0.2;
+  opacity: 1;
 }
 
 /* Volitelný stmavovací overlay pro čitelnost textu (ponech defaultně vypnutý) */
