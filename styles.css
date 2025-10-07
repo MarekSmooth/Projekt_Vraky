@@ -9,6 +9,11 @@
   opacity: 0.2;
 }
 
+/* V dark mode zobrazit pozadí v plné síle bez zesvětlení */
+.dark .site-bg {
+  opacity: 1.0;
+}
+
 /* Volitelný stmavovací overlay pro čitelnost textu (ponech defaultně vypnutý) */
 .site-bg-overlay {
   position: fixed;
