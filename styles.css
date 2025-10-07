@@ -6,7 +6,7 @@
   background: center center / cover no-repeat;
   background-image: url("img/auta-pozadi.png");
   pointer-events: none;
-  opacity: 0.2;
+  opacity: 0.5;
 }
 
 /* V dark mode zobrazit pozadí v plné síle a ztmavit pro sladění s navigací */
