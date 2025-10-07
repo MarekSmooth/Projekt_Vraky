@@ -22,3 +22,8 @@
 body {
   min-height: 100vh;
 }
+
+/* Tmavší pozadí v light mode */
+body:not(.dark) {
+  background-color: rgb(156, 163, 175); /* gray-450 equivalent */
+}
