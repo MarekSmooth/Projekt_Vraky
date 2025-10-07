@@ -490,8 +490,7 @@
         // Initialize map centered on Brno area with different zoom for mobile
         const isMobile = window.innerWidth < 768;
         const center = isMobile ? [49.2, 16.6] : [49.4, 17.2];
-        const zoom = isMobile ? 9 : 8;
-        const map = L.map('map').setView(center, zoom);
+        const map = L.map('map').setView(center, 8);
 
         // Add OpenStreetMap tiles
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
