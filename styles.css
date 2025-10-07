@@ -6,29 +6,47 @@
   background: center center / cover no-repeat;
   background-image: url("img/auta-pozadi.png");
   pointer-events: none;
-  opacity: 1;
+  transition: opacity 0.3s ease;
 }
 
-/* Volitelný stmavovací overlay pro čitelnost textu (ponech defaultně vypnutý) */
+/* === Volitelný stmavovací / zesvětlující overlay === */
 .site-bg-overlay {
   position: fixed;
   inset: 0;
   z-index: -1;
-  background: rgba(0,0,0,0.0); /* může se později měnit např. na 0.2–0.35 */
   pointer-events: none;
+  transition: background 0.3s ease;
 }
 
-/* Zajistí minimum výšky pro body */
+/* === Minimum výšky pro body === */
 body {
   min-height: 100vh;
+  transition: background-color 0.3s ease;
 }
 
-/* Tmavší pozadí v light mode */
+/* === LIGHT MODE === */
 body:not(.dark) {
-  background-color: rgb(156, 163, 175); /* gray-450 equivalent */
+  background-color: rgb(209, 213, 219); /* světle šedé pozadí */
 }
 
-/* Čistě černé pozadí v dark mode odpovídající originálnímu obrázku */
-body.dark {
-  background-color: #000000; /* Černá jako v originálním obrázku */
+body:not(.dark) .site-bg {
+  opacity: 0.25; /* zesvětlený obrázek */
 }
+
+body:not(.dark) .site-bg-overlay {
+  background: rgba(255, 255, 255, 0.25); /* jemný bílý závoj */
+}
+
+/* === DARK MODE === */
+body.dark {
+  background-color: #000000; /* čistá černá */
+}
+
+body.dark .site-bg {
+  opacity: 1; /* plné barvy obrázku */
+}
+
+body.dark .site-bg-overlay {
+  background: rgba(0, 0, 0, 0); /* bez překryvu */
+}
+
