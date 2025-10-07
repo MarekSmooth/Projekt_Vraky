@@ -540,28 +540,46 @@
           }
         }
 
-        // Load GeoJSON data from file
-        fetch('../public/okresy-brno.geojson')
-          .then(response => {
-            if (!response.ok) {
-              throw new Error('Network response was not ok: ' + response.status);
-            }
-            return response.json();
-          })
-          .then(data => {
-            geojsonLayer = L.geoJSON(data, {
-              style: style,
-              onEachFeature: onEachFeature
-            }).addTo(map);
+        async function loadGeoJSON() {
+  // prefix pro GitHub Pages (repo název jako první segment cesty)
+  const repoPrefix = location.hostname.endsWith('github.io')
+    ? `/${location.pathname.split('/').filter(Boolean)[0]}/`
+    : '/';
 
-            // Don't auto-zoom to bounds, keep the initial Czech Republic view
-            // map.fitBounds(geojsonLayer.getBounds(), {
-            //   padding: [50, 50]
-            // });
-          })
-          .catch(error => {
-            console.error('Error loading GeoJSON:', error);
-          });
+  // kandidáti podle toho, jak různé servery publikují "public"
+  const candidates = [
+    `${repoPrefix}public/okresy-brno.geojson`,
+    `${repoPrefix}okresy-brno.geojson`,
+    // navíc relativně k aktuální stránce (když je HTML v podsložce)
+    new URL('./public/okresy-brno.geojson', location.href).pathname,
+    new URL('./okresy-brno.geojson', location.href).pathname,
+    new URL('../public/okresy-brno.geojson', location.href).pathname,
+    new URL('../okresy-brno.geojson', location.href).pathname,
+  ].filter((v, i, a) => a.indexOf(v) === i); // dedup
+
+  let lastErr;
+  for (const u of candidates) {
+    try {
+      const url = u + `?v=${Date.now()}`; // bust cache při ladění
+      const res = await fetch(url, { cache: 'no-store' });
+      if (!res.ok) { console.warn('GeoJSON kandidát selhal:', u, res.status); continue; }
+      const data = await res.json();
+      console.log('GeoJSON načten z:', u);
+      return data;
+    } catch (e) {
+      lastErr = e;
+      console.warn('Chyba fetchu u kandidáta:', u, e);
+    }
+  }
+  throw lastErr || new Error('Nepodařilo se načíst žádnou z cest k GeoJSON.');
+}
+
+loadGeoJSON()
+  .then(data => {
+    geojsonLayer = L.geoJSON(data, { style, onEachFeature }).addTo(map);
+    // necháváš výhled na ČR => žádný fitBounds
+  })
+  .catch(err => console.error('Error loading GeoJSON:', err));
       }
     </script>
   </body>
