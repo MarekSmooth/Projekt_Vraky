@@ -28,7 +28,7 @@ body:not(.dark) {
   background-color: rgb(156, 163, 175); /* gray-450 equivalent */
 }
 
-/* Tmavé pozadí v dark mode odpovídající originálnímu obrázku */
+/* Čistě černé pozadí v dark mode odpovídající originálnímu obrázku */
 body.dark {
-  background-color: rgb(45, 48, 52); /* Tmavě šedá barva odpovídající pozadí obrázku */
+  background-color: #000000; /* Černá jako v originálním obrázku */
 }
