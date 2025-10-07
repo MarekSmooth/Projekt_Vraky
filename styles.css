@@ -1,4 +1,4 @@
-/* === Fixed background layer (nezávislé na délce stránky) === */
+/* === Fixed background layer === */
 .site-bg {
   position: fixed;
   inset: 0;
@@ -9,7 +9,7 @@
   transition: opacity 0.3s ease;
 }
 
-/* === Volitelný stmavovací / zesvětlující overlay === */
+/* Overlay */
 .site-bg-overlay {
   position: fixed;
   inset: 0;
@@ -18,35 +18,34 @@
   transition: background 0.3s ease;
 }
 
-/* === Minimum výšky pro body === */
-body {
-  min-height: 100vh;
-  transition: background-color 0.3s ease;
-}
+/* Základ */
+html, body { min-height: 100vh; transition: background-color 0.3s ease; }
 
-/* === LIGHT MODE === */
+/* === LIGHT MODE (žádná .dark třída na html ani body) === */
+html:not(.dark) body,
 body:not(.dark) {
-  background-color: rgb(209, 213, 219); /* světle šedé pozadí */
+  background-color: rgb(209,213,219); /* světle šedá */
 }
 
+html:not(.dark) .site-bg,
 body:not(.dark) .site-bg {
-  opacity: 0.25; /* zesvětlený obrázek */
+  opacity: 0.25; /* ztlum obrázek v light */
 }
 
+html:not(.dark) .site-bg-overlay,
 body:not(.dark) .site-bg-overlay {
-  background: rgba(255, 255, 255, 0.25); /* jemný bílý závoj */
+  background: rgba(255,255,255,0.25); /* jemné projasnění v light */
 }
 
-/* === DARK MODE === */
-body.dark {
-  background-color: #000000; /* čistá černá */
-}
+/* === DARK MODE (když je .dark na html NEBO na body) === */
+html.dark, body.dark { background-color: #000; } /* čistá černá */
 
+html.dark .site-bg,
 body.dark .site-bg {
   opacity: 1; /* plné barvy obrázku */
 }
 
+html.dark .site-bg-overlay,
 body.dark .site-bg-overlay {
-  background: rgba(0, 0, 0, 0); /* bez překryvu */
+  background: rgba(0,0,0,0); /* žádný závoj v dark */
 }
-
