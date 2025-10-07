@@ -27,3 +27,8 @@ body {
 body:not(.dark) {
   background-color: rgb(156, 163, 175); /* gray-450 equivalent */
 }
+
+/* Tmavé pozadí v dark mode odpovídající originálnímu obrázku */
+body.dark {
+  background-color: rgb(31, 35, 40); /* Barva pozadí z obrázku auta-pozadi.png */
+}
