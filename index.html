@@ -542,12 +542,19 @@
 
         // Load GeoJSON data from file
         fetch('/okresy-brno.geojson')
-          .then(response => response.json())
+          .then(response => {
+            if (!response.ok) {
+              throw new Error('Network response was not ok: ' + response.status);
+            }
+            return response.json();
+          })
           .then(data => {
+            console.log('GeoJSON loaded successfully, features:', data.features?.length);
             geojsonLayer = L.geoJSON(data, {
               style: style,
               onEachFeature: onEachFeature
             }).addTo(map);
+            console.log('GeoJSON layer added to map');
 
             // Don't auto-zoom to bounds, keep the initial Czech Republic view
             // map.fitBounds(geojsonLayer.getBounds(), {
@@ -556,6 +563,7 @@
           })
           .catch(error => {
             console.error('Error loading GeoJSON:', error);
+            alert('Chyba při načítání mapy: ' + error.message);
           });
       }
     </script>
