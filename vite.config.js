@@ -1,15 +1,22 @@
 import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { resolve } from 'path'
 
-// https://vite.dev/config/
 export default defineConfig({
-  plugins: [react()],
   base: '/Projects_Vraky/',
   build: {
     rollupOptions: {
       input: {
-        main: 'index.html',
+        main: resolve(__dirname, 'index.html'),
+        kontakt: resolve(__dirname, 'kontakt.html'),
+        onas: resolve(__dirname, 'onas.html'),
+        sluzby: resolve(__dirname, 'sluzby.html'),
+        gdpr: resolve(__dirname, 'gdpr.html'),
+        vop: resolve(__dirname, 'vop.html'),
+        cookies: resolve(__dirname, 'cookies.html'),
       }
     }
+  },
+  server: {
+    open: true
   }
 })

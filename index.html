@@ -2,104 +2,12 @@
 <html lang="cs">
   <head>
     <meta charset="UTF-8" />
+    <script>if(localStorage.getItem('theme')!=='light')document.documentElement.classList.add('dark')</script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vraky Brno – Odtah, výkup a likvidace vozidel</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-<script>
-  tailwind.config = {
-    darkMode: 'class',
-    theme: {
-      extend: {
-        fontFamily: {
-          inter: ['Inter', 'sans-serif']
-        },
-        colors: {
-          grayish: {
-            900: '#1a1a1a',
-            800: '#2e2f33',
-            700: '#3a3b3f',
-            600: '#4a4b4f'
-          }
-        }
-      }
-    },
-    safelist: [
-      'bg-grayish-900',
-      'bg-grayish-800',
-      'bg-grayish-700',
-      'bg-grayish-600',
-      'text-white',
-      'text-gray-300',
-      'dark:bg-grayish-900',
-      'dark:bg-grayish-800',
-      'dark:bg-grayish-700',
-      'dark:bg-grayish-600',
-      'dark:text-white',
-      'dark:text-gray-300'
-    ]
-  }
-</script>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-    <link rel="stylesheet" href="styles.css" />
-    <style>
-      body {
-        font-family: 'Inter', sans-serif;
-      }
-
-      .location-separator {
-        width: 1px;
-        background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.2), transparent);
-        height: 60%;
-      }
-      .location-separator::before {
-        content: '';
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 6px;
-        height: 6px;
-        background: rgba(255,255,255,0.3);
-        border-radius: 50%;
-      }
-      .location-graphic {
-        position: absolute;
-        right: 12px;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 40px;
-        height: 40px;
-        opacity: 0.6;
-      }
-      .location-graphic svg {
-        width: 100%;
-        height: 100%;
-      }
-      .theme-toggle {
-        transition: transform 0.3s ease;
-      }
-      .theme-toggle:hover {
-        transform: scale(1.1);
-      }
-      #map {
-        height: 500px;
-        width: 100%;
-        border-radius: 12px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      }
-      .map-container {
-        background: rgba(255, 255, 255, 0.9);
-        padding: 1.5rem;
-        border-radius: 16px;
-      }
-      .dark .map-container {
-        background: rgba(58, 59, 63, 0.9);
-      }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/src/styles/main.css" />
+    <script type="module" src="/src/scripts/main.js"></script>
   </head>
   <body class="bg-white text-gray-900 dark:bg-[#1a1a1a] dark:text-gray-300" data-bg="fixed">
     <div class="site-bg"></div>
@@ -109,14 +17,14 @@
     <nav class="relative overflow-visible bg-gradient-to-r from-black to-grayish-900 dark:from-black dark:to-grayish-900 bg-opacity-90 backdrop-blur shadow-md px-4 md:px-6 py-4 sticky top-0 z-50">
       <div class="flex justify-between items-center">
         <a href="index.html" class="absolute left-2 md:left-4 top-2 md:top-4 z-[60]">
-          <img src="public/Logo.png" alt="Logo" class="h-16 md:h-32 w-auto drop-shadow-lg pointer-events-none select-none md:-rotate-[15deg]">
+          <img src="/src/assets/images/Logo.png" alt="Logo" class="h-16 md:h-32 w-auto drop-shadow-lg pointer-events-none select-none md:-rotate-[15deg]">
         </a>
 
         <!-- Rezerva, aby se menu neposunulo do loga -->
         <div class="w-28 md:w-40"></div>
         
         <!-- Mobile menu button -->
-        <button onclick="toggleMobileMenu()" class="md:hidden p-2 rounded-lg bg-gray-700 hover:bg-gray-600 transition-colors">
+        <button data-mobile-menu-toggle class="md:hidden p-2 rounded-lg bg-gray-700 hover:bg-gray-600 transition-colors">
           <svg id="menu-icon" class="w-6 h-6 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
           </svg>
@@ -144,11 +52,11 @@
           </a>
           
           <!-- Theme Toggle Button -->
-          <button onclick="toggleTheme()" class="theme-toggle p-2 rounded-lg bg-gray-700 dark:bg-gray-600 hover:bg-gray-600 dark:hover:bg-gray-500 transition-colors">
-            <svg id="sun-icon" class="w-5 h-5 text-yellow-400 hidden" fill="currentColor" viewBox="0 0 20 20">
+          <button data-theme-toggle class="theme-toggle p-2 rounded-lg bg-gray-700 dark:bg-gray-600 hover:bg-gray-600 dark:hover:bg-gray-500 transition-colors">
+            <svg data-icon="sun" class="w-5 h-5 text-yellow-400 hidden" fill="currentColor" viewBox="0 0 20 20">
               <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"></path>
             </svg>
-            <svg id="moon-icon" class="w-5 h-5 text-gray-300" fill="currentColor" viewBox="0 0 20 20">
+            <svg data-icon="moon" class="w-5 h-5 text-gray-300" fill="currentColor" viewBox="0 0 20 20">
               <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
             </svg>
           </button>
@@ -172,11 +80,11 @@
           </a>
           
           <div class="flex items-center justify-between pt-4 border-t border-gray-700">
-            <button onclick="toggleTheme()" class="theme-toggle p-2 rounded-lg bg-gray-700 hover:bg-gray-600 transition-colors">
-              <svg id="sun-icon-mobile" class="w-5 h-5 text-yellow-400 hidden" fill="currentColor" viewBox="0 0 20 20">
+            <button data-theme-toggle class="theme-toggle p-2 rounded-lg bg-gray-700 hover:bg-gray-600 transition-colors">
+              <svg data-icon="sun" class="w-5 h-5 text-yellow-400 hidden" fill="currentColor" viewBox="0 0 20 20">
                 <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"></path>
               </svg>
-              <svg id="moon-icon-mobile" class="w-5 h-5 text-gray-300" fill="currentColor" viewBox="0 0 20 20">
+              <svg data-icon="moon" class="w-5 h-5 text-gray-300" fill="currentColor" viewBox="0 0 20 20">
                 <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
               </svg>
             </button>
@@ -223,7 +131,7 @@
           <div class="flex flex-col md:flex-row gap-0 bg-gradient-to-r from-green-600 via-green-700 to-green-600 dark:from-green-800 dark:via-green-900 dark:to-green-800 p-1 rounded-xl md:rounded-2xl">
             
             <!-- BRNO -->
-            <button onclick="selectLocation('brno')" id="btn-brno" class="location-btn bg-transparent text-white p-2 md:p-3 rounded-t-xl md:rounded-l-2xl md:rounded-t-none w-full md:w-1/4 text-left hover:bg-black/20 transition-all duration-300 relative">
+            <button data-location="brno" class="location-btn bg-transparent text-white p-2 md:p-3 rounded-t-xl md:rounded-l-2xl md:rounded-t-none w-full md:w-1/4 text-left hover:bg-black/20 transition-all duration-300 relative">
               <div class="flex flex-col gap-1">
                 <div class="text-base md:text-lg font-bold">Brno a okolí</div>
               </div>
@@ -243,7 +151,7 @@
             </div>
 
             <!-- BŘECLAV -->
-            <a href="https://www.autovraky-breclav.cz/" target="_blank" onclick="selectLocation('breclav')" id="btn-breclav" class="location-btn bg-transparent text-white p-2 md:p-3 w-full md:w-1/4 text-left hover:bg-black/20 transition-all duration-300 relative block">
+            <a href="https://www.autovraky-breclav.cz/" target="_blank" data-location="breclav" class="location-btn bg-transparent text-white p-2 md:p-3 w-full md:w-1/4 text-left hover:bg-black/20 transition-all duration-300 relative block">
               <div class="flex flex-col gap-1">
                 <div class="text-base md:text-lg font-bold">Břeclav</div>
               </div>
@@ -263,7 +171,7 @@
             </div>
 
             <!-- VYŠKOV -->
-            <a href="https://www.autovraky-vyskov.cz/" target="_blank" onclick="selectLocation('vyskov')" id="btn-vyskov" class="location-btn bg-transparent text-white p-2 md:p-3 w-full md:w-1/4 text-left hover:bg-black/20 transition-all duration-300 relative block">
+            <a href="https://www.autovraky-vyskov.cz/" target="_blank" data-location="vyskov" class="location-btn bg-transparent text-white p-2 md:p-3 w-full md:w-1/4 text-left hover:bg-black/20 transition-all duration-300 relative block">
               <div class="flex flex-col gap-1">
                 <div class="text-base md:text-lg font-bold">Vyškov</div>
               </div>
@@ -283,7 +191,7 @@
             </div>
 
             <!-- BLANSKO -->
-            <a href="https://autovraky-blansko.cz/" target="_blank" onclick="selectLocation('blansko')" id="btn-blansko" class="location-btn bg-transparent text-white p-2 md:p-3 rounded-b-xl md:rounded-r-2xl md:rounded-b-none w-full md:w-1/4 text-left hover:bg-black/20 transition-all duration-300 relative block">
+            <a href="https://autovraky-blansko.cz/" target="_blank" data-location="blansko" class="location-btn bg-transparent text-white p-2 md:p-3 rounded-b-xl md:rounded-r-2xl md:rounded-b-none w-full md:w-1/4 text-left hover:bg-black/20 transition-all duration-300 relative block">
               <div class="flex flex-col gap-1">
                 <div class="text-base md:text-lg font-bold">Blansko</div>
               </div>
@@ -307,26 +215,26 @@
           <h2 class="text-lg md:text-4xl font-bold text-center mb-6 md:mb-8 text-green-400 dark:text-green-400 px-4">Jak to u nás funguje</h2>
           <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
             <div class="bg-gray-100 dark:bg-grayish-800 p-3 md:p-4 rounded-xl hover:transform hover:scale-105 transition-transform text-center">
-              <img src="img/Zavolate.png" class="mx-auto mb-3 md:mb-4 h-16 md:h-20" alt="Zavolejte ikona" />
+              <img src="/src/assets/images/icons/Zavolate.png" class="mx-auto mb-3 md:mb-4 h-16 md:h-20" alt="Zavolejte ikona" />
               <h3 class="text-base md:text-lg font-semibold mb-2 text-green-600 dark:text-green-300">Vy nám zavoláte</h3>
               <p class="text-sm md:text-base text-gray-600 dark:text-gray-400">Po zavolání na naše telefonní číslo si domluvíte termín (den, přibližnou hodinu) odvozu vašeho vraku, výši výkupní ceny vozidla (vyplacení probíhá v hotovosti při příjmu vozidla). Dále je potřeba se dohodnout na způsobu vyřízení kompletní služby v podobě ekologické likvidace a zániku vozidla, nebo pouze vystavení likvidačního protokolu.</p>
             </div>
             <div class="bg-gray-100 dark:bg-grayish-800 p-3 md:p-4 rounded-xl hover:transform hover:scale-105 transition-transform text-center">
-              <img src="img/postaramese.png" class="mx-auto mb-3 md:mb-4 h-16 md:h-20" alt="Odtah ikona" />
+              <img src="/src/assets/images/icons/postaramese.png" class="mx-auto mb-3 md:mb-4 h-16 md:h-20" alt="Odtah ikona" />
               <h3 class="text-base md:text-lg font-semibold mb-2 text-green-600 dark:text-green-300">My se postaráme</h3>
               <p class="text-sm md:text-base text-gray-600 dark:text-gray-400">Ve smluvený čas si pro váš autovrak přijedeme s naším odtahovým vozidlem, vozidlo si naložíme, vyplatíme výkupní cenu, vyřídíme doklady spojené s likvidací (podpis předávacích protokolů pro likvidaci vozidla, příp. plné moci k vyřízení zániku vozidla) a vozidlo následně odvezeme na ekologickou likvidaci.</p>
             </div>
             <div class="bg-gray-100 dark:bg-grayish-800 p-3 md:p-4 rounded-xl hover:transform hover:scale-105 transition-transform text-center sm:col-span-2 lg:col-span-1">
-              <img src="img/Certifikat.png" class="mx-auto mb-3 md:mb-4 h-16 md:h-20" alt="Certifikat ikona" />
+              <img src="/src/assets/images/icons/Certifikat.png" class="mx-auto mb-3 md:mb-4 h-16 md:h-20" alt="Certifikat ikona" />
               <h3 class="text-base md:text-lg font-semibold mb-2 text-green-600 dark:text-green-300">Příprava požadovaných dokumentů</h3>
-              <p class="text-sm md:text-base text-gray-600 dark:text-gray-400">Při přejímání vozidla, určeného k likvidaci je nutno předložit Velký technický průkaz, popř. osvědčení o registraci vozidla a doklad totožnosti v     případě předávání vozidla jeho vlastníkem. V případě předávání vozidla jinou osobou, než je jeho vlastník je nutno předložit plnou moc od vlastníka vozidla (nemusí být s ověřeným podpisem). Vzor plné moci je ke stažení <a      href="public/plnamoc.pdf" class="text-green-700 dark:text-green-500 underline" target="_blank">zde</a>.</p>
+              <p class="text-sm md:text-base text-gray-600 dark:text-gray-400">Při přejímání vozidla, určeného k likvidaci je nutno předložit Velký technický průkaz, popř. osvědčení o registraci vozidla a doklad totožnosti v     případě předávání vozidla jeho vlastníkem. V případě předávání vozidla jinou osobou, než je jeho vlastník je nutno předložit plnou moc od vlastníka vozidla (nemusí být s ověřeným podpisem). Vzor plné moci je ke stažení <a      href="/src/assets/files/plnamoc.pdf" class="text-green-700 dark:text-green-500 underline" target="_blank">zde</a>.</p>
             </div>
           </div>
           
           <!-- Full width "A je to hotové" box -->
           <div class="mt-6 md:mt-8 bg-gray-100 dark:bg-grayish-800 p-4 md:p-6 rounded-xl hover:transform hover:scale-105 transition-transform">
             <div class="flex flex-col md:flex-row items-center gap-4 md:gap-8">
-              <img src="img/Hotovo.png" class="h-20 md:h-24 w-24 md:w-32 flex-shrink-0" alt="Hotovo ikona" />
+              <img src="/src/assets/images/icons/Hotovo.png" class="h-20 md:h-24 w-24 md:w-32 flex-shrink-0" alt="Hotovo ikona" />
               <div class="flex-1 text-center md:text-left md:ml-4">
                 <h3 class="text-base md:text-lg font-semibold mb-2 text-green-600 dark:text-green-300">A je to hotové</h3>
                 <p class="text-sm md:text-base text-gray-600 dark:text-gray-400">Po odvezení vozidla od nás obdržíte ve smluvený termín doklad o ekologické likvidaci vozidla (potvrzení o převzetí vozidla s ukončenou životností do zařízení určeném k jejich sběru) příp. protokol o zániku vozidla v registru silničních vozidel. Tímto je celý proces z naší strany u konce a na vás už je pouze vyřídit ukončení zákonného pojištění vozidla (povinného ručení). Přenechte likvidací vašeho vozidla profesionálům a mějte o starost v podobě vraku méně a o peníze v kapse více...A to se vyplatí, co říkáte? <a href="sluzby.html" class="text-green-700 dark:text-green-500 underline">Zjistit více</a>.</p>
@@ -353,7 +261,7 @@
             <div class="grid sm:grid-cols-2 gap-6 md:gap-8 mb-6 md:mb-8 max-w-4xl mx-auto">
                 <div>
                     <h4 class="text-lg font-semibold text-green-600 dark:text-green-800 mb-4 text-center">Kontaktní údaje</h4>
-                    <p class="text-xs md:text-sm text-center"><span id="footer-addess">U Hřiště 290, 664 61 Opatovice</span></p>
+                    <p class="text-xs md:text-sm text-center"><span id="footer-address">U Hřiště 290, 664 61 Opatovice</span></p>
                     <p class="text-xs md:text-sm text-center"><span id="footer-phone">+420 731 071 218</span></p>
                     <p class="text-xs md:text-sm text-center"><span id="footer-email">info@vraky-brno.cz</span></p>
                 </div>
@@ -378,209 +286,5 @@
             </div>
         </div>
     </footer>
-    
-    <script>
-      function toggleMobileMenu() {
-        const mobileMenu = document.getElementById('mobile-menu');
-        const menuIcon = document.getElementById('menu-icon');
-        const closeIcon = document.getElementById('close-icon');
-        
-        if (mobileMenu.classList.contains('hidden')) {
-          mobileMenu.classList.remove('hidden');
-          menuIcon.classList.add('hidden');
-          closeIcon.classList.remove('hidden');
-        } else {
-          mobileMenu.classList.add('hidden');
-          menuIcon.classList.remove('hidden');
-          closeIcon.classList.add('hidden');
-        }
-      }
-
-      function updateThemeIcons() {
-        const sunIcon = document.getElementById('sun-icon');
-        const moonIcon = document.getElementById('moon-icon');
-        const sunIconMobile = document.getElementById('sun-icon-mobile');
-        const moonIconMobile = document.getElementById('moon-icon-mobile');
-        const isDark = document.documentElement.classList.contains('dark');
-        
-        if (isDark) {
-          sunIcon.classList.remove('hidden');
-          moonIcon.classList.add('hidden');
-          sunIconMobile.classList.remove('hidden');
-          moonIconMobile.classList.add('hidden');
-        } else {
-          sunIcon.classList.add('hidden');
-          moonIcon.classList.remove('hidden');
-          sunIconMobile.classList.add('hidden');
-          moonIconMobile.classList.remove('hidden');
-        }
-      }
-
-      const locations = {
-        brno: {
-          address: "U Hřiště 290, 664 61 Opatovice",
-          phone: "+420 731 071 218",
-          email: "info@vraky-brno.cz"
-        },
-        breclav: {
-          address: "Průmyslová 567, 690 02 Břeclav",
-          phone: "+420 234 567 890",
-          email: "breclav@vrakoviste.cz"
-        },
-        vyskov: {
-          address: "Nádražní 890, 682 01 Vyškov",
-          phone: "+420 345 678 901",
-          email: "vyskov@vrakoviste.cz"
-        },
-        blansko: {
-          address: "Tovární 123, 678 01 Blansko",
-          phone: "+420 456 789 012",
-          email: "blansko@vrakoviste.cz"
-        }
-      };
-
-      function selectLocation(location) {
-        // Update footer information
-        document.getElementById('footer-phone').textContent = locations[location].phone;
-        document.getElementById('footer-email').textContent = locations[location].email;
-
-        // Update button styles
-        document.querySelectorAll('.location-btn').forEach(btn => {
-          btn.classList.remove('ring-2', 'ring-gray-600', 'ring-offset-2', 'bg-black/20');
-        });
-
-        document.getElementById(`btn-${location}`).classList.add('ring-2', 'ring-gray-600', 'ring-offset-2', 'bg-black/20');
-      }
-
-      function toggleTheme() {
-        const html = document.documentElement;
-        
-        if (html.classList.contains('dark')) {
-          html.classList.remove('dark');
-          localStorage.setItem('theme', 'light');
-        } else {
-          html.classList.add('dark');
-          localStorage.setItem('theme', 'dark');
-        }
-        updateThemeIcons();
-      }
-
-      // Set Brno as default on page load
-      document.addEventListener('DOMContentLoaded', function() {
-        selectLocation('brno');
-
-        // Check for saved theme preference or default to dark
-        const savedTheme = localStorage.getItem('theme') || 'dark';
-        const html = document.documentElement;
-
-        if (savedTheme === 'dark') {
-          html.classList.add('dark');
-        } else {
-          html.classList.remove('dark');
-        }
-        updateThemeIcons();
-
-        // Initialize map
-        initMap();
-      });
-    </script>
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    <script>
-      function initMap() {
-        // Initialize map centered on Brno area with different zoom for mobile
-        const isMobile = window.innerWidth < 768;
-        const center = isMobile ? [49.2, 16.6] : [49.4, 17.2];
-        const map = L.map('map').setView(center, 8);
-
-        // Add OpenStreetMap tiles
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-          attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        }).addTo(map);
-
-        // Declare geojsonLayer in outer scope
-        let geojsonLayer;
-
-        // Style function for districts
-        function style(feature) {
-          return {
-            fillColor: 'transparent',
-            weight: 3,
-            opacity: 1,
-            color: '#15803d',
-            fillOpacity: 0
-          };
-        }
-
-        // Highlight feature on hover
-        function highlightFeature(e) {
-          const layer = e.target;
-          layer.setStyle({
-            weight: 4,
-            color: '#16a34a',
-            fillOpacity: 0
-          });
-          layer.bringToFront();
-        }
-
-        // Reset highlight
-        function resetHighlight(e) {
-          geojsonLayer.resetStyle(e.target);
-        }
-
-        // Add popup on click
-        function onEachFeature(feature, layer) {
-          layer.on({
-            mouseover: highlightFeature,
-            mouseout: resetHighlight
-          });
-
-          if (feature.properties.name) {
-            layer.bindPopup('<b>' + feature.properties.name + '</b><br>' +
-              (feature.properties.covered ? 'Poskytujeme služby' : 'Neposkytujeme služby'));
-          }
-        }
-
-        async function loadGeoJSON() {
-  // prefix pro GitHub Pages (repo název jako první segment cesty)
-  const repoPrefix = location.hostname.endsWith('github.io')
-    ? `/${location.pathname.split('/').filter(Boolean)[0]}/`
-    : '/';
-
-  // kandidáti podle toho, jak různé servery publikují "public"
-  const candidates = [
-    `${repoPrefix}public/okresy-brno.geojson`,
-    `${repoPrefix}okresy-brno.geojson`,
-    // navíc relativně k aktuální stránce (když je HTML v podsložce)
-    new URL('./public/okresy-brno.geojson', location.href).pathname,
-    new URL('./okresy-brno.geojson', location.href).pathname,
-    new URL('../public/okresy-brno.geojson', location.href).pathname,
-    new URL('../okresy-brno.geojson', location.href).pathname,
-  ].filter((v, i, a) => a.indexOf(v) === i); // dedup
-
-  let lastErr;
-  for (const u of candidates) {
-    try {
-      const url = u + `?v=${Date.now()}`; // bust cache při ladění
-      const res = await fetch(url, { cache: 'no-store' });
-      if (!res.ok) { console.warn('GeoJSON kandidát selhal:', u, res.status); continue; }
-      const data = await res.json();
-      console.log('GeoJSON načten z:', u);
-      return data;
-    } catch (e) {
-      lastErr = e;
-      console.warn('Chyba fetchu u kandidáta:', u, e);
-    }
-  }
-  throw lastErr || new Error('Nepodařilo se načíst žádnou z cest k GeoJSON.');
-}
-
-loadGeoJSON()
-  .then(data => {
-    geojsonLayer = L.geoJSON(data, { style, onEachFeature }).addTo(map);
-    // necháváš výhled na ČR => žádný fitBounds
-  })
-  .catch(err => console.error('Error loading GeoJSON:', err));
-      }
-    </script>
   </body>
 </html>

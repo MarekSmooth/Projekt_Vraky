@@ -1,0 +1,105 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* === Fixed background layer === */
+.site-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: center center / cover no-repeat;
+  background-image: url("../assets/images/backgrounds/auta-pozadi.png");
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.dark .site-bg {
+  opacity: 1.0;
+  filter: brightness(0.75) contrast(1.1);
+}
+
+/* Optional overlay for text readability */
+.site-bg-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: rgba(0, 0, 0, 0.0);
+  pointer-events: none;
+}
+
+/* Ensure minimum body height */
+body {
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Light mode background */
+body:not(.dark) {
+  background-color: rgb(156, 163, 175);
+}
+
+/* Dark mode background */
+body.dark {
+  background-color: #000000;
+}
+
+/* Location selector styles */
+.location-separator {
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.2), transparent);
+  height: 60%;
+}
+
+.location-separator::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 6px;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+}
+
+.location-graphic {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  opacity: 0.6;
+}
+
+.location-graphic svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Theme toggle animation */
+.theme-toggle {
+  transition: transform 0.3s ease;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1);
+}
+
+/* Map container styles */
+#map {
+  height: 500px;
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.map-container {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 1.5rem;
+  border-radius: 16px;
+}
+
+.dark .map-container {
+  background: rgba(58, 59, 63, 0.9);
+}

@@ -2,88 +2,12 @@
 <html lang="cs">
   <head>
     <meta charset="UTF-8" />
+    <script>if(localStorage.getItem('theme')!=='light')document.documentElement.classList.add('dark')</script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>O nás – Vraky Brno – Odtah, výkup a likvidace vozidel</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-<script>
-  tailwind.config = {
-    darkMode: 'class',
-    theme: {
-      extend: {
-        fontFamily: {
-          inter: ['Inter', 'sans-serif']
-        },
-        colors: {
-          grayish: {
-            900: '#1a1a1a',
-            800: '#2e2f33',
-            700: '#3a3b3f',
-            600: '#4a4b4f'
-          }
-        }
-      }
-    },
-    safelist: [
-      'bg-grayish-900',
-      'bg-grayish-800',
-      'bg-grayish-700',
-      'bg-grayish-600',
-      'text-white',
-      'text-gray-300',
-      'dark:bg-grayish-900',
-      'dark:bg-grayish-800',
-      'dark:bg-grayish-700',
-      'dark:bg-grayish-600',
-      'dark:text-white',
-      'dark:text-gray-300'
-    ]
-  }
-</script>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles.css" />
-    <style>
-  body {
-    font-family: 'Inter', sans-serif;
-  }
-  .location-separator {
-    width: 1px;
-    background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.2), transparent);
-    height: 60%;
-  }
-  .location-separator::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 6px;
-    height: 6px;
-    background: rgba(255,255,255,0.3);
-    border-radius: 50%;
-  }
-  .location-graphic {
-    position: absolute;
-    right: 12px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 40px;
-    height: 40px;
-    opacity: 0.6;
-  }
-  .location-graphic svg {
-    width: 100%;
-    height: 100%;
-  }
-  .theme-toggle {
-    transition: transform 0.3s ease;
-  }
-  .theme-toggle:hover {
-    transform: scale(1.1);
-  }
-</style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/src/styles/main.css" />
+    <script type="module" src="/src/scripts/main.js"></script>
   </head>
   <body class="bg-white text-gray-900 dark:bg-[#1a1a1a] dark:text-gray-300" data-bg="fixed">
     <div class="site-bg"></div>
@@ -92,14 +16,14 @@
     <nav class="relative overflow-visible bg-gradient-to-r from-black to-grayish-900 dark:from-black dark:to-grayish-900 bg-opacity-90 backdrop-blur shadow-md px-4 md:px-6 py-4 sticky top-0 z-50">
       <div class="flex justify-between items-center">
         <a href="index.html" class="absolute left-2 md:left-4 top-2 md:top-4 z-[60]">
-          <img src="public/Logo.png" alt="Vraky Brno Logo" class="h-16 md:h-32 w-auto drop-shadow-lg pointer-events-none select-none md:-rotate-[15deg]">
+          <img src="/src/assets/images/Logo.png" alt="Vraky Brno Logo" class="h-16 md:h-32 w-auto drop-shadow-lg pointer-events-none select-none md:-rotate-[15deg]">
         </a>
 
         <!-- Rezerva, aby se menu neposunulo do loga -->
         <div class="w-28 md:w-40"></div>
         
         <!-- Mobile menu button -->
-        <button onclick="toggleMobileMenu()" class="md:hidden p-2 rounded-lg bg-gray-700 hover:bg-gray-600 transition-colors">
+        <button data-mobile-menu-toggle class="md:hidden p-2 rounded-lg bg-gray-700 hover:bg-gray-600 transition-colors">
           <svg id="menu-icon" class="w-6 h-6 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
           </svg>
@@ -127,11 +51,11 @@
           </a>
           
           <!-- Theme Toggle Button -->
-          <button onclick="toggleTheme()" class="theme-toggle p-2 rounded-lg bg-gray-700 dark:bg-gray-600 hover:bg-gray-600 dark:hover:bg-gray-500 transition-colors">
-            <svg id="sun-icon" class="w-5 h-5 text-yellow-400 hidden" fill="currentColor" viewBox="0 0 20 20">
+          <button data-theme-toggle class="theme-toggle p-2 rounded-lg bg-gray-700 dark:bg-gray-600 hover:bg-gray-600 dark:hover:bg-gray-500 transition-colors">
+            <svg data-icon="sun" class="w-5 h-5 text-yellow-400 hidden" fill="currentColor" viewBox="0 0 20 20">
               <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"></path>
             </svg>
-            <svg id="moon-icon" class="w-5 h-5 text-gray-300" fill="currentColor" viewBox="0 0 20 20">
+            <svg data-icon="moon" class="w-5 h-5 text-gray-300" fill="currentColor" viewBox="0 0 20 20">
               <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
             </svg>
           </button>
@@ -155,7 +79,7 @@
           </a>
           
           <div class="flex items-center justify-between pt-4 border-t border-gray-700">
-            <button onclick="toggleTheme()" class="theme-toggle p-2 rounded-lg bg-gray-700 hover:bg-gray-600 transition-colors">
+            <button data-theme-toggle class="theme-toggle p-2 rounded-lg bg-gray-700 hover:bg-gray-600 transition-colors">
               <svg id="sun-icon-mobile" class="w-5 h-5 text-yellow-400 hidden" fill="currentColor" viewBox="0 0 20 20">
                 <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"></path>
               </svg>
@@ -251,102 +175,5 @@
         </div>
       </div>
     </footer>
-
-    <script>
-      function toggleMobileMenu() {
-        const mobileMenu = document.getElementById('mobile-menu');
-        const menuIcon = document.getElementById('menu-icon');
-        const closeIcon = document.getElementById('close-icon');
-        
-        if (mobileMenu.classList.contains('hidden')) {
-          mobileMenu.classList.remove('hidden');
-          menuIcon.classList.add('hidden');
-          closeIcon.classList.remove('hidden');
-        } else {
-          mobileMenu.classList.add('hidden');
-          menuIcon.classList.remove('hidden');
-          closeIcon.classList.add('hidden');
-        }
-      }
-
-      function updateThemeIcons() {
-        const sunIcon = document.getElementById('sun-icon');
-        const moonIcon = document.getElementById('moon-icon');
-        const sunIconMobile = document.getElementById('sun-icon-mobile');
-        const moonIconMobile = document.getElementById('moon-icon-mobile');
-        const isDark = document.documentElement.classList.contains('dark');
-        
-        if (isDark) {
-          sunIcon.classList.remove('hidden');
-          moonIcon.classList.add('hidden');
-          sunIconMobile.classList.remove('hidden');
-          moonIconMobile.classList.add('hidden');
-        } else {
-          sunIcon.classList.add('hidden');
-          moonIcon.classList.remove('hidden');
-          sunIconMobile.classList.add('hidden');
-          moonIconMobile.classList.remove('hidden');
-        }
-      }
-
-      function toggleTheme() {
-        const html = document.documentElement;
-        
-        if (html.classList.contains('dark')) {
-          html.classList.remove('dark');
-          localStorage.setItem('theme', 'light');
-        } else {
-          html.classList.add('dark');
-          localStorage.setItem('theme', 'dark');
-        }
-        updateThemeIcons();
-      }
-
-      // Check for saved theme preference or default to dark
-      document.addEventListener('DOMContentLoaded', function() {
-        selectLocation('brno');
-        
-        // Check for saved theme preference or default to dark
-        const savedTheme = localStorage.getItem('theme') || 'dark';
-        const html = document.documentElement;
-        
-        if (savedTheme === 'dark') {
-          html.classList.add('dark');
-        } else {
-          html.classList.remove('dark');
-        }
-        updateThemeIcons();
-      });
-
-      const locations = {
-        brno: {
-          address: "U Hřiště 290, 664 61 Opatovice",
-          phone: "+420 731 071 218",
-          email: "info@vraky-brno.cz"
-        },
-        breclav: {
-          address: "Průmyslová 567, 690 02 Břeclav",
-          phone: "+420 234 567 890",
-          email: "breclav@vrakoviste.cz"
-        },
-        vyskov: {
-          address: "Nádražní 890, 682 01 Vyškov",
-          phone: "+420 345 678 901",
-          email: "vyskov@vrakoviste.cz"
-        },
-        blansko: {
-          address: "Tovární 123, 678 01 Blansko",
-          phone: "+420 456 789 012",
-          email: "blansko@vrakoviste.cz"
-        }
-      };
-
-      function selectLocation(location) {
-        // Update footer information
-        document.getElementById('footer-phone').textContent = locations[location].phone;
-        document.getElementById('footer-email').textContent = locations[location].email;
-        document.getElementById('footer-addess').textContent = locations[location].address;
-      }
-    </script>
   </body>
 </html>
