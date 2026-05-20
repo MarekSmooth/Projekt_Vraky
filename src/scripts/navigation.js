@@ -67,3 +67,15 @@ function updateThemeIcons() {
     isDark ? icon.classList.add('hidden') : icon.classList.remove('hidden');
   });
 }
+
+// Highlight the current page link in the navigation
+export function initActiveNav() {
+  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  document.querySelectorAll('nav a[href]').forEach(link => {
+    const linkPage = link.getAttribute('href').split('/').pop().split('?')[0];
+    if (linkPage === currentPage) {
+      link.classList.add('text-green-400', 'font-semibold');
+      link.classList.remove('text-gray-300');
+    }
+  });
+}

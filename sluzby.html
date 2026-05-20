@@ -1,10 +1,19 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="cs">
   <head>
     <meta charset="UTF-8" />
     <script>if(localStorage.getItem('theme')!=='light')document.documentElement.classList.add('dark')</script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Služby – Vraky Brno – Odtah, výkup a likvidace vozidel</title>
+    <meta name="description" content="Odtah vozidel, výkup vraků za hotovost, ekologická likvidace a vyřízení veškeré dokumentace. Působíme po celém Jihomoravském kraji. Bezplatný příjezd." />
+    <meta name="keywords" content="odtah vozidel brno, výkup vraků brno, ekologická likvidace aut, likvidace vozidel jihomoravský kraj, výkup aut za hotovost" />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Služby – Vraky Brno" />
+    <meta property="og:description" content="Odtah vozidel, výkup vraků za hotovost, ekologická likvidace a vyřízení dokumentace po celém Jihomoravském kraji." />
+    <meta property="og:url" content="https://vraky-brno.cz/sluzby.html" />
+    <meta property="og:image" content="https://vraky-brno.cz/og-image.webp" />
+    <link rel="canonical" href="https://vraky-brno.cz/sluzby.html" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="/src/styles/main.css" />
     <script type="module" src="/src/scripts/main.js"></script>
@@ -80,10 +89,10 @@
           
           <div class="flex items-center justify-between pt-4 border-t border-gray-700">
             <button data-theme-toggle class="theme-toggle p-2 rounded-lg bg-gray-700 hover:bg-gray-600 transition-colors">
-              <svg id="sun-icon-mobile" class="w-5 h-5 text-yellow-400 hidden" fill="currentColor" viewBox="0 0 20 20">
+              <svg data-icon="sun" class="w-5 h-5 text-yellow-400 hidden" fill="currentColor" viewBox="0 0 20 20">
                 <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"></path>
               </svg>
-              <svg id="moon-icon-mobile" class="w-5 h-5 text-gray-300" fill="currentColor" viewBox="0 0 20 20">
+              <svg data-icon="moon" class="w-5 h-5 text-gray-300" fill="currentColor" viewBox="0 0 20 20">
                 <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
               </svg>
             </button>
@@ -105,7 +114,7 @@
   <div class="bg-gray-300 dark:bg-grayish-800 p-4 md:p-6 rounded-xl hover:transform hover:scale-105 transition-transform">
     <div class="flex flex-col md:flex-row items-center md:items-start gap-4 md:gap-6">
       <div class="w-20 md:w-24 flex justify-center flex-shrink-0">
-        <img src="/src/assets/images/icons/Okoli.webp" alt="Okolí ikona" class="h-20 md:h-24" loading="lazy">
+        <img src="/src/assets/images/icons/Okoli.webp" alt="Okolí ikona" width="96" height="96" class="h-20 md:h-24" loading="lazy">
       </div>
       <div class="flex-1">
         <h2 class="text-lg md:text-xl font-semibold text-green-600 dark:text-green-300 mb-2 text-center md:text-left">Lokální pokrytí</h2>
@@ -122,7 +131,7 @@
         <p class="text-sm md:text-base text-gray-700 dark:text-gray-300 text-center md:text-left">Vozidlo naložíme a odtáhneme ve smluvený čas na smluveném místě – zcela ZDARMA.</p>
       </div>
       <div class="w-20 md:w-24 flex justify-center flex-shrink-0 order-first md:order-last">
-        <img src="/src/assets/images/icons/Odtah.webp" alt="Odtah ikona" class="h-20 md:h-24" loading="lazy">
+        <img src="/src/assets/images/icons/Odtah.webp" alt="Odtah ikona" width="96" height="96" class="h-20 md:h-24" loading="lazy">
       </div>
     </div>
   </div>
@@ -131,7 +140,7 @@
   <div class="bg-gray-300 dark:bg-grayish-800 p-4 md:p-6 rounded-xl hover:transform hover:scale-105 transition-transform">
     <div class="flex flex-col md:flex-row items-center md:items-start gap-4 md:gap-6">
       <div class="w-20 md:w-24 flex justify-center flex-shrink-0">
-        <img src="/src/assets/images/icons/Vyplata.webp" alt="Vyplata ikona" class="h-20 md:h-24" loading="lazy">
+        <img src="/src/assets/images/icons/Vyplata.webp" alt="Vyplata ikona" width="96" height="96" class="h-20 md:h-24" loading="lazy">
       </div>
       <div class="flex-1">
         <h2 class="text-lg md:text-xl font-semibold text-green-600 dark:text-green-300 mb-2 text-center md:text-left">Férové výkupní ceny</h2>
@@ -148,7 +157,7 @@
         <p class="text-sm md:text-base text-gray-700 dark:text-gray-300 text-center md:text-left">Zajištujeme šetrnou ekologickou likvidaci autovraků podle platného zákona 185/2001 Sb. o nebezpečných odpadech. Tento zákon ukládá majitelům vozidel s ukončenou životností tyto vozidla řádně předat k ekologické likvidaci do zařízení k tomu určeným. Současná legislativa zároveň neumožnuje (vyjma krádeže vozidla) provedení zániku vozidla v registru silničních vozidel na základě jiného důvodu než řádné ekologické likvidace vozidla.</p>
       </div>
       <div class="w-20 md:w-24 flex justify-center flex-shrink-0 order-first md:order-last">
-        <img src="/src/assets/images/icons/Ekologicka.webp" alt="Eko ikona" class="h-20 md:h-24" loading="lazy">
+        <img src="/src/assets/images/icons/Ekologicka.webp" alt="Eko ikona" width="96" height="96" class="h-20 md:h-24" loading="lazy">
       </div>
     </div>
   </div>
@@ -157,7 +166,7 @@
   <div class="bg-gray-300 dark:bg-grayish-800 p-4 md:p-6 rounded-xl hover:transform hover:scale-105 transition-transform">
     <div class="flex flex-col md:flex-row items-center md:items-start gap-4 md:gap-6">
       <div class="w-20 md:w-24 flex justify-center flex-shrink-0">
-        <img src="/src/assets/images/icons/Flexibilita.webp" alt="Cas ikona" class="h-20 md:h-24" loading="lazy">
+        <img src="/src/assets/images/icons/Flexibilita.webp" alt="Cas ikona" width="96" height="96" class="h-20 md:h-24" loading="lazy">
       </div>
       <div class="flex-1">
         <h2 class="text-lg md:text-xl font-semibold text-green-600 dark:text-green-300 mb-2 text-center md:text-left">Časová flexibilita</h2>
@@ -174,7 +183,7 @@
         <p class="text-sm md:text-base text-gray-700 dark:text-gray-300 text-center md:text-left">Garantujeme zajištění kompletní služby Ekologické likvidace vozidla od jeho odtahu, přes samotnou likvidaci, až po vyřízení zániku vozidla v registru silničních vozidel a předání všech dokumentů.</p>
       </div>
       <div class="w-20 md:w-24 flex justify-center flex-shrink-0 order-first md:order-last">
-        <img src="/src/assets/images/icons/Komplet.webp" alt="Komplet ikona" class="h-20 md:h-24" loading="lazy">
+        <img src="/src/assets/images/icons/Komplet.webp" alt="Komplet ikona" width="96" height="96" class="h-20 md:h-24" loading="lazy">
       </div>
     </div>
   </div>
@@ -184,33 +193,34 @@
     </section>
 
     <!-- Footer - Always Dark -->
-    <footer class="bg-grayish-800 dark:bg-grayish-900 text-gray-400 py-8">
+    <footer class="bg-grayish-800 dark:bg-grayish-900 text-gray-400 py-5">
       <div class="max-w-6xl mx-auto px-6">
-        <div class="grid md:grid-cols-2 gap-8 mb-8 max-w-4xl mx-auto">
+        <div class="grid md:grid-cols-3 gap-4 mb-3">
           <div>
-            <h4 class="text-lg font-semibold text-green-600 dark:text-green-800 mb-4 text-center">Kontaktní údaje</h4>
-            <p class="text-sm text-center"><span id="footer-addess">U Hřiště 290, 664 61 Opatovice</span></p>
+            <h4 class="text-lg font-semibold text-green-600 dark:text-green-800 mb-1 text-center">Kontaktní údaje</h4>
+            <p class="text-sm text-center"><span id="footer-address">U Hřiště 290, 664 61 Opatovice</span></p>
             <p class="text-sm text-center"><span id="footer-phone">+420 731 071 218</span></p>
             <p class="text-sm text-center"><span id="footer-email">info@vraky-brno.cz</span></p>
           </div>
           <div>
-            <h4 class="text-lg font-semibold text-green-600 dark:text-green-800 mb-4 text-center">Provozní doba</h4>
+            <h4 class="text-lg font-semibold text-green-600 dark:text-green-800 mb-1 text-center">Provozní doba</h4>
             <p class="text-sm text-center">Po-Pá: 8:00 - 18:00</p>
             <p class="text-sm text-center">So: 9:00 - 14:00</p>
             <p class="text-sm text-center">Ne: Zavřeno</p>
           </div>
+          <div>
+            <h4 class="text-lg font-semibold text-green-600 dark:text-green-800 mb-1 text-center">Dokumenty</h4>
+            <div class="flex flex-col text-sm text-center">
+              <a href="gdpr.html" class="hover:underline text-gray-400 hover:text-white">Zásady zpracování osobních údajů</a>
+              <a href="vop.html" class="hover:underline text-gray-400 hover:text-white">Obchodní podmínky</a>
+              <a href="cookies.html" class="hover:underline text-gray-400 hover:text-white">Používání cookies</a>
+            </div>
+          </div>
         </div>
 
-        <!-- Odkazy na právní dokumenty -->
-        <div class="md:col-span-3 space-x-4 text-sm text-center mb-4">
-          <a href="gdpr.html" class="hover:underline text-gray-400 hover:text-white">Zásady zpracování osobních údajů</a>
-          <a href="vop.html" class="hover:underline text-gray-400 hover:text-white">Obchodní podmínky</a>
-          <a href="cookies.html" class="hover:underline text-gray-400 hover:text-white">Používání cookies</a>
-        </div>
-
-        <div class="border-t border-gray-700 pt-8 text-center">
-          <p class="text-sm">&copy; 2025 Vraky Brno. Všechna práva vyhrazena.</p>
-          <p class="text-sm">Design & vývoj: <a href="https://smooth-development.com/" target="_blank" class="hover:underline hover:text-white">Smooth Development</a></p>
+        <div class="border-t border-gray-700 pt-4 flex justify-between items-center text-sm">
+          <span>&copy; 2025 Vraky Brno. Všechna práva vyhrazena.</span>
+          <span>Design & vývoj: <a href="https://smooth-development.com/" target="_blank" class="hover:underline hover:text-white">Smooth Development</a></span>
         </div>
       </div>
     </footer>

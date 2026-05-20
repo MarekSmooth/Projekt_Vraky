@@ -1,12 +1,16 @@
-import 'leaflet/dist/leaflet.css';
-import { initMobileMenu, initThemeToggle } from './navigation.js';
+import { initMobileMenu, initThemeToggle, initActiveNav } from './navigation.js';
 import { initLocationSelector } from './locations.js';
-import { initMap } from './map.js';
 
 // Initialize all modules when DOM is ready
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
   initMobileMenu();
   initThemeToggle();
+  initActiveNav();
   initLocationSelector();
-  initMap();
+
+  // Dynamically load Leaflet only on pages that have the map
+  if (document.getElementById('map')) {
+    const { initMap } = await import('./map.js');
+    initMap();
+  }
 });
