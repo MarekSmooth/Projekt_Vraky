@@ -69,7 +69,6 @@ export function initMap() {
         throw new Error(`HTTP ${res.status}`);
       }
       const data = await res.json();
-      console.log('GeoJSON načten z:', url);
       return data;
     } catch (e) {
       console.error('Chyba při načítání GeoJSON:', url, e);
