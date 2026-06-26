@@ -6,12 +6,12 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   <script>if(localStorage.getItem('theme')!=='light')document.documentElement.classList.add('dark')</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kontakt – Vraky Brno – Odtah, výkup a likvidace vozidel</title>
+  <title>Kontakt – Vraky Brno, Brno a okolí</title>
   <meta name="description" content="Kontaktujte Vraky Brno – odtah a likvidace vozidel. Telefon: +420 731 071 218, e-mail: info@vraky-brno.cz. Napište nám přes kontaktní formulář." />
   <meta name="keywords" content="kontakt vraky brno, odtah brno telefon, likvidace vozidel kontakt, vraky brno email" />
   <meta name="robots" content="index, follow" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Kontakt – Vraky Brno" />
+  <meta property="og:title" content="Kontakt – Vraky Brno, Brno a okolí" />
   <meta property="og:description" content="Kontaktujte nás telefonicky nebo přes formulář. Telefon: +420 731 071 218, e-mail: info@vraky-brno.cz." />
   <meta property="og:url" content="https://vraky-brno.cz/kontakt.html" />
   <meta property="og:image" content="https://vraky-brno.cz/og-image.jpg" />
@@ -22,6 +22,30 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/src/styles/main.css" />
   <script type="module" src="/src/scripts/main.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AutoWrecker",
+    "name": "Vraky Brno",
+    "image": "https://vraky-brno.cz/og-image.jpg",
+    "url": "https://vraky-brno.cz/",
+    "telephone": "+420731071218",
+    "email": "info@vraky-brno.cz",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "U Hřiště 290",
+      "addressLocality": "Opatovice",
+      "postalCode": "664 61",
+      "addressCountry": "CZ"
+    },
+    "areaServed": ["Brno-město", "Brno-venkov", "Vyškov", "Břeclav", "Blansko"],
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "18:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "09:00", "closes": "14:00" }
+    ],
+    "sameAs": ["https://www.facebook.com/profile.php?id=100063838452115"]
+  }
+  </script>
 </head>
 <body class="bg-white text-gray-900 dark:bg-[#1a1a1a] dark:text-gray-300" data-bg="fixed">
   <div class="site-bg"></div>

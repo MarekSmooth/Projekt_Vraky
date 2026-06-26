@@ -13,6 +13,7 @@ export default defineConfig({
         gdpr: resolve(__dirname, 'gdpr.html'),
         vop: resolve(__dirname, 'vop.html'),
         cookies: resolve(__dirname, 'cookies.html'),
+        ekologickaLikvidaceVozidel: resolve(__dirname, 'ekologicka-likvidace-vozidel.html'),
       }
     }
   },

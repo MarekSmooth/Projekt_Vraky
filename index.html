@@ -4,12 +4,12 @@
     <meta charset="UTF-8" />  <link rel="icon" href="/favicon.png" type="image/png" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />    <script>if(localStorage.getItem('theme')!=='light')document.documentElement.classList.add('dark')</script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vraky Brno – Odtah, výkup a likvidace vozidel</title>
+    <title>Vraky Brno – ekologická likvidace a výkup vozidel Brno a okolí</title>
     <meta name="description" content="Odtah, výkup a ekologická likvidace vozidel v Jihomoravském kraji. Bezplatný příjezd, výplata v hotovosti, vyřízení veškeré administrativy. Volejte +420 731 071 218." />
     <meta name="keywords" content="vraky brno, odtah vozidel brno, výkup vraků, likvidace vozidel, ekologická likvidace, odtahová služba jihomoravský kraj" />
     <meta name="robots" content="index, follow" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Vraky Brno – Odtah, výkup a likvidace vozidel" />
+    <meta property="og:title" content="Vraky Brno – ekologická likvidace a výkup vozidel Brno a okolí" />
     <meta property="og:description" content="Odtah, výkup a ekologická likvidace vozidel v Jihomoravském kraji. Bezplatný příjezd, výplata v hotovosti, vyřízení veškeré administrativy." />
     <meta property="og:url" content="https://vraky-brno.cz/" />
   <meta property="og:image" content="https://vraky-brno.cz/og-image.jpg" />
@@ -20,6 +20,30 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="/src/styles/main.css" />
     <script type="module" src="/src/scripts/main.js"></script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "AutoWrecker",
+      "name": "Vraky Brno",
+      "image": "https://vraky-brno.cz/og-image.jpg",
+      "url": "https://vraky-brno.cz/",
+      "telephone": "+420731071218",
+      "email": "info@vraky-brno.cz",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "U Hřiště 290",
+        "addressLocality": "Opatovice",
+        "postalCode": "664 61",
+        "addressCountry": "CZ"
+      },
+      "areaServed": ["Brno-město", "Brno-venkov", "Vyškov", "Břeclav", "Blansko"],
+      "openingHoursSpecification": [
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "18:00" },
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "09:00", "closes": "14:00" }
+      ],
+      "sameAs": ["https://www.facebook.com/profile.php?id=100063838452115"]
+    }
+    </script>
   </head>
   <body class="bg-white text-gray-900 dark:bg-[#1a1a1a] dark:text-gray-300" data-bg="fixed">
     <div class="site-bg"></div>
@@ -116,7 +140,7 @@
         <div class="w-full max-w-screen-xl mx-auto px-4 md:px-8 relative z-10">
           <div class="text-center">
             <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold mb-3 md:mb-4 leading-tight md:leading-relaxed pb-2 bg-clip-text text-transparent bg-gradient-to-r from-[#FFD700] to-[#FFA500] dark:from-yellow-300 dark:to-yellow-500">
-              Ekologická likvidace vozidel
+              Ekologická likvidace vozidel Brno a okolí
             </h1>
             <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-6 md:mb-8 text-green-400 dark:text-green-400 drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)]">
               Výkup autovraků
@@ -128,7 +152,7 @@
               <a href="kontakt.html" class="bg-green-600 dark:bg-green-800 text-white px-6 md:px-8 py-3 md:py-4 rounded-lg font-semibold hover:bg-green-700 dark:hover:bg-green-900 transition-colors font-bold text-sm md:text-base">
                 +420 731 071 218
               </a>
-              <a href="sluzby.html" class="bg-[#FFD700] dark:bg-yellow-400 text-gray-900 dark:text-gray-900 px-6 md:px-8 py-3 md:py-4 rounded-lg font-semibold hover:bg-[#FFA500] dark:hover:bg-yellow-400 transition-colors text-sm md:text-base">
+              <a href="ekologicka-likvidace-vozidel.html" class="bg-[#FFD700] dark:bg-yellow-400 text-gray-900 dark:text-gray-900 px-6 md:px-8 py-3 md:py-4 rounded-lg font-semibold hover:bg-[#FFA500] dark:hover:bg-yellow-400 transition-colors text-sm md:text-base">
                 Více informací
               </a>
             </div>
@@ -249,7 +273,7 @@
               <img src="/src/assets/images/icons/Hotovo.webp" class="h-20 md:h-24 w-24 md:w-32 flex-shrink-0" alt="Hotovo ikona" width="96" height="96" loading="lazy" />
               <div class="flex-1 text-center md:text-left md:ml-4">
                 <h3 class="text-base md:text-lg font-semibold mb-2 text-green-600 dark:text-green-300">A je to hotové</h3>
-                <p class="text-sm md:text-base text-gray-600 dark:text-gray-400">Po odvezení vozidla od nás obdržíte ve smluvený termín doklad o ekologické likvidaci vozidla (potvrzení o převzetí vozidla s ukončenou životností do zařízení určeném k jejich sběru) příp. protokol o zániku vozidla v registru silničních vozidel. Tímto je celý proces z naší strany u konce a na vás už je pouze vyřídit ukončení zákonného pojištění vozidla (povinného ručení). Přenechte likvidací vašeho vozidla profesionálům a mějte o starost v podobě vraku méně a o peníze v kapse více...A to se vyplatí, co říkáte? <a href="sluzby.html" class="text-green-700 dark:text-green-500 underline">Zjistit více</a>.</p>
+                <p class="text-sm md:text-base text-gray-600 dark:text-gray-400">Po odvezení vozidla od nás obdržíte ve smluvený termín doklad o ekologické likvidaci vozidla (potvrzení o převzetí vozidla s ukončenou životností do zařízení určeném k jejich sběru) příp. protokol o zániku vozidla v registru silničních vozidel. Tímto je celý proces z naší strany u konce a na vás už je pouze vyřídit ukončení zákonného pojištění vozidla (povinného ručení). Přenechte likvidací vašeho vozidla profesionálům a mějte o starost v podobě vraku méně a o peníze v kapse více...A to se vyplatí, co říkáte? <a href="ekologicka-likvidace-vozidel.html" class="text-green-700 dark:text-green-500 underline">Zjistit více o ekologické likvidaci</a>.</p>
               </div>
             </div>
           </div>
