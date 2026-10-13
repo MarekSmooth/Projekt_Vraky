@@ -10,7 +10,7 @@
   background: center center / cover no-repeat;
   background-image: url("../assets/images/backgrounds/auta-pozadi.webp");
   background-image: -webkit-image-set(url("../assets/images/backgrounds/auta-pozadi.webp") 1x);
-  background-image: image-set(url("../assets/images/backgrounds/auta-pozadi.webp") 1x, url("../assets/images/backgrounds/auta-pozadi.png") 1x);
+  background-image: image-set(url("../assets/images/backgrounds/auta-pozadi.webp") 1x);
   pointer-events: none;
   opacity: 0.6;
 }
