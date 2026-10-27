@@ -3,6 +3,7 @@ import { resolve } from 'path'
 import { existsSync } from 'fs'
 import { pathToFileURL } from 'url'
 import { regionalSite } from './sites/regional/plugin.js'
+import { previewPlugin, PREVIEW_BASE } from './scripts/preview-plugin.mjs'
 
 // Regionální weby (autovraky-vyskov.cz, ...) – web se vybírá přes --mode:
 //   vite build -c vite.regional.config.js --mode vyskov  ->  dist-sites/vyskov
@@ -15,9 +16,10 @@ export default defineConfig(async ({ mode }) => {
   const page = name => resolve(__dirname, 'sites/regional', `${name}.html`)
 
   return {
-    base: '/',
+    // V náhledu na GitHub Pages leží regionální web v podsložce (/Projekt_Vraky/vyskov/)
+    base: PREVIEW_BASE ? `${PREVIEW_BASE}${mode}/` : '/',
     publicDir: false,
-    plugins: [regionalSite(site)],
+    plugins: [regionalSite(site), previewPlugin()],
     build: {
       outDir: `dist-sites/${mode}`,
       emptyOutDir: true,

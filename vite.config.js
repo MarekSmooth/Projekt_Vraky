@@ -1,8 +1,10 @@
 import { defineConfig } from 'vite'
 import { resolve } from 'path'
+import { previewPlugin, PREVIEW_BASE } from './scripts/preview-plugin.mjs'
 
 export default defineConfig({
-  base: '/',
+  base: PREVIEW_BASE || '/',
+  plugins: [previewPlugin()],
   build: {
     rollupOptions: {
       input: {

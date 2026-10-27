@@ -37,7 +37,7 @@ export function regionalSite(data) {
     // publicDir je vypnutý, v dev režimu proto sdílené soubory servírujeme ručně
     configureServer(server) {
       server.middlewares.use((req, res, next) => {
-        const name = req.url.split('?')[0].slice(1)
+        const name = req.url.split('?')[0].split('/').pop()
         if (!SHARED_PUBLIC.includes(name)) return next()
         res.end(readFileSync(resolve(ROOT, 'public', name)))
       })

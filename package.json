@@ -14,7 +14,8 @@
     "build:blansko": "vite build -c vite.regional.config.js --mode blansko",
     "build:breclav": "vite build -c vite.regional.config.js --mode breclav",
     "build:regional": "npm run build:vyskov && npm run build:blansko && npm run build:breclav",
-    "build:all": "npm run build && npm run build:regional"
+    "build:all": "npm run build && npm run build:regional",
+    "build:preview": "node scripts/build-preview.mjs"
   },
   "dependencies": {
     "leaflet": "^1.9.4"

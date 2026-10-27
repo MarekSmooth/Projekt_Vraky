@@ -1,9 +1,12 @@
-name: Deploy to GitHub Pages
+# Testovací náhled všech čtyř webů na https://mareksmooth.github.io/Projekt_Vraky/
+# (ostré weby se nahrávají přes FTP z dist/ a dist-sites/)
+name: Deploy preview to GitHub Pages
 
 on:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -30,13 +33,13 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build
-        run: npm run build
+      - name: Build preview (všechny weby)
+        run: npm run build:preview
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist
+          path: dist-preview
 
   deploy:
     needs: build
