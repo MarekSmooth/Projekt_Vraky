@@ -18,8 +18,21 @@ export function initMap() {
   // Declare geojsonLayer in outer scope
   let geojsonLayer;
 
+  // Regionální web zvýrazní svůj okres (data-focus="Vyškov"), hlavní web ukáže všechny stejně
+  const focus = mapElement.dataset.focus;
+
   // Style function for districts
   function style(feature) {
+    if (focus) {
+      const active = feature.properties.name === focus;
+      return {
+        fillColor: '#16a34a',
+        weight: active ? 3 : 1.5,
+        opacity: active ? 1 : 0.6,
+        color: '#15803d',
+        fillOpacity: active ? 0.25 : 0
+      };
+    }
     return {
       fillColor: 'transparent',
       weight: 3,
@@ -79,6 +92,10 @@ export function initMap() {
   loadGeoJSON()
     .then(data => {
       geojsonLayer = L.geoJSON(data, { style, onEachFeature }).addTo(map);
+      if (focus) {
+        const target = geojsonLayer.getLayers().find(l => l.feature.properties.name === focus);
+        if (target) map.fitBounds(target.getBounds(), { padding: [20, 20] });
+      }
     })
     .catch(err => console.error('Error loading GeoJSON:', err));
 }

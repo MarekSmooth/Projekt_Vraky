@@ -7,6 +7,15 @@ export function initMobileMenu() {
 
   if (!mobileMenuBtn || !mobileMenu) return;
 
+  // Odkaz na sekci stejné stránky (/#kontakt) menu zavře
+  mobileMenu.querySelectorAll('a[href*="#"]').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
+      menuIcon?.classList.remove('hidden');
+      closeIcon?.classList.add('hidden');
+    });
+  });
+
   mobileMenuBtn.addEventListener('click', () => {
     const isHidden = mobileMenu.classList.contains('hidden');
     

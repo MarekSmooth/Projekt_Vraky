@@ -8,8 +8,9 @@ const locations = {
 };
 
 export function initLocationSelector() {
-  // Set Brno as default
-  selectLocation('brno');
+  // Regionální web určí aktivní lokalitu přes data-location-active, hlavní web má Brno
+  const active = document.querySelector('[data-location-active]')?.dataset.locationActive || 'brno';
+  selectLocation(active);
 
   // Add click handlers to location buttons
   document.querySelectorAll('[data-location]').forEach(btn => {
@@ -26,16 +27,17 @@ export function initLocationSelector() {
 
 export function selectLocation(location) {
   const data = locations[location];
-  if (!data) return;
 
   // Update footer information
-  const footerPhone = document.getElementById('footer-phone');
-  const footerEmail = document.getElementById('footer-email');
-  const footerAddress = document.getElementById('footer-address');
+  if (data) {
+    const footerPhone = document.getElementById('footer-phone');
+    const footerEmail = document.getElementById('footer-email');
+    const footerAddress = document.getElementById('footer-address');
 
-  if (footerPhone) footerPhone.textContent = data.phone;
-  if (footerEmail) footerEmail.textContent = data.email;
-  if (footerAddress) footerAddress.textContent = data.address;
+    if (footerPhone) footerPhone.textContent = data.phone;
+    if (footerEmail) footerEmail.textContent = data.email;
+    if (footerAddress) footerAddress.textContent = data.address;
+  }
 
   // Update button styles
   document.querySelectorAll('[data-location]').forEach(btn => {

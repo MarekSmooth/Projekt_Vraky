@@ -1,0 +1,62 @@
+      <section id="kontakt" class="relative py-8 md:py-16 px-4 md:px-6 scroll-mt-20">
+        <div class="max-w-screen-xl mx-auto px-2 md:px-8">
+          <h2 class="text-2xl md:text-4xl font-bold text-center mb-3 text-[#FFD700] dark:text-yellow-400">Kontaktujte nás</h2>
+          <p class="text-center text-white dark:text-gray-300 font-semibold drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)] max-w-3xl mx-auto mb-6 md:mb-10">{{contactLead}}</p>
+          <div class="grid md:grid-cols-2 gap-6 md:gap-10">
+            <div class="space-y-6">
+              <div class="bg-gray-100/95 dark:bg-grayish-800/95 rounded-xl p-5 md:p-6 text-sm md:text-base text-gray-700 dark:text-gray-300 space-y-2">
+                <h3 class="text-base md:text-lg font-semibold mb-2 text-green-600 dark:text-green-300">Kontaktní údaje</h3>
+                <p><span class="mr-2">📞</span><a href="tel:+420731071218" class="font-bold text-lg hover:text-green-600">+420 731 071 218</a></p>
+                <p><span class="mr-2">📧</span><a href="mailto:info@vraky-brno.cz" class="hover:text-green-600">info@vraky-brno.cz</a></p>
+                <p><span class="mr-2">📍</span>U Hřiště 290, 664 61 Opatovice (fakturační adresa)</p>
+                <p class="pt-2 text-green-700 dark:text-green-500 font-semibold">Nejrychleji se domluvíme po telefonu. E-maily vyřizujeme průběžně, odpověď může chvíli trvat.</p>
+              </div>
+              <div class="bg-gray-100/95 dark:bg-grayish-800/95 rounded-xl p-5 md:p-6 text-sm md:text-base text-gray-700 dark:text-gray-300 space-y-1">
+                <h3 class="text-base md:text-lg font-semibold mb-2 text-green-600 dark:text-green-300">Provozní doba</h3>
+                <p>Pondělí – pátek: 8:00–18:00</p>
+                <p>Sobota: 9:00–14:00</p>
+                <p>Neděle: zavřeno</p>
+                <p class="pt-2 text-gray-600 dark:text-gray-400">Odvoz auta je po dohodě možný i večer, o víkendu nebo ve svátek.</p>
+              </div>
+            </div>
+
+            <div class="bg-gray-100/95 dark:bg-grayish-800/95 rounded-xl p-5 md:p-6">
+              <h3 class="text-base md:text-lg font-semibold mb-4 text-green-600 dark:text-green-300">Napište nám</h3>
+              <form id="contact-form" class="space-y-3 md:space-y-4">
+                <input type="hidden" name="access_key" value="51102dd3-4ce9-407d-acf8-f859ef14866a" />
+                <input type="hidden" name="subject" value="Nová poptávka z {{domain}}" />
+                <input type="hidden" name="from_name" value="{{brand}} – web formulář" />
+                <input type="checkbox" name="botcheck" class="hidden" style="display:none" tabindex="-1" autocomplete="off" />
+
+                <div>
+                  <label for="name" class="block text-xs md:text-sm font-medium text-gray-600 dark:text-gray-400 mb-1">Jméno</label>
+                  <input id="name" type="text" name="name" autocomplete="name" class="w-full px-3 md:px-4 py-2 text-sm md:text-base rounded bg-white dark:bg-gray-600 border border-gray-300 dark:border-gray-500 text-gray-900 dark:text-white focus:ring-2 focus:ring-green-500 focus:border-transparent" required />
+                </div>
+                <div>
+                  <label for="email" class="block text-xs md:text-sm font-medium text-gray-600 dark:text-gray-400 mb-1">E-mail</label>
+                  <input id="email" type="email" name="email" autocomplete="email" class="w-full px-3 md:px-4 py-2 text-sm md:text-base rounded bg-white dark:bg-gray-600 border border-gray-300 dark:border-gray-500 text-gray-900 dark:text-white focus:ring-2 focus:ring-green-500 focus:border-transparent" required />
+                </div>
+                <div>
+                  <label for="phone" class="block text-xs md:text-sm font-medium text-gray-600 dark:text-gray-400 mb-1">Telefon</label>
+                  <input id="phone" type="tel" name="phone" autocomplete="tel" class="w-full px-3 md:px-4 py-2 text-sm md:text-base rounded bg-white dark:bg-gray-600 border border-gray-300 dark:border-gray-500 text-gray-900 dark:text-white focus:ring-2 focus:ring-green-500 focus:border-transparent" required />
+                </div>
+                <div>
+                  <label for="message" class="block text-xs md:text-sm font-medium text-gray-600 dark:text-gray-400 mb-1">Zpráva</label>
+                  <textarea id="message" name="message" rows="4" placeholder="{{formPlaceholder}}" class="w-full px-3 md:px-4 py-2 text-sm md:text-base rounded bg-white dark:bg-gray-600 border border-gray-300 dark:border-gray-500 text-gray-900 dark:text-white focus:ring-2 focus:ring-green-500 focus:border-transparent" required></textarea>
+                </div>
+                <button type="submit" id="submit-btn" class="w-full bg-green-600 dark:bg-green-800 text-white py-2 md:py-3 text-sm md:text-base rounded-lg font-semibold hover:bg-green-700 dark:hover:bg-green-900 transition-colors disabled:opacity-60 disabled:cursor-not-allowed">
+                  Odeslat poptávku
+                </button>
+                <p class="text-xs text-gray-500 dark:text-gray-400">Odesláním souhlasíte se <a href="gdpr.html" class="underline">zpracováním osobních údajů</a>.</p>
+
+                <div id="form-success" class="hidden text-center p-3 rounded-lg bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300 text-sm font-medium">
+                  ✅ Zpráva odeslána! Ozveme se vám co nejdříve.
+                </div>
+                <div id="form-error" class="hidden text-center p-3 rounded-lg bg-red-100 dark:bg-red-900 text-red-700 dark:text-red-300 text-sm font-medium">
+                  ❌ Nepodařilo se odeslat zprávu. Zkuste to prosím znovu nebo nám zavolejte.
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>

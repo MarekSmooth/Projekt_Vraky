@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="cs" class="scroll-smooth">
+  <head>
+<!-- @partial head -->
+    <script type="module" src="/src/scripts/contact-form.js"></script>
+    <script type="application/ld+json">
+{{jsonld}}
+    </script>
+  </head>
+  <body class="bg-white text-gray-900 dark:bg-[#1a1a1a] dark:text-gray-300" data-bg="fixed">
+    <div class="site-bg"></div>
+
+<!-- @partial nav -->
+
+    <main class="relative">
+
+      <!-- Úvod -->
+      <section id="uvod" class="relative py-8 md:py-16 px-4 md:px-6 scroll-mt-20">
+        <div class="w-full max-w-screen-xl mx-auto px-2 md:px-8 text-center">
+          <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold mb-3 md:mb-4 leading-tight md:leading-snug pb-2 bg-clip-text text-transparent bg-gradient-to-r from-[#FFD700] to-[#FFA500] dark:from-yellow-300 dark:to-yellow-500">
+            {{hero.title}}
+          </h1>
+          <p class="text-xl sm:text-2xl md:text-3xl font-bold mb-6 md:mb-8 text-green-400 drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)]">
+            {{hero.subtitle}}
+          </p>
+          <p class="text-base md:text-lg lg:text-xl mb-8 font-semibold text-white dark:text-gray-300 drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)] max-w-4xl mx-auto">
+            {{hero.lead}}
+          </p>
+          <div class="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
+            <a href="tel:+420731071218" class="bg-green-600 dark:bg-green-800 text-white px-6 md:px-8 py-3 md:py-4 rounded-lg font-bold hover:bg-green-700 dark:hover:bg-green-900 transition-colors text-sm md:text-base">
+              Zavolat +420 731 071 218
+            </a>
+            <a href="#kontakt" class="bg-[#FFD700] dark:bg-yellow-400 text-gray-900 px-6 md:px-8 py-3 md:py-4 rounded-lg font-semibold hover:bg-[#FFA500] transition-colors text-sm md:text-base">
+              Nezávazná poptávka
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Rozcestník lokalit (stejná pozice jako na vraky-brno.cz) -->
+      <section class="relative py-8 md:py-12 px-4 md:px-6">
+        <div class="max-w-6xl mx-auto relative z-10">
+          <div data-location-active="{{id}}" class="flex flex-col md:flex-row gap-0 bg-gradient-to-r from-green-600 via-green-700 to-green-600 dark:from-green-800 dark:via-green-900 dark:to-green-800 p-1 rounded-xl md:rounded-2xl">
+{{switcher}}
+          </div>
+        </div>
+      </section>
+
+      <!-- Hlavní výhody -->
+      <section class="relative pb-4 md:pb-6 px-4 md:px-6">
+        <div class="max-w-screen-xl mx-auto px-2 md:px-8">
+          <ul class="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 max-w-5xl mx-auto text-left">
+            <li class="bg-gray-100/95 dark:bg-grayish-800/95 rounded-xl p-3 md:p-4 flex items-center gap-3">
+              <img src="/src/assets/images/icons/Odtah.webp" alt="" width="48" height="48" class="h-10 w-10 md:h-12 md:w-12 shrink-0" />
+              <span class="text-sm md:text-base font-semibold text-gray-800 dark:text-gray-200">Odtah zdarma</span>
+            </li>
+            <li class="bg-gray-100/95 dark:bg-grayish-800/95 rounded-xl p-3 md:p-4 flex items-center gap-3">
+              <img src="/src/assets/images/icons/Vyplata.webp" alt="" width="48" height="48" class="h-10 w-10 md:h-12 md:w-12 shrink-0" />
+              <span class="text-sm md:text-base font-semibold text-gray-800 dark:text-gray-200">Výkup od 2&nbsp;500&nbsp;Kč</span>
+            </li>
+            <li class="bg-gray-100/95 dark:bg-grayish-800/95 rounded-xl p-3 md:p-4 flex items-center gap-3">
+              <img src="/src/assets/images/icons/Komplet.webp" alt="" width="48" height="48" class="h-10 w-10 md:h-12 md:w-12 shrink-0" />
+              <span class="text-sm md:text-base font-semibold text-gray-800 dark:text-gray-200">Zánik vozidla vyřídíme za vás</span>
+            </li>
+            <li class="bg-gray-100/95 dark:bg-grayish-800/95 rounded-xl p-3 md:p-4 flex items-center gap-3">
+              <img src="/src/assets/images/icons/Certifikat.webp" alt="" width="48" height="48" class="h-10 w-10 md:h-12 md:w-12 shrink-0" />
+              <span class="text-sm md:text-base font-semibold text-gray-800 dark:text-gray-200">Protokol hned na místě</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- O nás / lokální úvod -->
+      <section id="o-nas" class="relative py-8 md:py-12 px-4 md:px-6 scroll-mt-20">
+        <div class="max-w-screen-xl mx-auto px-2 md:px-8">
+          <div class="bg-gray-100/95 dark:bg-grayish-800/95 rounded-2xl p-5 md:p-10 grid md:grid-cols-3 gap-6 md:gap-10 items-center">
+            <div class="md:col-span-2 space-y-4 text-sm md:text-base text-gray-700 dark:text-gray-300">
+              <h2 class="text-xl md:text-3xl font-bold text-green-600 dark:text-green-400">{{intro.title}}</h2>
+              {{intro.html}}
+            </div>
+            <img src="/src/assets/images/icons/Okoli.webp" alt="{{intro.imageAlt}}" width="300" height="300" class="w-2/3 md:w-full max-w-xs mx-auto h-auto" loading="lazy" />
+          </div>
+        </div>
+      </section>
+
+      <!-- Služby -->
+      <section id="sluzby" class="relative py-8 md:py-12 px-4 md:px-6 scroll-mt-20">
+        <div class="max-w-screen-xl mx-auto px-2 md:px-8">
+          <h2 class="text-2xl md:text-4xl font-bold text-center mb-3 text-green-400">{{services.title}}</h2>
+          <p class="text-center text-white dark:text-gray-300 font-semibold drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)] max-w-3xl mx-auto mb-6 md:mb-10">{{services.lead}}</p>
+          <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+            {{services.cards}}
+          </div>
+        </div>
+      </section>
+
+      <!-- Postup -->
+<!-- @partial steps -->
+
+      <!-- Kde působíme -->
+      <section id="oblast" class="relative py-8 md:py-12 px-4 md:px-6 scroll-mt-20">
+        <div class="max-w-screen-xl mx-auto px-2 md:px-8">
+          <h2 class="text-2xl md:text-4xl font-bold text-center mb-6 md:mb-8 text-green-400">{{area.title}}</h2>
+          <div class="grid lg:grid-cols-2 gap-6 md:gap-8 items-start">
+            <div class="bg-gray-100/95 dark:bg-grayish-800/95 rounded-2xl p-5 md:p-8 space-y-4 text-sm md:text-base text-gray-700 dark:text-gray-300">
+              {{area.html}}
+              <ul class="flex flex-wrap gap-2 pt-2">
+                {{area.towns}}
+              </ul>
+              <p class="pt-2 text-gray-600 dark:text-gray-400">{{area.siblings}}</p>
+            </div>
+            <div class="map-container">
+              <div id="map" data-focus="{{okres}}"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Proč my -->
+      <section id="proc-my" class="relative py-8 md:py-12 px-4 md:px-6 scroll-mt-20">
+        <div class="max-w-screen-xl mx-auto px-2 md:px-8">
+          <h2 class="text-2xl md:text-4xl font-bold text-center mb-6 md:mb-10 text-green-400">{{why.title}}</h2>
+          <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+            {{why.cards}}
+          </div>
+        </div>
+      </section>
+
+      <!-- Časté dotazy -->
+      <section id="dotazy" class="relative py-8 md:py-12 px-4 md:px-6 scroll-mt-20">
+        <div class="max-w-4xl mx-auto px-2 md:px-8">
+          <h2 class="text-2xl md:text-4xl font-bold text-center mb-6 md:mb-10 text-green-400">Časté dotazy</h2>
+          <div class="space-y-3">
+            {{faq}}
+          </div>
+        </div>
+      </section>
+
+      <!-- Kontakt -->
+<!-- @partial contact -->
+
+    </main>
+
+<!-- @partial footer -->
+  </body>
+</html>

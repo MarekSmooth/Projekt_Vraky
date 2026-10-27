@@ -6,7 +6,15 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "dev:vyskov": "vite -c vite.regional.config.js --mode vyskov",
+    "dev:blansko": "vite -c vite.regional.config.js --mode blansko",
+    "dev:breclav": "vite -c vite.regional.config.js --mode breclav",
+    "build:vyskov": "vite build -c vite.regional.config.js --mode vyskov",
+    "build:blansko": "vite build -c vite.regional.config.js --mode blansko",
+    "build:breclav": "vite build -c vite.regional.config.js --mode breclav",
+    "build:regional": "npm run build:vyskov && npm run build:blansko && npm run build:breclav",
+    "build:all": "npm run build && npm run build:regional"
   },
   "dependencies": {
     "leaflet": "^1.9.4"

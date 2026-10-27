@@ -65,6 +65,35 @@ Výstup v složce `dist/`
 npm run preview
 ```
 
+## 🗺️ Regionální weby
+
+Jednostránkové weby autovraky-vyskov.cz, autovraky-blansko.cz a autovraky-breclav.cz se staví ze stejného kódu jako hlavní web.
+
+```
+sites/
+├── regional/            # společná šablona
+│   ├── index.html       # jednostránkový web (sekce + partialy)
+│   ├── gdpr.html, vop.html, cookies.html
+│   ├── partials/        # head, nav, steps, contact, footer
+│   ├── helpers.js       # skládá data webu do HTML, meta a JSON-LD
+│   ├── htaccess.txt     # šablona .htaccess
+│   └── plugin.js        # Vite plugin (partialy, {{proměnné}}, robots, sitemap)
+├── vyskov/site.js       # texty a nastavení konkrétního webu
+├── blansko/site.js
+└── breclav/site.js
+```
+
+Texty se upravují jen v `sites/<web>/site.js`.
+
+```bash
+npm run dev:vyskov        # vývojový server
+npm run build:vyskov      # -> dist-sites/vyskov
+npm run build:regional    # všechny tři regionální weby
+npm run build:all         # hlavní web + regionální weby
+```
+
+Na FTP dané domény se nahrává **obsah** složky `dist-sites/<web>/` (včetně skrytého `.htaccess`).
+
 ## ✨ Funkce
 
 - **Responzivní design** - Optimalizováno pro mobil, tablet i desktop
